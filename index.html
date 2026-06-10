@@ -53,79 +53,75 @@
     .nav-cta { padding: 0.5rem 1.4rem; border: 1px solid var(--gold); color: var(--gold) !important; transition: all 0.3s; }
     .nav-cta:hover { background: var(--gold) !important; color: var(--deep) !important; }
 
-    /* ══ HERO — FULL SPLIT LAYOUT ══ */
+    /* ══ HERO — single centered column ══ */
     .hero {
-      min-height: 100vh; display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 70px; /* nav height */
-      position: relative; overflow: hidden;
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 100px 6% 4rem; overflow: hidden;
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
       background:
-        radial-gradient(ellipse 70% 60% at 20% 50%, rgba(200,153,42,0.1) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 40% at 80% 30%, rgba(200,153,42,0.06) 0%, transparent 60%),
-        linear-gradient(160deg, #080604 0%, #120E08 50%, #080604 100%);
+        radial-gradient(ellipse 70% 55% at 50% 40%, rgba(200,153,42,0.13) 0%, transparent 65%),
+        linear-gradient(160deg, #080604 0%, #120E08 55%, #080604 100%);
     }
-    /* Subtle texture lines */
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
       background-image: repeating-linear-gradient(
-        90deg, transparent, transparent 60px, rgba(200,153,42,0.015) 60px, rgba(200,153,42,0.015) 61px
+        90deg, transparent, transparent 60px, rgba(200,153,42,0.012) 60px, rgba(200,153,42,0.012) 61px
       );
     }
-    .hero-left {
+    .hero-center {
       position: relative; z-index: 1;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 5rem 4rem 5rem 6%;
-      border-right: 1px solid var(--border);
-    }
-    .hero-right {
-      position: relative; z-index: 1;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 5rem 6% 5rem 4rem;
-      background: rgba(255,255,255,0.013);
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; max-width: 820px; width: 100%;
     }
 
-    /* Left side — main brand + headline */
+    /* Eyebrow */
     .hero-eyebrow {
-      display: flex; align-items: center; gap: 0.8rem;
-      font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 1.8rem;
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem;
+      padding: 0.45rem 1.2rem; border: 1px solid rgba(200,153,42,0.25);
     }
-    .hero-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
 
-    .hero-name-block { margin-bottom: 1rem; }
+    /* Brand name — one line, Issac heavy, events lighter */
+    .hero-name-block {
+      line-height: 1; margin-bottom: 1rem;
+      white-space: nowrap;
+    }
     .hero-issac {
       font-family: 'Playfair Display', serif; font-weight: 800;
-      font-size: clamp(3.8rem, 7vw, 6.2rem); line-height: 0.92;
+      font-size: clamp(4rem, 10vw, 8rem);
       background: linear-gradient(135deg, #F5D878 0%, #C8992A 45%, #F0C840 75%, #D4A030 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      letter-spacing: -0.02em; display: block;
+      letter-spacing: -0.02em;
     }
     .hero-eventsword {
-      font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic;
-      font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1;
-      color: rgba(232,184,48,0.65); display: block; margin-top: 0.1rem;
+      font-family: 'Playfair Display', serif; font-weight: 400; font-style: italic;
+      font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+      color: rgba(232,184,48,0.6);
+      -webkit-text-fill-color: rgba(232,184,48,0.6);
       letter-spacing: 0.02em;
     }
+
+    /* Tagline */
     .hero-tagline-text {
-      font-size: clamp(0.62rem, 1.2vw, 0.72rem); letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--muted);
-      margin: 1.2rem 0 2rem; line-height: 1.6;
-      padding-left: 2px;
+      font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase;
+      color: #B8A878; margin: 0.8rem 0 1.8rem;
+      display: flex; align-items: center; gap: 0.7rem; justify-content: center;
     }
-    .hero-tagline-text span { color: var(--gold); opacity: 0.7; }
+    .hero-tagline-text::before,
+    .hero-tagline-text::after { content: ''; display: block; width: 36px; height: 1px; background: rgba(200,153,42,0.45); }
 
-    .hero-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-      font-weight: 300; line-height: 1.4; color: var(--ivory);
-      margin-bottom: 2rem;
+    /* Description */
+    .hero-desc {
+      font-size: 1rem; color: var(--text); line-height: 1.82;
+      margin-bottom: 2.4rem; max-width: 600px; font-weight: 300;
     }
-    .hero-headline em { font-style: italic; color: var(--gold-light); }
 
-    .hero-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    /* Buttons */
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
     .btn-gold { display: inline-block; padding: 0.9rem 2.4rem; background: var(--gold); color: var(--deep); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; transition: all 0.3s; }
     .btn-gold:hover { background: var(--gold-light); }
     .btn-outline { display: inline-block; padding: 0.9rem 2.4rem; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; position: relative; overflow: hidden; transition: color 0.35s; }
@@ -134,44 +130,22 @@
     .btn-outline:hover::before { transform: translateX(0); }
     .btn-outline span { position: relative; z-index: 1; }
 
-    /* Hero trust strip */
-    .hero-trust {
-      display: flex; gap: 2rem; flex-wrap: wrap;
-      padding-top: 2rem; border-top: 1px solid var(--border);
+    /* Quick connect bar */
+    .hero-connect {
+      display: flex; align-items: stretch; flex-wrap: wrap;
+      border: 1px solid var(--border);
+      width: 100%; background: rgba(255,255,255,0.015);
     }
-    .trust-item { display: flex; align-items: center; gap: 0.6rem; }
-    .trust-icon { font-size: 1.1rem; }
-    .trust-text { font-size: 0.78rem; color: var(--muted); line-height: 1.35; }
-    .trust-text strong { color: var(--ivory); display: block; font-size: 0.82rem; }
-
-    /* Right side — services preview + contact card */
-    .hero-services-preview {
-      display: flex; flex-direction: column; gap: 1px;
-      background: var(--border); margin-bottom: 1.5rem;
+    .hcc-item {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 1rem 1.4rem; text-decoration: none; color: inherit;
+      flex: 1; min-width: 120px; transition: background 0.3s; gap: 0.2rem;
     }
-    .hsp-item {
-      display: flex; align-items: center; gap: 1.2rem;
-      padding: 1.1rem 1.4rem; background: var(--panel);
-      transition: background 0.3s; cursor: default;
-    }
-    .hsp-item:hover { background: var(--warm); }
-    .hsp-icon { font-size: 1.3rem; width: 2rem; text-align: center; flex-shrink: 0; }
-    .hsp-label { font-size: 0.85rem; font-weight: 500; color: var(--ivory); }
-    .hsp-desc { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
-    .hsp-arrow { margin-left: auto; color: var(--gold); font-size: 0.7rem; opacity: 0.5; }
-
-    /* Right contact strip */
-    .hero-contact-strip {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1px; background: var(--border);
-    }
-    .hcs-item {
-      padding: 1rem 1.2rem; background: rgba(255,255,255,0.02);
-      text-decoration: none; color: inherit; transition: background 0.3s;
-    }
-    .hcs-item:hover { background: rgba(200,153,42,0.06); }
-    .hcs-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
-    .hcs-value { font-size: 0.82rem; font-weight: 500; color: var(--ivory); }
+    .hcc-item:hover { background: rgba(200,153,42,0.07); }
+    .hcc-sep { width: 1px; background: var(--border); flex-shrink: 0; }
+    .hcc-icon { font-size: 1.1rem; line-height: 1; }
+    .hcc-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 0.1rem; }
+    .hcc-value { font-size: 0.78rem; font-weight: 500; color: var(--ivory); }
 
     /* ══ SECTION COMMONS ══ */
     .section-label { font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
@@ -291,15 +265,19 @@
 
     /* ══ FOOTER ══ */
     footer { background: #050402; padding: 3.5rem 5% 2rem; border-top: 1px solid var(--border); }
-    .footer-inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 2.5rem; }
+    .footer-inner { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr 0.7fr; gap: 2.5rem; align-items: start; margin-bottom: 2.5rem; }
     .footer-brand-name { font-size: 1.55rem; line-height: 1; }
     .footer-tagline { font-size: 0.58rem; color: var(--muted); margin-top: 0.45rem; letter-spacing: 0.18em; text-transform: uppercase; }
     .footer-contact { display: flex; flex-direction: column; gap: 0.55rem; }
-    .footer-contact a, .footer-contact span { font-size: 0.8rem; text-decoration: none; color: var(--muted); transition: color 0.3s; display: flex; align-items: center; gap: 0.45rem; }
+    .footer-contact a, .footer-contact span { font-size: 0.78rem; text-decoration: none; color: var(--muted); transition: color 0.3s; display: flex; align-items: center; gap: 0.45rem; }
     .footer-contact a:hover { color: var(--gold); }
-    .footer-links { display: flex; flex-direction: column; gap: 0.55rem; }
-    .footer-links a { font-size: 0.76rem; text-decoration: none; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--gold); }
+    .footer-col-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+    .footer-services { display: flex; flex-direction: column; gap: 0.45rem; }
+    .footer-services a { font-size: 0.76rem; text-decoration: none; color: var(--muted); transition: color 0.3s; }
+    .footer-services a:hover { color: var(--gold); }
+    .footer-nav { display: flex; flex-direction: column; gap: 0.45rem; }
+    .footer-nav a { font-size: 0.76rem; text-decoration: none; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+    .footer-nav a:hover { color: var(--gold); }
     .footer-copy { font-size: 0.68rem; color: rgba(122,110,94,0.4); text-align: center; padding-top: 2rem; border-top: 1px solid rgba(200,153,42,0.07); }
 
     /* Sparkle */
@@ -308,24 +286,23 @@
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 960px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 4rem 5%; border-right: none; border-bottom: 1px solid var(--border); }
-      .hero-right { padding: 3rem 5%; }
       nav ul { display: none; }
       .cards { grid-template-columns: 1fr 1fr; }
       .why { grid-template-columns: 1fr; gap: 3rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item.featured { grid-column: span 2; }
-      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
     }
     @media (max-width: 600px) {
       .cards { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item.featured { grid-column: span 1; aspect-ratio: 4/3; }
       .form-row { grid-template-columns: 1fr; }
-      .hero-contact-strip { grid-template-columns: 1fr; }
-      .hero-btns { flex-direction: column; align-items: flex-start; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .hcc-sep { display: none; }
+      .hcc-item { min-width: 45%; border-bottom: 1px solid var(--border); }
+      .footer-inner { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
   </style>
@@ -360,118 +337,69 @@
   </ul>
 </nav>
 
-<!-- ══ HERO — FULL SPLIT ══ -->
+<!-- ══ HERO ══ -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="sparkle" style="width:3px;height:3px;left:18%;top:60%;animation-delay:0s;animation-duration:5s;"></div>
-  <div class="sparkle" style="width:4px;height:4px;left:42%;top:75%;animation-delay:1.8s;animation-duration:6.5s;"></div>
-  <div class="sparkle" style="width:3px;height:3px;left:72%;top:55%;animation-delay:0.9s;animation-duration:7s;"></div>
+  <div class="sparkle" style="width:3px;height:3px;left:10%;top:65%;animation-delay:0s;animation-duration:5s;"></div>
+  <div class="sparkle" style="width:4px;height:4px;left:88%;top:55%;animation-delay:1.8s;animation-duration:6.5s;"></div>
+  <div class="sparkle" style="width:3px;height:3px;left:55%;top:80%;animation-delay:0.9s;animation-duration:7s;"></div>
 
-  <!-- LEFT: Brand + headline + buttons + trust -->
-  <div class="hero-left">
-    <div class="hero-eyebrow">Premium Event Management · Morris Plains, NJ</div>
+  <div class="hero-center">
 
+    <!-- Brand name — Issac bold, events lighter, on one line, big -->
     <div class="hero-name-block">
-      <span class="hero-issac">Issac</span>
-      <span class="hero-eventsword">events</span>
+      <span class="hero-issac">Issac</span><span class="hero-eventsword"> events</span>
     </div>
 
-    <div class="hero-tagline-text">
-      <span>✦</span> Planned with Purpose, Delivered with Excellence
-    </div>
+    <!-- Tagline -->
+    <div class="hero-tagline-text">Planned with Purpose, Delivered with Excellence</div>
 
-    <h2 class="hero-headline">
-      Every stage deserves<br/>
-      <em>a grand reveal</em>
-    </h2>
+    <!-- Description -->
+    <p class="hero-desc">
+      Your premier event management partner in New Jersey — specialising in bespoke stage décor for weddings, birthdays,
+      baby showers, receptions, and every celebration in between.
+      Crafted with elegance, delivered on time, every time.
+    </p>
 
+    <!-- Buttons -->
     <div class="hero-btns">
       <a href="#contact" class="btn-gold">Plan Your Event</a>
       <a href="#gallery" class="btn-outline"><span>View Our Work</span></a>
     </div>
 
-    <div class="hero-trust">
-      <div class="trust-item">
-        <div class="trust-icon">💍</div>
-        <div class="trust-text"><strong>Weddings</strong>Stage & Mandap</div>
+    <!-- Quick Connect strip — horizontal row below buttons -->
+    <div class="hero-connect">
+      <a href="tel:+19734622380" class="hcc-item">
+        <span class="hcc-icon">📞</span>
+        <span class="hcc-label">Call Us</span>
+        <span class="hcc-value">+1 (973) 462-2380</span>
+      </a>
+      <div class="hcc-sep"></div>
+      <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!" target="_blank" rel="noopener" class="hcc-item">
+        <span class="hcc-icon">💬</span>
+        <span class="hcc-label">WhatsApp</span>
+        <span class="hcc-value">Chat with us</span>
+      </a>
+      <div class="hcc-sep"></div>
+      <a href="mailto:Issacevents@gmail.com" class="hcc-item">
+        <span class="hcc-icon">📧</span>
+        <span class="hcc-label">Email</span>
+        <span class="hcc-value">Issacevents@gmail.com</span>
+      </a>
+      <div class="hcc-sep"></div>
+      <div class="hcc-item">
+        <span class="hcc-icon">📍</span>
+        <span class="hcc-label">Location</span>
+        <span class="hcc-value">Morris Plains, NJ</span>
       </div>
-      <div class="trust-item">
-        <div class="trust-icon">🎂</div>
-        <div class="trust-text"><strong>Birthdays</strong>Themed Setups</div>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">🌸</div>
-        <div class="trust-text"><strong>All Events</strong>Full Décor</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT: Services preview + quick contact -->
-  <div class="hero-right">
-    <p class="section-label" style="margin-bottom:1.2rem">Our Services</p>
-
-    <div class="hero-services-preview">
-      <div class="hsp-item">
-        <div class="hsp-icon">💍</div>
-        <div>
-          <div class="hsp-label">Wedding Stage Decoration</div>
-          <div class="hsp-desc">Floral arches, mandap setups, lighting & backdrops</div>
-        </div>
-        <div class="hsp-arrow">→</div>
-      </div>
-      <div class="hsp-item">
-        <div class="hsp-icon">🎂</div>
-        <div>
-          <div class="hsp-label">Birthday Party Stages</div>
-          <div class="hsp-desc">Balloon walls, neon signs, themed backdrops</div>
-        </div>
-        <div class="hsp-arrow">→</div>
-      </div>
-      <div class="hsp-item">
-        <div class="hsp-icon">🎊</div>
-        <div>
-          <div class="hsp-label">Event Decoration</div>
-          <div class="hsp-desc">Anniversaries, engagements, receptions & more</div>
-        </div>
-        <div class="hsp-arrow">→</div>
-      </div>
-      <div class="hsp-item">
-        <div class="hsp-icon">🌸</div>
-        <div>
-          <div class="hsp-label">Floral & Lighting Design</div>
-          <div class="hsp-desc">Fairy lights, LED setups, custom chandeliers</div>
-        </div>
-        <div class="hsp-arrow">→</div>
-      </div>
-      <div class="hsp-item">
-        <div class="hsp-icon">🎯</div>
-        <div>
-          <div class="hsp-label">Full Event Management</div>
-          <div class="hsp-desc">End-to-end coordination, vendors & logistics</div>
-        </div>
-        <div class="hsp-arrow">→</div>
+      <div class="hcc-sep"></div>
+      <div class="hcc-item">
+        <span class="hcc-icon">🕐</span>
+        <span class="hcc-label">Hours</span>
+        <span class="hcc-value">Mon–Sun, 9AM–9PM</span>
       </div>
     </div>
 
-    <p class="section-label" style="margin:1.5rem 0 0.8rem">Quick Connect</p>
-    <div class="hero-contact-strip">
-      <a href="tel:+19734622380" class="hcs-item">
-        <div class="hcs-label">📞 Call Us</div>
-        <div class="hcs-value">+1 (973) 462-2380</div>
-      </a>
-      <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!" target="_blank" class="hcs-item">
-        <div class="hcs-label">💬 WhatsApp</div>
-        <div class="hcs-value">Chat with us</div>
-      </a>
-      <a href="mailto:Issacevents@gmail.com" class="hcs-item">
-        <div class="hcs-label">📧 Email</div>
-        <div class="hcs-value">Issacevents@gmail.com</div>
-      </a>
-      <div class="hcs-item">
-        <div class="hcs-label">📍 Location</div>
-        <div class="hcs-value">Morris Plains, NJ</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -705,12 +633,25 @@
       <a href="mailto:Issacevents@gmail.com">📧 Issacevents@gmail.com</a>
       <a href="https://wa.me/19734622380" target="_blank" rel="noopener">💬 WhatsApp Us</a>
       <span>📍 Morris Plains, New Jersey</span>
+      <span>🕐 Mon – Sun, 9 AM – 9 PM</span>
     </div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
+    <div class="footer-services">
+      <div class="footer-col-label">Our Services</div>
+      <a href="#contact">💍 Wedding Stage Decoration</a>
+      <a href="#contact">🎂 Birthday Party Stages</a>
+      <a href="#contact">🍼 Baby Shower Décor</a>
+      <a href="#contact">🎈 Party Decorations</a>
+      <a href="#contact">📸 Backdrop Setups</a>
+      <a href="#contact">🎊 Event Decorations</a>
+      <a href="#contact">🌸 Floral & Lighting Design</a>
+      <a href="#contact">🎯 Full Event Management</a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col-label">Quick Links</div>
       <a href="#why">About Us</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
+      <a href="#contact">Book Now</a>
     </div>
   </div>
   <div class="footer-copy">© 2025 Issac Events · Morris Plains, NJ · All rights reserved</div>
