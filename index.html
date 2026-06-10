@@ -3,184 +3,355 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Issac Events – Where Moments Become Magic</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <title>Issac Events – Planned with Purpose, Delivered with Excellence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --gold: #C8992A; --gold-light: #E8C870; --deep: #0D0A06;
-      --charcoal: #1A1510; --warm: #2C2218; --ivory: #F7F3EC;
-      --muted: #8A7B6A;
+      --gold: #C8992A; --gold-light: #F0D080; --gold-dim: #A07820;
+      --deep: #080604; --charcoal: #141210; --warm: #221A10;
+      --panel: #1A1510; --ivory: #F5F0E8; --muted: #7A6E5E;
+      --border: rgba(200,153,42,0.2); --text: #D4CAB8;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--deep); color: var(--ivory); overflow-x: hidden; }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 5%; background: linear-gradient(to bottom, rgba(13,10,6,0.97) 0%, transparent 100%); backdrop-filter: blur(6px); }
-    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; letter-spacing: 0.08em; color: var(--gold-light); }
-    .logo span { font-style: italic; color: var(--gold); }
-    nav ul { list-style: none; display: flex; gap: 2.5rem; }
-    nav ul a { text-decoration: none; color: var(--ivory); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
-    nav ul a:hover { color: var(--gold-light); }
-    .nav-cta { padding: 0.5rem 1.5rem; border: 1px solid var(--gold); color: var(--gold) !important; transition: all 0.3s !important; }
-    .nav-cta:hover { background: var(--gold); color: var(--deep) !important; }
+    /* ══ BRAND NAME STYLES ══ */
+    .brand-highlight {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      background: linear-gradient(135deg, #F0D080 0%, #C8992A 40%, #F5C842 70%, #E8B830 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.01em;
+      display: inline-block;
+    }
+    .brand-events {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600; font-style: italic;
+      color: rgba(240,208,128,0.75);
+      -webkit-text-fill-color: rgba(240,208,128,0.75);
+    }
 
-    /* HERO */
-    .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 6%; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(200,153,42,0.18) 0%, transparent 70%), linear-gradient(160deg, #0D0A06 0%, #1A1208 50%, #0D0A06 100%); }
-    .sparkle { position: absolute; border-radius: 50%; background: var(--gold); opacity: 0; animation: float-up 6s infinite ease-in-out; }
-    @keyframes float-up { 0%{transform:translateY(0) scale(1);opacity:0} 20%{opacity:0.6} 80%{opacity:0.2} 100%{transform:translateY(-120px) scale(0.3);opacity:0} }
-    .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; position: relative; display: flex; align-items: center; gap: 1rem; }
-    .hero-eyebrow::before, .hero-eyebrow::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem, 8vw, 7rem); font-weight: 300; line-height: 1.08; position: relative; }
-    .hero h1 em { font-style: italic; color: var(--gold-light); display: block; }
-    .hero-sub { max-width: 480px; margin: 2rem auto 3rem; font-size: 1rem; color: #BEB4A8; line-height: 1.75; font-weight: 300; }
-    .btn-gold { display: inline-block; padding: 1rem 2.8rem; background: var(--gold); color: var(--deep); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; transition: opacity 0.3s; }
-    .btn-gold:hover { opacity: 0.85; }
-    .btn-outline { display: inline-block; padding: 1rem 2.8rem; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; position: relative; overflow: hidden; transition: color 0.35s; }
-    .btn-outline::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%); transition: transform 0.35s ease; }
+    /* ══ NAV ══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 5%;
+      background: rgba(8,6,4,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo-text { display: flex; flex-direction: column; }
+    .nav-brand { font-size: 1.55rem; line-height: 1; }
+    .nav-brand .brand-highlight { font-size: 1.55rem; }
+    .nav-brand .brand-events { font-size: 1.25rem; }
+    .nav-sub { font-size: 0.5rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; white-space: nowrap; }
+    nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    nav ul a { text-decoration: none; color: var(--text); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
+    nav ul a:hover { color: var(--gold-light); }
+    .nav-cta { padding: 0.5rem 1.4rem; border: 1px solid var(--gold); color: var(--gold) !important; transition: all 0.3s; }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--deep) !important; }
+
+    /* ══ HERO — FULL SPLIT LAYOUT ══ */
+    .hero {
+      min-height: 100vh; display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 70px; /* nav height */
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 50%, rgba(200,153,42,0.1) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 80% 30%, rgba(200,153,42,0.06) 0%, transparent 60%),
+        linear-gradient(160deg, #080604 0%, #120E08 50%, #080604 100%);
+    }
+    /* Subtle texture lines */
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        90deg, transparent, transparent 60px, rgba(200,153,42,0.015) 60px, rgba(200,153,42,0.015) 61px
+      );
+    }
+    .hero-left {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem 5rem 6%;
+      border-right: 1px solid var(--border);
+    }
+    .hero-right {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 6% 5rem 4rem;
+      background: rgba(255,255,255,0.013);
+    }
+
+    /* Left side — main brand + headline */
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.8rem;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--gold); }
+
+    .hero-name-block { margin-bottom: 1rem; }
+    .hero-issac {
+      font-family: 'Playfair Display', serif; font-weight: 800;
+      font-size: clamp(3.8rem, 7vw, 6.2rem); line-height: 0.92;
+      background: linear-gradient(135deg, #F5D878 0%, #C8992A 45%, #F0C840 75%, #D4A030 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: -0.02em; display: block;
+    }
+    .hero-eventsword {
+      font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic;
+      font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1;
+      color: rgba(232,184,48,0.65); display: block; margin-top: 0.1rem;
+      letter-spacing: 0.02em;
+    }
+    .hero-tagline-text {
+      font-size: clamp(0.62rem, 1.2vw, 0.72rem); letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--muted);
+      margin: 1.2rem 0 2rem; line-height: 1.6;
+      padding-left: 2px;
+    }
+    .hero-tagline-text span { color: var(--gold); opacity: 0.7; }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      font-weight: 300; line-height: 1.4; color: var(--ivory);
+      margin-bottom: 2rem;
+    }
+    .hero-headline em { font-style: italic; color: var(--gold-light); }
+
+    .hero-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-gold { display: inline-block; padding: 0.9rem 2.4rem; background: var(--gold); color: var(--deep); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; transition: all 0.3s; }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline { display: inline-block; padding: 0.9rem 2.4rem; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; position: relative; overflow: hidden; transition: color 0.35s; }
+    .btn-outline::before { content: ''; position: absolute; inset: 0; background: var(--gold); transform: translateX(-100%); transition: transform 0.35s; }
     .btn-outline:hover { color: var(--deep); }
     .btn-outline:hover::before { transform: translateX(0); }
     .btn-outline span { position: relative; z-index: 1; }
-    .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); animation: bob 2s infinite ease-in-out; }
-    @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
-    .scroll-hint svg { width: 20px; opacity: 0.5; }
 
-    /* SECTION COMMONS */
-    .section-label { font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.2; margin-bottom: 0.8rem; }
+    /* Hero trust strip */
+    .hero-trust {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .trust-item { display: flex; align-items: center; gap: 0.6rem; }
+    .trust-icon { font-size: 1.1rem; }
+    .trust-text { font-size: 0.78rem; color: var(--muted); line-height: 1.35; }
+    .trust-text strong { color: var(--ivory); display: block; font-size: 0.82rem; }
+
+    /* Right side — services preview + contact card */
+    .hero-services-preview {
+      display: flex; flex-direction: column; gap: 1px;
+      background: var(--border); margin-bottom: 1.5rem;
+    }
+    .hsp-item {
+      display: flex; align-items: center; gap: 1.2rem;
+      padding: 1.1rem 1.4rem; background: var(--panel);
+      transition: background 0.3s; cursor: default;
+    }
+    .hsp-item:hover { background: var(--warm); }
+    .hsp-icon { font-size: 1.3rem; width: 2rem; text-align: center; flex-shrink: 0; }
+    .hsp-label { font-size: 0.85rem; font-weight: 500; color: var(--ivory); }
+    .hsp-desc { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; }
+    .hsp-arrow { margin-left: auto; color: var(--gold); font-size: 0.7rem; opacity: 0.5; }
+
+    /* Right contact strip */
+    .hero-contact-strip {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+    }
+    .hcs-item {
+      padding: 1rem 1.2rem; background: rgba(255,255,255,0.02);
+      text-decoration: none; color: inherit; transition: background 0.3s;
+    }
+    .hcs-item:hover { background: rgba(200,153,42,0.06); }
+    .hcs-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+    .hcs-value { font-size: 0.82rem; font-weight: 500; color: var(--ivory); }
+
+    /* ══ SECTION COMMONS ══ */
+    .section-label { font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 0.8rem; }
     .section-title em { font-style: italic; color: var(--gold-light); }
-    .section-desc { color: var(--muted); font-size: 0.95rem; max-width: 520px; line-height: 1.8; }
+    .section-desc { color: var(--muted); font-size: 0.9rem; max-width: 520px; line-height: 1.85; }
 
-    /* SERVICES */
+    /* ══ SERVICES ══ */
     .services { padding: 7rem 5%; background: var(--charcoal); }
-    .services-header { margin-bottom: 4rem; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(200,153,42,0.1); }
-    .card { background: var(--charcoal); padding: 3rem 2.5rem; position: relative; overflow: hidden; transition: background 0.4s; }
-    .card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to right, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease; }
+    .services-header { margin-bottom: 4rem; padding-left: 1.5rem; border-left: 2px solid var(--gold); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+    .card { background: var(--charcoal); padding: 2.6rem 2.2rem; position: relative; overflow: hidden; transition: background 0.4s; }
+    .card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to right, var(--gold), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.5s; }
     .card:hover { background: var(--warm); }
     .card:hover::after { transform: scaleX(1); }
-    .card-icon { font-size: 2.2rem; margin-bottom: 1.5rem; display: block; }
-    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; margin-bottom: 0.8rem; }
-    .card-text { color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
-    .card-tag { display: inline-block; margin-top: 1.5rem; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,153,42,0.3); padding: 0.3rem 0.8rem; }
+    .card-icon { font-size: 1.9rem; margin-bottom: 1.2rem; display: block; }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.7rem; color: var(--ivory); }
+    .card-text { color: var(--muted); font-size: 0.86rem; line-height: 1.82; }
+    .card-tag { display: inline-block; margin-top: 1.3rem; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,153,42,0.25); padding: 0.25rem 0.7rem; }
 
-    /* WHY US */
+    /* ══ WHY US ══ */
     .why { padding: 7rem 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-    .why-visual { position: relative; display: flex; align-items: center; justify-content: center; }
-    .why-visual svg { width: 100%; max-width: 420px; height: auto; filter: drop-shadow(0 8px 40px rgba(200,153,42,0.18)); }
-    .why-points { display: flex; flex-direction: column; gap: 2.5rem; margin-top: 3rem; }
-    .why-point { display: flex; gap: 1.5rem; align-items: flex-start; }
-    .why-point-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: rgba(200,153,42,0.3); line-height: 1; min-width: 2.5rem; }
-    .why-point-body h4 { font-size: 1rem; font-weight: 500; color: var(--ivory); margin-bottom: 0.4rem; }
-    .why-point-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .why-visual { display: flex; align-items: center; justify-content: center; }
+    .why-visual svg { width: 100%; max-width: 400px; height: auto; filter: drop-shadow(0 6px 36px rgba(200,153,42,0.14)); }
+    .why-points { display: flex; flex-direction: column; margin-top: 3rem; }
+    .why-point { display: flex; gap: 1.4rem; align-items: flex-start; padding: 1.7rem 0; border-bottom: 1px solid var(--border); }
+    .why-point:first-child { padding-top: 0; }
+    .why-point:last-child { border-bottom: none; }
+    .why-point-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: rgba(200,153,42,0.22); line-height: 1; min-width: 2rem; font-weight: 700; }
+    .why-point-body h4 { font-size: 0.93rem; font-weight: 600; color: var(--ivory); margin-bottom: 0.38rem; }
+    .why-point-body p { font-size: 0.84rem; color: var(--muted); line-height: 1.75; }
 
-    /* GALLERY */
+    /* ══ GALLERY ══ */
     .gallery { padding: 7rem 5%; background: var(--charcoal); }
     .gallery-header { text-align: center; margin-bottom: 3rem; }
     .gallery-tabs { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-    .tab-btn { padding: 0.5rem 1.5rem; border: 1px solid rgba(200,153,42,0.3); background: transparent; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; font-family: 'DM Sans', sans-serif; }
-    .tab-btn.active, .tab-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,153,42,0.08); }
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .tab-btn { padding: 0.48rem 1.3rem; border: 1px solid rgba(200,153,42,0.22); background: transparent; color: var(--muted); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+    .tab-btn.active, .tab-btn:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,153,42,0.07); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
     .gallery-item { position: relative; overflow: hidden; aspect-ratio: 4/3; background: var(--warm); cursor: pointer; }
     .gallery-item.featured { grid-column: span 2; aspect-ratio: 16/9; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
-    .gallery-item:hover img { transform: scale(1.06); }
-    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,10,6,0.85) 0%, transparent 55%); opacity: 0; transition: opacity 0.4s; display: flex; align-items: flex-end; padding: 1.5rem; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; display: block; }
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,6,4,0.9) 0%, transparent 55%); opacity: 0; transition: opacity 0.4s; display: flex; align-items: flex-end; padding: 1.3rem; }
     .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-caption { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--gold-light); }
+    .gallery-caption { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--gold-light); }
 
-    /* LIGHTBOX */
-    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 999; align-items: center; justify-content: center; }
+    /* ══ LIGHTBOX ══ */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 999; align-items: center; justify-content: center; }
     .lightbox.open { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border: 1px solid rgba(200,153,42,0.2); }
-    .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 2rem; color: var(--gold); cursor: pointer; background: none; border: none; font-family: serif; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border: 1px solid var(--border); }
+    .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 1.8rem; color: var(--gold); cursor: pointer; background: none; border: none; }
 
-    /* TESTIMONIALS */
+    /* ══ TESTIMONIALS ══ */
     .testimonials { padding: 7rem 5%; }
     .testimonials-header { text-align: center; margin-bottom: 4rem; }
-    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .testi-card { padding: 2.5rem; border: 1px solid rgba(200,153,42,0.15); position: relative; }
-    .testi-card::before { content: '\201C'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--gold); opacity: 0.2; position: absolute; top: -0.5rem; left: 1.5rem; line-height: 1; }
-    .testi-text { font-size: 0.95rem; line-height: 1.85; color: #C8BFB4; margin-bottom: 1.5rem; padding-top: 1rem; }
-    .testi-author { display: flex; align-items: center; gap: 1rem; }
-    .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--deep); flex-shrink: 0; }
-    .testi-name { font-size: 0.88rem; font-weight: 500; }
-    .testi-event { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.08em; }
-    .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.8rem; }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .testi-card { padding: 2.3rem; border: 1px solid var(--border); position: relative; background: rgba(255,255,255,0.014); transition: border-color 0.3s; }
+    .testi-card:hover { border-color: rgba(200,153,42,0.38); }
+    .testi-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.13; position: absolute; top: -0.5rem; left: 1.5rem; line-height: 1; }
+    .testi-text { font-size: 0.9rem; line-height: 1.9; color: #C0B8A8; margin-bottom: 1.6rem; padding-top: 1rem; }
+    .testi-author { display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.2rem; }
+    .testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--deep); flex-shrink: 0; font-weight: 700; }
+    .testi-name { font-size: 0.86rem; font-weight: 600; color: var(--ivory); }
+    .testi-event { font-size: 0.7rem; color: var(--gold); letter-spacing: 0.08em; margin-top: 0.12rem; }
+    .stars { color: var(--gold); font-size: 0.78rem; margin-bottom: 0.7rem; letter-spacing: 0.1em; }
 
-    /* CONTACT */
+    /* ══ CONTACT ══ */
     .contact { padding: 7rem 5%; background: var(--charcoal); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 4rem; }
-    .contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; margin-bottom: 0.8rem; }
-    .contact-info p { color: var(--muted); font-size: 0.9rem; line-height: 1.8; margin-bottom: 2.5rem; }
-    .contact-methods { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.5rem; }
-    .contact-method { display: flex; align-items: center; gap: 1.2rem; padding: 1.2rem 1.5rem; border: 1px solid rgba(200,153,42,0.15); transition: border-color 0.3s; text-decoration: none; color: inherit; }
-    .contact-method:hover { border-color: var(--gold); }
-    .cm-icon { font-size: 1.5rem; width: 2.5rem; text-align: center; flex-shrink: 0; }
-    .cm-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-    .cm-value { font-size: 0.95rem; font-weight: 500; }
-    .direct-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .action-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.5rem; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
+    .contact-header { text-align: center; margin-bottom: 5rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: start; }
+    .contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 300; margin-bottom: 0.7rem; line-height: 1.25; }
+    .contact-info > p { color: var(--muted); font-size: 0.87rem; line-height: 1.85; margin-bottom: 2rem; }
+    .contact-methods { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2.2rem; }
+    .contact-method { display: flex; align-items: center; gap: 1.1rem; padding: 0.95rem 1.2rem; border: 1px solid var(--border); transition: all 0.3s; text-decoration: none; color: inherit; background: rgba(255,255,255,0.02); }
+    .contact-method:hover { border-color: var(--gold); background: rgba(200,153,42,0.04); }
+    .cm-icon { font-size: 1.15rem; width: 1.9rem; text-align: center; flex-shrink: 0; }
+    .cm-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.1rem; }
+    .cm-value { font-size: 0.88rem; font-weight: 500; color: var(--ivory); }
+    .quick-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.7rem; }
+    .direct-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+    .action-btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.7rem 1.15rem; text-decoration: none; font-size: 0.73rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; }
     .action-whatsapp { background: #25D366; color: #fff; }
-    .action-whatsapp:hover { opacity: 0.88; }
+    .action-whatsapp:hover { background: #1ebc5a; }
     .action-call { background: transparent; border: 1px solid var(--gold); color: var(--gold); }
     .action-call:hover { background: var(--gold); color: var(--deep); }
-    .action-email { background: transparent; border: 1px solid rgba(200,153,42,0.4); color: var(--muted); }
+    .action-email { background: transparent; border: 1px solid rgba(200,153,42,0.32); color: var(--muted); }
     .action-email:hover { border-color: var(--gold); color: var(--gold); }
 
-    /* FORM */
-    .contact-form { background: var(--warm); padding: 2.5rem; }
-    .form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; margin-bottom: 0.5rem; }
-    .form-sub { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; line-height: 1.6; }
-    .form-group { margin-bottom: 1.4rem; }
+    /* ══ FORM ══ */
+    .contact-form { background: var(--warm); padding: 2.6rem; border: 1px solid var(--border); }
+    .form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--ivory); }
+    .form-sub { color: var(--muted); font-size: 0.8rem; margin-bottom: 1.8rem; line-height: 1.65; border-bottom: 1px solid var(--border); padding-bottom: 1.4rem; }
+    .form-sub strong { color: var(--gold-light); }
+    .form-group { margin-bottom: 1.2rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group label { display: block; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(200,153,42,0.2); color: var(--ivory); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; padding: 0.85rem 1rem; outline: none; transition: border-color 0.3s; -webkit-appearance: none; appearance: none; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-group select option { background: var(--charcoal); }
-    .send-options { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; }
-    .send-options label { font-size: 0.72rem !important; letter-spacing: 0.1em !important; text-transform: uppercase; cursor: pointer; display: flex !important; align-items: center; gap: 0.4rem; color: var(--ivory) !important; padding: 0.5rem 1rem; border: 1px solid rgba(200,153,42,0.2); transition: border-color 0.3s; }
-    .send-options input[type="radio"] { accent-color: var(--gold); width: auto; }
-    .send-options label:hover { border-color: var(--gold); }
-    .form-submit-row { display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem; flex-wrap: wrap; }
-    .form-submit { padding: 1rem 2.5rem; background: var(--gold); color: var(--deep); border: none; font-family: 'DM Sans', sans-serif; font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: opacity 0.3s; }
-    .form-submit:hover { opacity: 0.85; }
-    .form-note { font-size: 0.75rem; color: var(--muted); }
+    .form-group label { display: block; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; font-weight: 500; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(200,153,42,0.18);
+      color: var(--ivory); font-family: 'DM Sans', sans-serif; font-size: 0.87rem;
+      padding: 0.78rem 0.95rem; outline: none; transition: border-color 0.3s, background 0.3s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: rgba(200,153,42,0.03); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(122,110,94,0.55); }
+    .form-group textarea { resize: vertical; min-height: 95px; }
+    .form-group select option { background: #1A1510; color: var(--ivory); }
+    .form-status { display: none; font-size: 0.78rem; padding: 0.7rem 1rem; margin-top: 0.6rem; }
+    .form-status.error { color: #f08080; border: 1px solid rgba(220,80,80,0.3); background: rgba(220,80,80,0.05); }
+    .form-status.sending { color: var(--gold); border: 1px solid var(--border); }
+    .form-submit-row { display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem; padding-top: 1.4rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .form-submit { padding: 0.95rem 2.3rem; background: var(--gold); color: var(--deep); border: none; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+    .form-submit:hover { background: var(--gold-light); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-note { font-size: 0.7rem; color: var(--muted); line-height: 1.55; }
+    #formSuccess { display:none; padding:2rem; text-align:center; border:1px solid var(--gold); margin-top:1rem; background:rgba(200,153,42,0.05); }
 
-    /* FOOTER */
-    footer { background: var(--deep); padding: 3rem 5% 2rem; border-top: 1px solid rgba(200,153,42,0.1); display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
-    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--gold-light); letter-spacing: 0.08em; }
-    .footer-tagline { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a { font-size: 0.78rem; text-decoration: none; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
+    /* ══ FOOTER ══ */
+    footer { background: #050402; padding: 3.5rem 5% 2rem; border-top: 1px solid var(--border); }
+    .footer-inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 2.5rem; }
+    .footer-brand-name { font-size: 1.55rem; line-height: 1; }
+    .footer-tagline { font-size: 0.58rem; color: var(--muted); margin-top: 0.45rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-contact a, .footer-contact span { font-size: 0.8rem; text-decoration: none; color: var(--muted); transition: color 0.3s; display: flex; align-items: center; gap: 0.45rem; }
+    .footer-contact a:hover { color: var(--gold); }
+    .footer-links { display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-links a { font-size: 0.76rem; text-decoration: none; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
     .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: 0.75rem; color: var(--muted); width: 100%; text-align: center; margin-top: 1.5rem; }
+    .footer-copy { font-size: 0.68rem; color: rgba(122,110,94,0.4); text-align: center; padding-top: 2rem; border-top: 1px solid rgba(200,153,42,0.07); }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
+    /* Sparkle */
+    .sparkle { position: absolute; border-radius: 50%; background: var(--gold); opacity: 0; animation: float-up 6s infinite ease-in-out; z-index: 0; }
+    @keyframes float-up { 0%{transform:translateY(0) scale(1);opacity:0} 20%{opacity:0.5} 80%{opacity:0.12} 100%{transform:translateY(-120px) scale(0.2);opacity:0} }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 4rem 5%; border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-right { padding: 3rem 5%; }
       nav ul { display: none; }
       .cards { grid-template-columns: 1fr 1fr; }
       .why { grid-template-columns: 1fr; gap: 3rem; }
       .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item.featured { grid-column: span 2; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
     }
     @media (max-width: 600px) {
       .cards { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item.featured { grid-column: span 1; aspect-ratio: 4/3; }
       .form-row { grid-template-columns: 1fr; }
+      .hero-contact-strip { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; align-items: flex-start; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ══ NAV ══ -->
 <nav>
-  <div class="logo">Issac <span>Events</span></div>
+  <a class="nav-logo" href="#">
+    <svg width="26" height="32" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="3" r="2.2" fill="#F0D080"/>
+      <circle cx="4" cy="9" r="1.6" fill="#C8992A"/>
+      <circle cx="28" cy="9" r="1.6" fill="#C8992A"/>
+      <path d="M4 10 L8 22 L16 16 L24 22 L28 10 L16 14 Z" fill="#C8992A" fill-opacity="0.18" stroke="#C8992A" stroke-width="1.2" stroke-linejoin="round"/>
+      <line x1="16" y1="5.2" x2="16" y2="16" stroke="#F0D080" stroke-width="1.4"/>
+      <line x1="16" y1="16" x2="16" y2="34" stroke="#C8992A" stroke-width="2" stroke-linecap="round"/>
+      <path d="M16 22 Q8 20 9 26 Q10 30 16 28" stroke="#C8992A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <path d="M10 34 Q16 36.5 22 34" stroke="#C8992A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-brand">
+        <span class="brand-highlight">Issac</span><span class="brand-events"> events</span>
+      </span>
+      <span class="nav-sub">Planned with Purpose, Delivered with Excellence</span>
+    </div>
+  </a>
   <ul>
     <li><a href="#services">Services</a></li>
     <li><a href="#why">About</a></li>
@@ -189,519 +360,476 @@
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- ══ HERO — FULL SPLIT ══ -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="sparkle" style="width:4px;height:4px;left:15%;top:70%;animation-delay:0s;animation-duration:5s;"></div>
-  <div class="sparkle" style="width:3px;height:3px;left:35%;top:80%;animation-delay:1.5s;animation-duration:6s;"></div>
-  <div class="sparkle" style="width:5px;height:5px;left:60%;top:60%;animation-delay:0.8s;animation-duration:7s;"></div>
-  <div class="sparkle" style="width:3px;height:3px;left:80%;top:75%;animation-delay:2.2s;animation-duration:5.5s;"></div>
-  <div class="sparkle" style="width:4px;height:4px;left:50%;top:85%;animation-delay:3s;animation-duration:6.5s;"></div>
-  <div class="hero-eyebrow">✦ Premium Event Management ✦</div>
-  <h1>Every Stage Deserves<br/><em>A Grand Reveal</em></h1>
-  <p class="hero-sub">Issac Events transforms weddings, birthdays, and celebrations into breathtaking experiences — through bespoke stage décor that tells your story.</p>
-  <a href="#contact" class="btn-gold">Plan Your Event</a>
-  <div class="scroll-hint">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    Scroll
+  <div class="sparkle" style="width:3px;height:3px;left:18%;top:60%;animation-delay:0s;animation-duration:5s;"></div>
+  <div class="sparkle" style="width:4px;height:4px;left:42%;top:75%;animation-delay:1.8s;animation-duration:6.5s;"></div>
+  <div class="sparkle" style="width:3px;height:3px;left:72%;top:55%;animation-delay:0.9s;animation-duration:7s;"></div>
+
+  <!-- LEFT: Brand + headline + buttons + trust -->
+  <div class="hero-left">
+    <div class="hero-eyebrow">Premium Event Management · Morris Plains, NJ</div>
+
+    <div class="hero-name-block">
+      <span class="hero-issac">Issac</span>
+      <span class="hero-eventsword">events</span>
+    </div>
+
+    <div class="hero-tagline-text">
+      <span>✦</span> Planned with Purpose, Delivered with Excellence
+    </div>
+
+    <h2 class="hero-headline">
+      Every stage deserves<br/>
+      <em>a grand reveal</em>
+    </h2>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold">Plan Your Event</a>
+      <a href="#gallery" class="btn-outline"><span>View Our Work</span></a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-icon">💍</div>
+        <div class="trust-text"><strong>Weddings</strong>Stage & Mandap</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🎂</div>
+        <div class="trust-text"><strong>Birthdays</strong>Themed Setups</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🌸</div>
+        <div class="trust-text"><strong>All Events</strong>Full Décor</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Services preview + quick contact -->
+  <div class="hero-right">
+    <p class="section-label" style="margin-bottom:1.2rem">Our Services</p>
+
+    <div class="hero-services-preview">
+      <div class="hsp-item">
+        <div class="hsp-icon">💍</div>
+        <div>
+          <div class="hsp-label">Wedding Stage Decoration</div>
+          <div class="hsp-desc">Floral arches, mandap setups, lighting & backdrops</div>
+        </div>
+        <div class="hsp-arrow">→</div>
+      </div>
+      <div class="hsp-item">
+        <div class="hsp-icon">🎂</div>
+        <div>
+          <div class="hsp-label">Birthday Party Stages</div>
+          <div class="hsp-desc">Balloon walls, neon signs, themed backdrops</div>
+        </div>
+        <div class="hsp-arrow">→</div>
+      </div>
+      <div class="hsp-item">
+        <div class="hsp-icon">🎊</div>
+        <div>
+          <div class="hsp-label">Event Decoration</div>
+          <div class="hsp-desc">Anniversaries, engagements, receptions & more</div>
+        </div>
+        <div class="hsp-arrow">→</div>
+      </div>
+      <div class="hsp-item">
+        <div class="hsp-icon">🌸</div>
+        <div>
+          <div class="hsp-label">Floral & Lighting Design</div>
+          <div class="hsp-desc">Fairy lights, LED setups, custom chandeliers</div>
+        </div>
+        <div class="hsp-arrow">→</div>
+      </div>
+      <div class="hsp-item">
+        <div class="hsp-icon">🎯</div>
+        <div>
+          <div class="hsp-label">Full Event Management</div>
+          <div class="hsp-desc">End-to-end coordination, vendors & logistics</div>
+        </div>
+        <div class="hsp-arrow">→</div>
+      </div>
+    </div>
+
+    <p class="section-label" style="margin:1.5rem 0 0.8rem">Quick Connect</p>
+    <div class="hero-contact-strip">
+      <a href="tel:+19734622380" class="hcs-item">
+        <div class="hcs-label">📞 Call Us</div>
+        <div class="hcs-value">+1 (973) 462-2380</div>
+      </a>
+      <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!" target="_blank" class="hcs-item">
+        <div class="hcs-label">💬 WhatsApp</div>
+        <div class="hcs-value">Chat with us</div>
+      </a>
+      <a href="mailto:Issacevents@gmail.com" class="hcs-item">
+        <div class="hcs-label">📧 Email</div>
+        <div class="hcs-value">Issacevents@gmail.com</div>
+      </a>
+      <div class="hcs-item">
+        <div class="hcs-label">📍 Location</div>
+        <div class="hcs-value">Morris Plains, NJ</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ══ SERVICES ══ -->
 <section class="services" id="services">
   <div class="services-header">
     <p class="section-label">What We Do</p>
     <h2 class="section-title">Crafted for <em>Every Occasion</em></h2>
-    <p class="section-desc">From an intimate birthday gathering to a grand wedding, we design and execute every detail with elegance and precision.</p>
+    <p class="section-desc">From an intimate birthday to a grand wedding, we design and execute every detail with elegance and precision.</p>
   </div>
   <div class="cards">
-    <div class="card">
-      <span class="card-icon">💍</span>
-      <h3 class="card-title">Wedding Stage Decoration</h3>
-      <p class="card-text">Floral arches, mandap setups, lighting canopies, and custom backdrops. Your vows deserve the most beautiful stage possible.</p>
-      <span class="card-tag">Weddings</span>
-    </div>
-    <div class="card">
-      <span class="card-icon">🎂</span>
-      <h3 class="card-title">Birthday Party Stages</h3>
-      <p class="card-text">Themed setups for kids and adults alike. Balloon walls, neon signs, photo backdrops, and colour-coordinated designs.</p>
-      <span class="card-tag">Birthdays</span>
-    </div>
-    <div class="card">
-      <span class="card-icon">🎊</span>
-      <h3 class="card-title">Event Decoration</h3>
-      <p class="card-text">Corporate events, anniversaries, engagements, and more. Full venue décor including entrance, tables, and centrepieces.</p>
-      <span class="card-tag">All Events</span>
-    </div>
-    <div class="card">
-      <span class="card-icon">🌸</span>
-      <h3 class="card-title">Floral & Lighting Design</h3>
-      <p class="card-text">Fresh floral installations, fairy lights, LED setups, and custom chandeliers that turn any space into something extraordinary.</p>
-      <span class="card-tag">Décor</span>
-    </div>
-    <div class="card">
-      <span class="card-icon">📸</span>
-      <h3 class="card-title">Photo Backdrop Setups</h3>
-      <p class="card-text">Perfectly styled backdrops for portraits, booths, and candid shots. Every angle becomes a memory worth framing.</p>
-      <span class="card-tag">Photography</span>
-    </div>
-    <div class="card">
-      <span class="card-icon">🎯</span>
-      <h3 class="card-title">Full Event Management</h3>
-      <p class="card-text">End-to-end coordination — from concept to execution. We handle vendors, timelines, and logistics so you enjoy the moment.</p>
-      <span class="card-tag">Management</span>
-    </div>
+    <div class="card"><span class="card-icon">💍</span><h3 class="card-title">Wedding Stage Decoration</h3><p class="card-text">Floral arches, mandap setups, lighting canopies, and custom backdrops. Your vows deserve the most beautiful stage possible.</p><span class="card-tag">Weddings</span></div>
+    <div class="card"><span class="card-icon">🎂</span><h3 class="card-title">Birthday Party Stages</h3><p class="card-text">Themed setups for kids and adults alike. Balloon walls, neon signs, photo backdrops, and colour-coordinated designs.</p><span class="card-tag">Birthdays</span></div>
+    <div class="card"><span class="card-icon">🎊</span><h3 class="card-title">Event Decoration</h3><p class="card-text">Anniversaries, engagements, receptions and more. Full venue décor including entrance, tables, and centrepieces.</p><span class="card-tag">All Events</span></div>
+    <div class="card"><span class="card-icon">🌸</span><h3 class="card-title">Floral & Lighting Design</h3><p class="card-text">Fresh floral installations, fairy lights, LED setups, and custom chandeliers that transform any space into something extraordinary.</p><span class="card-tag">Décor</span></div>
+    <div class="card"><span class="card-icon">📸</span><h3 class="card-title">Photo Backdrop Setups</h3><p class="card-text">Perfectly styled backdrops for portraits, booths, and candid shots. Every angle becomes a memory worth framing.</p><span class="card-tag">Photography</span></div>
+    <div class="card"><span class="card-icon">🎯</span><h3 class="card-title">Full Event Management</h3><p class="card-text">End-to-end coordination — from concept to execution. We handle vendors, timelines, and logistics so you enjoy the moment.</p><span class="card-tag">Management</span></div>
   </div>
 </section>
 
-<!-- WHY US -->
+<!-- ══ WHY US ══ -->
 <section class="why" id="why">
   <div class="why-visual">
-    <!-- Elegant gold floral decorative illustration -->
     <svg viewBox="0 0 420 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
-        <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#C8992A" stop-opacity="0.08"/>
-          <stop offset="100%" stop-color="#0D0A06" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#E8C870"/>
-          <stop offset="100%" stop-color="#C8992A"/>
-        </linearGradient>
-        <linearGradient id="goldGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#C8992A"/>
-          <stop offset="100%" stop-color="#E8C870"/>
-        </linearGradient>
+        <radialGradient id="bgG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#C8992A" stop-opacity="0.09"/><stop offset="100%" stop-color="#080604" stop-opacity="0"/></radialGradient>
+        <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F0D080"/><stop offset="100%" stop-color="#C8992A"/></linearGradient>
+        <linearGradient id="gB" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C8992A"/><stop offset="100%" stop-color="#F0D080"/></linearGradient>
       </defs>
-
-      <!-- Background glow -->
-      <ellipse cx="210" cy="250" rx="200" ry="230" fill="url(#bgGlow)"/>
-
-      <!-- Outer decorative border frame -->
-      <rect x="18" y="18" width="384" height="464" rx="2" fill="none" stroke="#C8992A" stroke-width="0.8" stroke-opacity="0.35"/>
-      <rect x="26" y="26" width="368" height="448" rx="1" fill="none" stroke="#C8992A" stroke-width="0.4" stroke-opacity="0.2"/>
-
-      <!-- Corner flourishes -->
-      <!-- Top-left -->
-      <g transform="translate(18,18)">
-        <path d="M0,0 L32,0" stroke="#E8C870" stroke-width="1.2" fill="none"/>
-        <path d="M0,0 L0,32" stroke="#E8C870" stroke-width="1.2" fill="none"/>
-        <circle cx="0" cy="0" r="2.5" fill="#E8C870"/>
-        <circle cx="16" cy="16" r="1.5" fill="#C8992A" fill-opacity="0.5"/>
+      <ellipse cx="210" cy="250" rx="200" ry="230" fill="url(#bgG)"/>
+      <rect x="20" y="20" width="380" height="460" rx="2" fill="none" stroke="#C8992A" stroke-width="0.7" stroke-opacity="0.28"/>
+      <g stroke="#F0D080" stroke-width="1.2" fill="none">
+        <path d="M20,20 L52,20 M20,20 L20,52"/><circle cx="20" cy="20" r="2.5" fill="#F0D080"/>
+        <path d="M400,20 L368,20 M400,20 L400,52"/><circle cx="400" cy="20" r="2.5" fill="#F0D080"/>
+        <path d="M20,480 L52,480 M20,480 L20,448"/><circle cx="20" cy="480" r="2.5" fill="#F0D080"/>
+        <path d="M400,480 L368,480 M400,480 L400,448"/><circle cx="400" cy="480" r="2.5" fill="#F0D080"/>
       </g>
-      <!-- Top-right -->
-      <g transform="translate(402,18)">
-        <path d="M0,0 L-32,0" stroke="#E8C870" stroke-width="1.2" fill="none"/>
-        <path d="M0,0 L0,32" stroke="#E8C870" stroke-width="1.2" fill="none"/>
-        <circle cx="0" cy="0" r="2.5" fill="#E8C870"/>
-        <circle cx="-16" cy="16" r="1.5" fill="#C8992A" fill-opacity="0.5"/>
+      <g transform="translate(210,225)">
+        <ellipse cx="0" cy="-50" rx="13" ry="27" fill="url(#gA)" fill-opacity="0.16" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.42" transform="rotate(0)"/>
+        <ellipse cx="0" cy="-50" rx="13" ry="27" fill="url(#gA)" fill-opacity="0.16" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.42" transform="rotate(45)"/>
+        <ellipse cx="0" cy="-50" rx="13" ry="27" fill="url(#gA)" fill-opacity="0.16" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.42" transform="rotate(90)"/>
+        <ellipse cx="0" cy="-50" rx="13" ry="27" fill="url(#gA)" fill-opacity="0.16" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.42" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-50" rx="13" ry="27" fill="url(#gA)" fill-opacity="0.16" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.42" transform="rotate(180)"/>
+        <ellipse cx="0" cy="-50" rx="13" ry="27" fill="url(#gA)" fill-opacity="0.16" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.42" transform="rotate(225)"/>
+        <ellipse cx="0" cy="-50" rx="13" ry="27" fill="url(#gA)" fill-opacity="0.16" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.42" transform="rotate(270)"/>
+        <ellipse cx="0" cy="-50" rx="13" ry="27" fill="url(#gA)" fill-opacity="0.16" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.42" transform="rotate(315)"/>
+        <ellipse cx="0" cy="-29" rx="9" ry="17" fill="url(#gB)" fill-opacity="0.25" stroke="#F0D080" stroke-width="0.65" stroke-opacity="0.5" transform="rotate(22.5)"/>
+        <ellipse cx="0" cy="-29" rx="9" ry="17" fill="url(#gB)" fill-opacity="0.25" stroke="#F0D080" stroke-width="0.65" stroke-opacity="0.5" transform="rotate(67.5)"/>
+        <ellipse cx="0" cy="-29" rx="9" ry="17" fill="url(#gB)" fill-opacity="0.25" stroke="#F0D080" stroke-width="0.65" stroke-opacity="0.5" transform="rotate(112.5)"/>
+        <ellipse cx="0" cy="-29" rx="9" ry="17" fill="url(#gB)" fill-opacity="0.25" stroke="#F0D080" stroke-width="0.65" stroke-opacity="0.5" transform="rotate(157.5)"/>
+        <ellipse cx="0" cy="-29" rx="9" ry="17" fill="url(#gB)" fill-opacity="0.25" stroke="#F0D080" stroke-width="0.65" stroke-opacity="0.5" transform="rotate(202.5)"/>
+        <ellipse cx="0" cy="-29" rx="9" ry="17" fill="url(#gB)" fill-opacity="0.25" stroke="#F0D080" stroke-width="0.65" stroke-opacity="0.5" transform="rotate(247.5)"/>
+        <ellipse cx="0" cy="-29" rx="9" ry="17" fill="url(#gB)" fill-opacity="0.25" stroke="#F0D080" stroke-width="0.65" stroke-opacity="0.5" transform="rotate(292.5)"/>
+        <ellipse cx="0" cy="-29" rx="9" ry="17" fill="url(#gB)" fill-opacity="0.25" stroke="#F0D080" stroke-width="0.65" stroke-opacity="0.5" transform="rotate(337.5)"/>
+        <circle cx="0" cy="0" r="11" fill="#C8992A" fill-opacity="0.2" stroke="#F0D080" stroke-width="0.9"/>
+        <circle cx="0" cy="0" r="5" fill="#F0D080" fill-opacity="0.3"/>
+        <circle cx="0" cy="0" r="2" fill="#F0D080"/>
       </g>
-      <!-- Bottom-left -->
-      <g transform="translate(18,482)">
-        <path d="M0,0 L32,0" stroke="#E8C870" stroke-width="1.2" fill="none"/>
-        <path d="M0,0 L0,-32" stroke="#E8C870" stroke-width="1.2" fill="none"/>
-        <circle cx="0" cy="0" r="2.5" fill="#E8C870"/>
-        <circle cx="16" cy="-16" r="1.5" fill="#C8992A" fill-opacity="0.5"/>
+      <g transform="translate(210,225)" stroke="#C8992A" fill="none">
+        <path d="M-12,10 Q-52,28 -88,19" stroke-width="1.1" stroke-opacity="0.42"/><path d="M-40,22 Q-45,4 -38,-12" stroke-width="0.85" stroke-opacity="0.36"/><path d="M-66,19 Q-71,4 -63,-9" stroke-width="0.85" stroke-opacity="0.36"/>
+        <circle cx="-88" cy="19" r="7" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.42" stroke-width="0.75"/><circle cx="-88" cy="19" r="3" fill="#F0D080" fill-opacity="0.26"/>
+        <circle cx="-38" cy="-12" r="5" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.36" stroke-width="0.75"/>
+        <circle cx="-63" cy="-9" r="5" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.36" stroke-width="0.75"/>
+        <path d="M12,10 Q52,28 88,19" stroke-width="1.1" stroke-opacity="0.42"/><path d="M40,22 Q45,4 38,-12" stroke-width="0.85" stroke-opacity="0.36"/><path d="M66,19 Q71,4 63,-9" stroke-width="0.85" stroke-opacity="0.36"/>
+        <circle cx="88" cy="19" r="7" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.42" stroke-width="0.75"/><circle cx="88" cy="19" r="3" fill="#F0D080" fill-opacity="0.26"/>
+        <circle cx="38" cy="-12" r="5" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.36" stroke-width="0.75"/>
+        <circle cx="63" cy="-9" r="5" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.36" stroke-width="0.75"/>
+        <path d="M0,-58 Q-7,-92 -4,-128" stroke-width="0.9" stroke-opacity="0.36"/><path d="M0,-58 Q7,-92 4,-128" stroke-width="0.9" stroke-opacity="0.36"/>
+        <circle cx="-4" cy="-128" r="7" fill="#C8992A" fill-opacity="0.1" stroke-opacity="0.36" stroke-width="0.75"/><circle cx="-4" cy="-128" r="3" fill="#F0D080" fill-opacity="0.2"/>
+        <circle cx="4" cy="-128" r="7" fill="#C8992A" fill-opacity="0.1" stroke-opacity="0.36" stroke-width="0.75"/><circle cx="4" cy="-128" r="3" fill="#F0D080" fill-opacity="0.2"/>
+        <path d="M0,58 Q-14,96 -18,140" stroke-width="0.9" stroke-opacity="0.36"/><path d="M0,58 Q14,96 18,140" stroke-width="0.9" stroke-opacity="0.36"/>
+        <path d="M-18,140 Q-36,150 -52,144" stroke-width="0.8" stroke-opacity="0.3"/><path d="M18,140 Q36,150 52,144" stroke-width="0.8" stroke-opacity="0.3"/>
+        <circle cx="-52" cy="144" r="6" fill="#C8992A" fill-opacity="0.1" stroke-opacity="0.3" stroke-width="0.75"/>
+        <circle cx="52" cy="144" r="6" fill="#C8992A" fill-opacity="0.1" stroke-opacity="0.3" stroke-width="0.75"/>
       </g>
-      <!-- Bottom-right -->
-      <g transform="translate(402,482)">
-        <path d="M0,0 L-32,0" stroke="#E8C870" stroke-width="1.2" fill="none"/>
-        <path d="M0,0 L0,-32" stroke="#E8C870" stroke-width="1.2" fill="none"/>
-        <circle cx="0" cy="0" r="2.5" fill="#E8C870"/>
-        <circle cx="-16" cy="-16" r="1.5" fill="#C8992A" fill-opacity="0.5"/>
-      </g>
-
-      <!-- Central large rose bloom -->
-      <g transform="translate(210,230)">
-        <!-- Outer petals -->
-        <ellipse cx="0" cy="-52" rx="14" ry="28" fill="url(#goldGrad)" fill-opacity="0.18" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.5" transform="rotate(0)"/>
-        <ellipse cx="0" cy="-52" rx="14" ry="28" fill="url(#goldGrad)" fill-opacity="0.18" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.5" transform="rotate(45)"/>
-        <ellipse cx="0" cy="-52" rx="14" ry="28" fill="url(#goldGrad)" fill-opacity="0.18" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.5" transform="rotate(90)"/>
-        <ellipse cx="0" cy="-52" rx="14" ry="28" fill="url(#goldGrad)" fill-opacity="0.18" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.5" transform="rotate(135)"/>
-        <ellipse cx="0" cy="-52" rx="14" ry="28" fill="url(#goldGrad)" fill-opacity="0.18" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.5" transform="rotate(180)"/>
-        <ellipse cx="0" cy="-52" rx="14" ry="28" fill="url(#goldGrad)" fill-opacity="0.18" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.5" transform="rotate(225)"/>
-        <ellipse cx="0" cy="-52" rx="14" ry="28" fill="url(#goldGrad)" fill-opacity="0.18" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.5" transform="rotate(270)"/>
-        <ellipse cx="0" cy="-52" rx="14" ry="28" fill="url(#goldGrad)" fill-opacity="0.18" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.5" transform="rotate(315)"/>
-        <!-- Inner petals -->
-        <ellipse cx="0" cy="-30" rx="10" ry="18" fill="url(#goldGrad2)" fill-opacity="0.28" stroke="#E8C870" stroke-width="0.7" stroke-opacity="0.6" transform="rotate(22.5)"/>
-        <ellipse cx="0" cy="-30" rx="10" ry="18" fill="url(#goldGrad2)" fill-opacity="0.28" stroke="#E8C870" stroke-width="0.7" stroke-opacity="0.6" transform="rotate(67.5)"/>
-        <ellipse cx="0" cy="-30" rx="10" ry="18" fill="url(#goldGrad2)" fill-opacity="0.28" stroke="#E8C870" stroke-width="0.7" stroke-opacity="0.6" transform="rotate(112.5)"/>
-        <ellipse cx="0" cy="-30" rx="10" ry="18" fill="url(#goldGrad2)" fill-opacity="0.28" stroke="#E8C870" stroke-width="0.7" stroke-opacity="0.6" transform="rotate(157.5)"/>
-        <ellipse cx="0" cy="-30" rx="10" ry="18" fill="url(#goldGrad2)" fill-opacity="0.28" stroke="#E8C870" stroke-width="0.7" stroke-opacity="0.6" transform="rotate(202.5)"/>
-        <ellipse cx="0" cy="-30" rx="10" ry="18" fill="url(#goldGrad2)" fill-opacity="0.28" stroke="#E8C870" stroke-width="0.7" stroke-opacity="0.6" transform="rotate(247.5)"/>
-        <ellipse cx="0" cy="-30" rx="10" ry="18" fill="url(#goldGrad2)" fill-opacity="0.28" stroke="#E8C870" stroke-width="0.7" stroke-opacity="0.6" transform="rotate(292.5)"/>
-        <ellipse cx="0" cy="-30" rx="10" ry="18" fill="url(#goldGrad2)" fill-opacity="0.28" stroke="#E8C870" stroke-width="0.7" stroke-opacity="0.6" transform="rotate(337.5)"/>
-        <!-- Centre -->
-        <circle cx="0" cy="0" r="12" fill="#C8992A" fill-opacity="0.22" stroke="#E8C870" stroke-width="1"/>
-        <circle cx="0" cy="0" r="6" fill="#E8C870" fill-opacity="0.35"/>
-        <circle cx="0" cy="0" r="2.5" fill="#E8C870"/>
-      </g>
-
-      <!-- Left floral branch -->
-      <g transform="translate(210,230)" stroke="#C8992A" fill="none">
-        <path d="M-12,10 Q-50,30 -90,20" stroke-width="1.2" stroke-opacity="0.5"/>
-        <path d="M-40,22 Q-45,5 -38,-10" stroke-width="0.9" stroke-opacity="0.4"/>
-        <path d="M-65,20 Q-70,5 -62,-8" stroke-width="0.9" stroke-opacity="0.4"/>
-        <!-- small flowers left -->
-        <circle cx="-90" cy="20" r="7" fill="#C8992A" fill-opacity="0.15" stroke-opacity="0.5" stroke-width="0.8"/>
-        <circle cx="-90" cy="20" r="3" fill="#E8C870" fill-opacity="0.3"/>
-        <circle cx="-38" cy="-10" r="5" fill="#C8992A" fill-opacity="0.15" stroke-opacity="0.4" stroke-width="0.8"/>
-        <circle cx="-62" cy="-8" r="5" fill="#C8992A" fill-opacity="0.15" stroke-opacity="0.4" stroke-width="0.8"/>
-      </g>
-
-      <!-- Right floral branch -->
-      <g transform="translate(210,230)" stroke="#C8992A" fill="none">
-        <path d="M12,10 Q50,30 90,20" stroke-width="1.2" stroke-opacity="0.5"/>
-        <path d="M40,22 Q45,5 38,-10" stroke-width="0.9" stroke-opacity="0.4"/>
-        <path d="M65,20 Q70,5 62,-8" stroke-width="0.9" stroke-opacity="0.4"/>
-        <circle cx="90" cy="20" r="7" fill="#C8992A" fill-opacity="0.15" stroke-opacity="0.5" stroke-width="0.8"/>
-        <circle cx="90" cy="20" r="3" fill="#E8C870" fill-opacity="0.3"/>
-        <circle cx="38" cy="-10" r="5" fill="#C8992A" fill-opacity="0.15" stroke-opacity="0.4" stroke-width="0.8"/>
-        <circle cx="62" cy="-8" r="5" fill="#C8992A" fill-opacity="0.15" stroke-opacity="0.4" stroke-width="0.8"/>
-      </g>
-
-      <!-- Top stem with small buds -->
-      <g transform="translate(210,230)" stroke="#C8992A" fill="none">
-        <path d="M0,-60 Q-8,-95 -5,-130" stroke-width="1" stroke-opacity="0.4"/>
-        <path d="M0,-60 Q8,-95 5,-130" stroke-width="1" stroke-opacity="0.4"/>
-        <circle cx="-5" cy="-130" r="8" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.4" stroke-width="0.8"/>
-        <circle cx="-5" cy="-130" r="3.5" fill="#E8C870" fill-opacity="0.25"/>
-        <circle cx="5" cy="-130" r="8" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.4" stroke-width="0.8"/>
-        <circle cx="5" cy="-130" r="3.5" fill="#E8C870" fill-opacity="0.25"/>
-      </g>
-
-      <!-- Bottom cascading stems -->
-      <g transform="translate(210,230)" stroke="#C8992A" fill="none">
-        <path d="M0,60 Q-15,100 -20,145" stroke-width="1" stroke-opacity="0.4"/>
-        <path d="M0,60 Q15,100 20,145" stroke-width="1" stroke-opacity="0.4"/>
-        <path d="M-20,145 Q-40,155 -55,148" stroke-width="0.9" stroke-opacity="0.35"/>
-        <path d="M20,145 Q40,155 55,148" stroke-width="0.9" stroke-opacity="0.35"/>
-        <circle cx="-55" cy="148" r="6" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.35" stroke-width="0.8"/>
-        <circle cx="55" cy="148" r="6" fill="#C8992A" fill-opacity="0.12" stroke-opacity="0.35" stroke-width="0.8"/>
-        <!-- small leaf shapes -->
-        <ellipse cx="-12" cy="100" rx="6" ry="12" fill="#C8992A" fill-opacity="0.1" stroke-opacity="0.3" stroke-width="0.7" transform="rotate(-20,-12,100)"/>
-        <ellipse cx="12" cy="100" rx="6" ry="12" fill="#C8992A" fill-opacity="0.1" stroke-opacity="0.3" stroke-width="0.7" transform="rotate(20,12,100)"/>
-      </g>
-
-      <!-- Decorative horizontal dividers -->
-      <line x1="60" y1="250" x2="148" y2="250" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.3"/>
-      <line x1="272" y1="250" x2="360" y2="250" stroke="#C8992A" stroke-width="0.6" stroke-opacity="0.3"/>
-      <circle cx="55" cy="250" r="2" fill="#C8992A" fill-opacity="0.4"/>
-      <circle cx="365" cy="250" r="2" fill="#C8992A" fill-opacity="0.4"/>
-
-      <!-- Brand text -->
-      <text x="210" y="415" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="18" font-weight="600" fill="#E8C870" fill-opacity="0.9" letter-spacing="4">ISSAC EVENTS</text>
-      <text x="210" y="435" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="11" font-style="italic" fill="#C8992A" fill-opacity="0.7" letter-spacing="2">Where Moments Become Magic</text>
-
-      <!-- Small star dots scattered -->
-      <circle cx="80" cy="120" r="1.5" fill="#E8C870" fill-opacity="0.4"/>
-      <circle cx="340" cy="120" r="1.5" fill="#E8C870" fill-opacity="0.4"/>
-      <circle cx="65" cy="370" r="1.5" fill="#E8C870" fill-opacity="0.4"/>
-      <circle cx="355" cy="370" r="1.5" fill="#E8C870" fill-opacity="0.4"/>
-      <circle cx="150" cy="80" r="1" fill="#C8992A" fill-opacity="0.5"/>
-      <circle cx="270" cy="80" r="1" fill="#C8992A" fill-opacity="0.5"/>
-      <circle cx="130" cy="390" r="1" fill="#C8992A" fill-opacity="0.5"/>
-      <circle cx="290" cy="390" r="1" fill="#C8992A" fill-opacity="0.5"/>
+      <line x1="62" y1="248" x2="148" y2="248" stroke="#C8992A" stroke-width="0.5" stroke-opacity="0.26"/>
+      <line x1="272" y1="248" x2="358" y2="248" stroke="#C8992A" stroke-width="0.5" stroke-opacity="0.26"/>
+      <circle cx="57" cy="248" r="1.7" fill="#C8992A" fill-opacity="0.35"/>
+      <circle cx="363" cy="248" r="1.7" fill="#C8992A" fill-opacity="0.35"/>
+      <text x="210" y="408" text-anchor="middle" font-family="'Playfair Display',serif" font-size="18" font-weight="700" fill="#F0D080" fill-opacity="0.85" letter-spacing="3">ISSAC</text>
+      <text x="210" y="427" text-anchor="middle" font-family="'Playfair Display',serif" font-size="12" font-weight="400" font-style="italic" fill="#C8992A" fill-opacity="0.65" letter-spacing="5">events</text>
+      <text x="210" y="448" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#C8992A" fill-opacity="0.45" letter-spacing="1.5">Planned with Purpose, Delivered with Excellence</text>
     </svg>
   </div>
   <div class="why-content">
     <p class="section-label">Why Issac Events</p>
     <h2 class="section-title">We Don't Just Decorate.<br/><em>We Create Experiences.</em></h2>
-    <p class="section-desc" style="margin-top:0.8rem">Built on a passion for beauty and a commitment to detail, Issac Events has been the trusted name for families and couples across the region.</p>
+    <p class="section-desc" style="margin-top:0.6rem">Built on a passion for beauty and a commitment to detail, Issac Events is the trusted name for families and couples seeking truly memorable celebrations in New Jersey.</p>
     <div class="why-points">
-      <div class="why-point">
-        <div class="why-point-num">I</div>
-        <div class="why-point-body"><h4>Custom Concepts, Every Time</h4><p>No two events are alike. We design from scratch based on your vision, theme, and budget — no templates, no shortcuts.</p></div>
-      </div>
-      <div class="why-point">
-        <div class="why-point-num">II</div>
-        <div class="why-point-body"><h4>On-Time, Every Time</h4><p>We understand the pressure of event timelines. Our team arrives early, sets up professionally, and leaves nothing to chance.</p></div>
-      </div>
-      <div class="why-point">
-        <div class="why-point-num">III</div>
-        <div class="why-point-body"><h4>Packages for Every Budget</h4><p>From simple elegant setups to grand luxury productions, we have offerings that make every celebration feel special.</p></div>
-      </div>
+      <div class="why-point"><div class="why-point-num">I</div><div class="why-point-body"><h4>Custom Concepts, Every Time</h4><p>No two events are alike. We design from scratch based on your vision, theme, and budget — no templates, no shortcuts.</p></div></div>
+      <div class="why-point"><div class="why-point-num">II</div><div class="why-point-body"><h4>On-Time, Every Time</h4><p>We understand the pressure of event timelines. Our team arrives early, sets up professionally, and leaves nothing to chance.</p></div></div>
+      <div class="why-point"><div class="why-point-num">III</div><div class="why-point-body"><h4>Packages for Every Budget</h4><p>From simple elegant setups to grand luxury productions, we have offerings that make every celebration feel special.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- ══ GALLERY ══ -->
 <section class="gallery" id="gallery">
   <div class="gallery-header">
     <p class="section-label">Our Work</p>
     <h2 class="section-title" style="text-align:center">Moments We've <em>Brought to Life</em></h2>
-    <p class="section-desc" style="margin: 0.5rem auto 0; text-align:center">A glimpse of the stages, florals, and memories we've created for our clients.</p>
+    <p class="section-desc" style="margin:0.5rem auto 0;text-align:center">A glimpse of the stages, florals, and memories we've created for our clients.</p>
   </div>
   <div class="gallery-tabs">
-    <button class="tab-btn active" onclick="filterGallery('all', this)">All</button>
-    <button class="tab-btn" onclick="filterGallery('wedding', this)">Weddings</button>
-    <button class="tab-btn" onclick="filterGallery('birthday', this)">Birthdays</button>
-    <button class="tab-btn" onclick="filterGallery('decor', this)">Décor</button>
+    <button class="tab-btn active" onclick="filterGallery('all',this)">All</button>
+    <button class="tab-btn" onclick="filterGallery('wedding',this)">Weddings</button>
+    <button class="tab-btn" onclick="filterGallery('birthday',this)">Birthdays</button>
+    <button class="tab-btn" onclick="filterGallery('decor',this)">Décor</button>
   </div>
-  <div class="gallery-grid" id="galleryGrid">
-
-    <div class="gallery-item featured" data-cat="wedding" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1000&q=85&fit=crop&crop=center" alt="Grand Wedding Stage" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Grand Wedding Stage</span></div>
-    </div>
-    <div class="gallery-item" data-cat="wedding" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=85&fit=crop" alt="Floral Wedding Arch" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Floral Wedding Arch</span></div>
-    </div>
-    <div class="gallery-item" data-cat="birthday" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=85&fit=crop" alt="Birthday Celebration" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Birthday Celebration</span></div>
-    </div>
-    <div class="gallery-item" data-cat="birthday" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600&q=85&fit=crop" alt="Party Stage Setup" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Party Stage Setup</span></div>
-    </div>
-    <div class="gallery-item" data-cat="decor" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=85&fit=crop" alt="Floral Centrepiece" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Floral Centrepiece</span></div>
-    </div>
-    <div class="gallery-item featured" data-cat="decor" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1000&q=85&fit=crop" alt="Lighting and Ambience" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Lighting & Ambience</span></div>
-    </div>
-    <div class="gallery-item" data-cat="wedding" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=85&fit=crop" alt="Reception Setup" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Reception Setup</span></div>
-    </div>
-    <div class="gallery-item" data-cat="decor" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=85&fit=crop" alt="Stage Lighting" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Stage Lighting</span></div>
-    </div>
-    <div class="gallery-item" data-cat="birthday" onclick="openLightbox(this)">
-      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=85&fit=crop" alt="Birthday Backdrop" crossorigin="anonymous"/>
-      <div class="gallery-overlay"><span class="gallery-caption">Birthday Backdrop</span></div>
-    </div>
-
+  <div class="gallery-grid">
+    <div class="gallery-item featured" data-cat="wedding" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1000&q=85&fit=crop" alt="Grand Wedding Stage"/><div class="gallery-overlay"><span class="gallery-caption">Grand Wedding Stage</span></div></div>
+    <div class="gallery-item" data-cat="wedding" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=85&fit=crop" alt="Floral Wedding Arch"/><div class="gallery-overlay"><span class="gallery-caption">Floral Wedding Arch</span></div></div>
+    <div class="gallery-item" data-cat="birthday" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=85&fit=crop" alt="Birthday Celebration"/><div class="gallery-overlay"><span class="gallery-caption">Birthday Celebration</span></div></div>
+    <div class="gallery-item" data-cat="birthday" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=600&q=85&fit=crop" alt="Party Stage Setup"/><div class="gallery-overlay"><span class="gallery-caption">Party Stage Setup</span></div></div>
+    <div class="gallery-item" data-cat="decor" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=85&fit=crop" alt="Floral Centrepiece"/><div class="gallery-overlay"><span class="gallery-caption">Floral Centrepiece</span></div></div>
+    <div class="gallery-item featured" data-cat="decor" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1000&q=85&fit=crop" alt="Lighting and Ambience"/><div class="gallery-overlay"><span class="gallery-caption">Lighting & Ambience</span></div></div>
+    <div class="gallery-item" data-cat="wedding" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&q=85&fit=crop" alt="Reception Setup"/><div class="gallery-overlay"><span class="gallery-caption">Reception Setup</span></div></div>
+    <div class="gallery-item" data-cat="decor" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=85&fit=crop" alt="Stage Lighting"/><div class="gallery-overlay"><span class="gallery-caption">Stage Lighting</span></div></div>
+    <div class="gallery-item" data-cat="birthday" onclick="openLightbox(this)"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=85&fit=crop" alt="Birthday Backdrop"/><div class="gallery-overlay"><span class="gallery-caption">Birthday Backdrop</span></div></div>
   </div>
-  <!-- Fallback notice if images blocked -->
-  <p id="imgNotice" style="display:none;text-align:center;color:var(--muted);font-size:0.8rem;margin-top:1.5rem;">
-    ⚠️ Gallery images require an internet connection to load from Unsplash.
-  </p>
+  <p id="imgNotice" style="display:none;text-align:center;color:var(--muted);font-size:0.78rem;margin-top:1.5rem;">⚠️ Gallery images require an internet connection to load.</p>
 </section>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightboxImg" src="" alt=""/>
 </div>
 
-<!-- TESTIMONIALS -->
+<!-- ══ TESTIMONIALS ══ -->
 <section class="testimonials">
   <div class="testimonials-header">
     <p class="section-label">Kind Words</p>
     <h2 class="section-title">Families Who <em>Trust Us</em></h2>
   </div>
   <div class="testi-grid">
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">The wedding stage was absolutely stunning. Every flower, every light was exactly how we imagined. Issac Events made our big day truly magical.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">P</div>
-        <div><div class="testi-name">Priya & Rahul</div><div class="testi-event">Wedding · January 2025</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">My daughter's 1st birthday party looked like it was straight out of a magazine. The balloon setup and backdrop were beyond what I expected!</p>
-      <div class="testi-author">
-        <div class="testi-avatar">A</div>
-        <div><div class="testi-name">Anitha Rajan</div><div class="testi-event">Birthday Party · March 2025</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">Professional, punctual, and passionate about their work. The stage they built for our reception was breathtaking. Highly recommend Issac Events.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">S</div>
-        <div><div class="testi-name">Samuel & Deepa</div><div class="testi-event">Reception · December 2024</div></div>
-      </div>
-    </div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">The wedding stage was absolutely stunning. Every flower, every light was exactly how we imagined. Issac Events made our big day truly magical.</p><div class="testi-author"><div class="testi-avatar">P</div><div><div class="testi-name">Priya & Rahul</div><div class="testi-event">Wedding · January 2025</div></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">My daughter's 1st birthday party looked like it was straight out of a magazine. The balloon setup and backdrop were beyond what I expected!</p><div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Anitha Rajan</div><div class="testi-event">Birthday Party · March 2025</div></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">Professional, punctual, and passionate. The stage they built for our reception was breathtaking. Highly recommend Issac Events.</p><div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Samuel & Deepa</div><div class="testi-event">Reception · December 2024</div></div></div></div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ══ CONTACT ══ -->
 <section class="contact" id="contact">
-  <div style="text-align:center">
+  <div class="contact-header">
     <p class="section-label">Get In Touch</p>
     <h2 class="section-title">Let's Plan Your <em>Perfect Event</em></h2>
-    <p class="section-desc" style="margin:0 auto">Tell us about your dream event and we'll get back to you with ideas and pricing. Free consultation, always.</p>
+    <p class="section-desc" style="margin:0 auto">Tell us about your dream event. Free consultation, always.</p>
   </div>
   <div class="contact-grid">
     <div class="contact-info">
-      <h3>Reach Us Directly</h3>
-      <p>We're available to answer your questions, discuss décor ideas, and share package details. Reach out through any channel you prefer — we respond fast.</p>
+      <h3>Reach Us<br/>Directly</h3>
+      <p>Available to answer questions, discuss décor ideas, and share packages. We respond fast.</p>
       <div class="contact-methods">
-        <a href="tel:+19734622380" class="contact-method">
-          <div class="cm-icon">📞</div>
-          <div><div class="cm-label">Phone</div><div class="cm-value">+1 (973) 462-2380</div></div>
-        </a>
-        <a href="https://wa.me/19734622380" target="_blank" class="contact-method">
-          <div class="cm-icon">💬</div>
-          <div><div class="cm-label">WhatsApp</div><div class="cm-value">+1 (973) 462-2380</div></div>
-        </a>
-        <a href="mailto:apkissac@gmail.com" class="contact-method">
-          <div class="cm-icon">📧</div>
-          <div><div class="cm-label">Email</div><div class="cm-value">apkissac@gmail.com</div></div>
-        </a>
-        <div class="contact-method" style="cursor:default">
-          <div class="cm-icon">📍</div>
-          <div><div class="cm-label">Location</div><div class="cm-value">Morristown, New Jersey</div></div>
-        </div>
-        <div class="contact-method" style="cursor:default">
-          <div class="cm-icon">🕐</div>
-          <div><div class="cm-label">Working Hours</div><div class="cm-value">Mon – Sun, 9 AM – 9 PM</div></div>
-        </div>
+        <a href="tel:+19734622380" class="contact-method"><div class="cm-icon">📞</div><div><div class="cm-label">Phone</div><div class="cm-value">+1 (973) 462-2380</div></div></a>
+        <a href="https://wa.me/19734622380" target="_blank" rel="noopener" class="contact-method"><div class="cm-icon">💬</div><div><div class="cm-label">WhatsApp</div><div class="cm-value">+1 (973) 462-2380</div></div></a>
+        <a href="mailto:Issacevents@gmail.com" class="contact-method"><div class="cm-icon">📧</div><div><div class="cm-label">Email</div><div class="cm-value">Issacevents@gmail.com</div></div></a>
+        <div class="contact-method" style="cursor:default"><div class="cm-icon">📍</div><div><div class="cm-label">Location</div><div class="cm-value">Morris Plains, New Jersey</div></div></div>
+        <div class="contact-method" style="cursor:default"><div class="cm-icon">🕐</div><div><div class="cm-label">Working Hours</div><div class="cm-value">Mon – Sun &nbsp;|&nbsp; 9 AM – 9 PM</div></div></div>
       </div>
-      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;">Quick actions — tap to connect instantly:</p>
+      <p class="quick-label">Tap to connect instantly</p>
       <div class="direct-actions">
-        <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!%20I%20would%20like%20to%20enquire%20about%20event%20decoration." target="_blank" class="action-btn action-whatsapp">💬 WhatsApp Us</a>
+        <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!%20I%27d%20like%20to%20enquire." target="_blank" rel="noopener" class="action-btn action-whatsapp">💬 WhatsApp</a>
         <a href="tel:+19734622380" class="action-btn action-call">📞 Call Now</a>
-        <a href="mailto:apkissac@gmail.com?subject=Event%20Enquiry%20–%20Issac%20Events" class="action-btn action-email">✉ Send Email</a>
+        <a href="mailto:Issacevents@gmail.com" class="action-btn action-email">✉ Email Us</a>
       </div>
     </div>
 
     <div class="contact-form">
       <div class="form-title">Send an Enquiry</div>
-      <p class="form-sub">Fill in your details below and choose how you'd like us to respond — we'll get back to you within a few hours.</p>
-      <form id="enquiryForm" onsubmit="handleSubmit(event)">
+      <p class="form-sub">Fill in your details and click <strong>Send Enquiry</strong> — we'll receive your message directly by email and respond promptly.</p>
+
+      <!-- Web3Forms: free service that emails form submissions to your inbox, no backend needed -->
+      <!-- HOW TO ACTIVATE: Go to https://web3forms.com, enter Issacevents@gmail.com, get your Access Key, replace YOUR_ACCESS_KEY_HERE below -->
+      <form id="enquiryForm" onsubmit="handleSubmit(event)" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE"/>
+        <input type="hidden" name="subject" value="New Event Enquiry – Issac Events"/>
+        <input type="hidden" name="from_name" value="Issac Events Website"/>
+        <input type="hidden" name="redirect" value="false"/>
+
         <div class="form-row">
-          <div class="form-group">
-            <label for="fname">Your Name *</label>
-            <input type="text" id="fname" name="name" placeholder="Full name" required/>
-          </div>
-          <div class="form-group">
-            <label for="fphone">Phone Number *</label>
-            <input type="tel" id="fphone" name="phone" placeholder="+1 XXXXX XXXXX" required/>
-          </div>
+          <div class="form-group"><label>Your Name *</label><input type="text" name="name" id="fname" placeholder="Full name" required/></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" id="fphone" placeholder="+1 (xxx) xxx-xxxx" required/></div>
         </div>
+        <div class="form-group"><label>Your Email</label><input type="email" name="email" id="femail" placeholder="your@email.com"/></div>
         <div class="form-group">
-          <label for="femail">Email Address</label>
-          <input type="email" id="femail" name="email" placeholder="your@email.com"/>
-        </div>
-        <div class="form-group">
-          <label for="ftype">Event Type *</label>
-          <select id="ftype" name="eventType" required>
+          <label>Event Type *</label>
+          <select name="event_type" id="ftype" required>
             <option value="" disabled selected>Select event type</option>
-            <option value="Wedding">Wedding</option>
-            <option value="Birthday Party">Birthday Party</option>
-            <option value="Reception">Reception</option>
-            <option value="Engagement">Engagement</option>
-            <option value="Corporate Event">Corporate Event</option>
-            <option value="Anniversary">Anniversary</option>
-            <option value="Other">Other</option>
+            <option>Wedding</option><option>Birthday Party</option><option>Reception</option>
+            <option>Engagement</option><option>Corporate Event</option><option>Anniversary</option><option>Other</option>
           </select>
         </div>
+        <div class="form-group"><label>Preferred Event Date</label><input type="date" name="event_date" id="fdate"/></div>
+        <div class="form-group"><label>Tell Us Your Vision</label><textarea name="message" id="fmsg" placeholder="Describe your event, theme, décor ideas, expected guests, venue, budget..."></textarea></div>
         <div class="form-group">
-          <label for="fdate">Event Date</label>
-          <input type="date" id="fdate" name="date"/>
+          <label>Preferred Mode of Communication *</label>
+          <select name="preferred_contact" id="fcontact" required>
+            <option value="" disabled selected>How should we contact you?</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Phone Call">Phone Call</option>
+            <option value="Email">Email</option>
+          </select>
         </div>
-        <div class="form-group">
-          <label for="fmsg">Tell Us Your Vision</label>
-          <textarea id="fmsg" name="message" placeholder="Describe your event, theme, décor ideas, expected guests, venue, budget range..."></textarea>
-        </div>
-        <div class="form-group">
-          <label style="margin-bottom:0.8rem;display:block">How would you like us to reply? *</label>
-          <div class="send-options">
-            <label><input type="radio" name="replyVia" value="whatsapp" required/> 💬 WhatsApp</label>
-            <label><input type="radio" name="replyVia" value="call"/> 📞 Call Me</label>
-            <label><input type="radio" name="replyVia" value="email"/> ✉ Email</label>
-          </div>
-        </div>
+        <div class="form-status error" id="formError"></div>
         <div class="form-submit-row">
-          <button type="submit" class="form-submit">Send Enquiry ✦</button>
-          <span class="form-note">We reply within a few hours.</span>
+          <button type="submit" class="form-submit" id="submitBtn">Send Enquiry ✦</button>
+          <span class="form-note">You'll receive a confirmation.<br/>We reply within a few hours.</span>
         </div>
       </form>
-      <div id="formSuccess" style="display:none;padding:2rem;text-align:center;border:1px solid var(--gold);margin-top:1rem;">
+
+      <div id="formSuccess">
         <div style="font-size:2rem;margin-bottom:0.8rem">✦</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold-light);margin-bottom:0.5rem">Thank You!</div>
-        <p style="color:var(--muted);font-size:0.88rem">Your enquiry has been received. We'll get back to you very soon.</p>
+        <div style="font-family:'Playfair Display',serif;font-size:1.5rem;background:linear-gradient(135deg,#F0D080,#C8992A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.6rem">Thank You!</div>
+        <p style="color:var(--muted);font-size:0.86rem;line-height:1.65">Your enquiry has been sent successfully. We've received it and will get back to you very soon!</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div>
-    <div class="footer-logo">Issac Events</div>
-    <div class="footer-tagline">Where Moments Become Magic</div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">
+        <span class="brand-highlight" style="font-size:1.55rem">Issac</span><span class="brand-events" style="font-size:1.25rem"> events</span>
+      </div>
+      <div class="footer-tagline">Planned with Purpose, Delivered with Excellence</div>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+19734622380">📞 +1 (973) 462-2380</a>
+      <a href="mailto:Issacevents@gmail.com">📧 Issacevents@gmail.com</a>
+      <a href="https://wa.me/19734622380" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      <span>📍 Morris Plains, New Jersey</span>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#why">About Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#why">About</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="footer-copy">© 2025 Issac Events · apkissac@gmail.com · +1 (973) 462-2380 · Morristown, NJ · All rights reserved.</div>
+  <div class="footer-copy">© 2025 Issac Events · Morris Plains, NJ · All rights reserved</div>
 </footer>
 
 <script>
-  // Check if images are loading, show notice if not
-  window.addEventListener('load', function() {
-    const imgs = document.querySelectorAll('.gallery-item img');
-    let failCount = 0;
-    imgs.forEach(img => {
-      if (!img.complete || img.naturalWidth === 0) failCount++;
+  /* Image errors */
+  window.addEventListener('load', () => {
+    let fc = 0;
+    document.querySelectorAll('.gallery-item img').forEach(img => {
       img.onerror = function() {
-        this.parentElement.style.background = 'linear-gradient(135deg, #1A1208, #2C1A0A)';
-        this.style.display = 'none';
-        failCount++;
-        if (failCount >= 3) document.getElementById('imgNotice').style.display = 'block';
+        this.parentElement.style.background='linear-gradient(135deg,#1A1208,#2C1A0A)';
+        this.style.display='none';
+        if(++fc>=3) document.getElementById('imgNotice').style.display='block';
       };
     });
   });
 
-  // Gallery filter
-  function filterGallery(cat, btn) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  /* Gallery filter */
+  function filterGallery(cat,btn){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+    document.querySelectorAll('.gallery-item').forEach(item=>{
+      item.style.display=(cat==='all'||item.dataset.cat===cat)?'':'none';
     });
   }
 
-  // Lightbox
-  function openLightbox(el) {
-    const img = el.querySelector('img');
-    if (!img || img.style.display === 'none') return;
-    document.getElementById('lightboxImg').src = img.src.replace('w=600','w=1200').replace('w=1000','w=1400');
-    document.getElementById('lightboxImg').alt = img.alt;
+  /* Lightbox */
+  function openLightbox(el){
+    const img=el.querySelector('img');
+    if(!img||img.style.display==='none') return;
+    document.getElementById('lightboxImg').src=img.src.replace('w=600','w=1200').replace('w=1000','w=1400');
+    document.getElementById('lightboxImg').alt=img.alt;
     document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow='hidden';
   }
-  function closeLightbox() {
+  function closeLightbox(){
     document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
+    document.body.style.overflow='';
   }
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 
-  // Form submit
-  function handleSubmit(e) {
+  /* Form — uses Web3Forms API to deliver email directly to Issacevents@gmail.com */
+  async function handleSubmit(e) {
     e.preventDefault();
-    const data = new FormData(e.target);
-    const name = data.get('name');
-    const phone = data.get('phone');
-    const email = data.get('email');
-    const eventType = data.get('eventType');
-    const date = data.get('date');
-    const message = data.get('message');
-    const replyVia = data.get('replyVia');
-    const msg = `Hi Issac Events! 🌟\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email || 'N/A'}\nEvent: ${eventType}\nDate: ${date || 'TBD'}\n\nMessage: ${message || 'No message'}\n\nPreferred reply: ${replyVia}`;
-    if (replyVia === 'whatsapp') {
-      window.open(`https://wa.me/19734622380?text=${encodeURIComponent(msg)}`, '_blank');
-    } else if (replyVia === 'email') {
-      window.location.href = `mailto:apkissac@gmail.com?subject=Event Enquiry – ${eventType}&body=${encodeURIComponent(msg)}`;
-    } else if (replyVia === 'call') {
-      window.location.href = `tel:+19734622380`;
+    const errEl = document.getElementById('formError');
+    errEl.style.display = 'none';
+
+    const name    = document.getElementById('fname').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
+    const type    = document.getElementById('ftype').value;
+    const contact = document.getElementById('fcontact').value;
+
+    if (!name)    { showErr('Please enter your name.'); return; }
+    if (!phone)   { showErr('Please enter your phone number.'); return; }
+    if (!type)    { showErr('Please select an event type.'); return; }
+    if (!contact) { showErr('Please select a preferred mode of communication.'); return; }
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const formData = new FormData(e.target);
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        e.target.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        // Web3Forms key not yet set — fall back to mailto so nothing is lost
+        fallbackMailto();
+      }
+    } catch {
+      // Network error — fall back to mailto
+      fallbackMailto();
     }
-    e.target.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+
+    function fallbackMailto() {
+      const date    = document.getElementById('fdate').value;
+      const email   = document.getElementById('femail').value.trim();
+      const msg     = document.getElementById('fmsg').value.trim();
+      const subject = encodeURIComponent(`New Event Enquiry – ${type} | Issac Events`);
+      const body    = encodeURIComponent(
+`Hello Issac Events,
+
+Name    : ${name}
+Phone   : ${phone}
+Email   : ${email||'Not provided'}
+Event   : ${type}
+Date    : ${date||'TBD'}
+Contact : ${contact}
+
+Message:
+${msg||'No additional details.'}
+
+— Sent via Issac Events website`
+      );
+      window.location.href = `mailto:Issacevents@gmail.com?subject=${subject}&body=${body}`;
+      setTimeout(()=>{
+        e.target.style.display='none';
+        document.getElementById('formSuccess').style.display='block';
+      },600);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Send Enquiry ✦';
+  }
+
+  function showErr(msg){
+    const el=document.getElementById('formError');
+    el.textContent='⚠ '+msg;
+    el.style.display='block';
+    el.scrollIntoView({behavior:'smooth',block:'nearest'});
   }
 </script>
 </body>
