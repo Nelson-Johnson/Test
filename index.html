@@ -35,17 +35,16 @@
 
     /* ══ BRAND ══ */
     .brand-highlight {
-      font-family: 'Playfair Display', serif; font-weight: 800;
-      background: linear-gradient(135deg, #6A0020 0%, #C2185B 30%, #E91E63 55%, #C2185B 75%, #8B0030 100%);
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      background: linear-gradient(135deg, #3E1500 0%, #7B2D00 25%, #BF360C 45%, #E64A19 58%, #BF360C 75%, #7B2D00 90%, #3E1500 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      letter-spacing: 0.01em; display: inline-block;
-      filter: drop-shadow(0 1px 4px rgba(194,24,91,0.2));
+      letter-spacing: 0.02em; display: inline-block;
+      filter: drop-shadow(0 1px 5px rgba(191,54,12,0.22));
     }
     .brand-events {
-      font-family: 'Playfair Display', serif; font-weight: 500; font-style: italic;
-      background: linear-gradient(135deg, #7A5500 0%, #C8880A 50%, #7A5500 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      letter-spacing: 0.03em;
+      font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic;
+      color: #1A1F3A; -webkit-text-fill-color: #1A1F3A;
+      letter-spacing: 0.06em; margin-left: 0.5rem;
     }
 
     /* ══ NAV — crisp white, gold border, elegant ══ */
@@ -82,16 +81,16 @@
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
       background:
-        radial-gradient(ellipse 70% 55% at 50% 38%, rgba(245,200,66,0.13) 0%, rgba(212,160,23,0.06) 45%, transparent 65%),
-        radial-gradient(ellipse 35% 40% at 3%  95%, rgba(184,134,11,0.09) 0%, transparent 55%),
-        radial-gradient(ellipse 35% 40% at 97% 5%,  rgba(184,134,11,0.09) 0%, transparent 55%),
-        radial-gradient(ellipse 25% 25% at 3%  5%,  rgba(212,160,23,0.06) 0%, transparent 50%),
-        radial-gradient(ellipse 25% 25% at 97% 95%, rgba(212,160,23,0.06) 0%, transparent 50%);
+        radial-gradient(ellipse 65% 50% at 50% 38%, rgba(230,74,25,0.08) 0%, rgba(255,109,58,0.04) 40%, transparent 65%),
+        radial-gradient(ellipse 35% 40% at 3%  95%, rgba(191,54,12,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 35% 40% at 97% 5%,  rgba(191,54,12,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 22% 22% at 3%  5%,  rgba(212,160,23,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 22% 22% at 97% 95%, rgba(212,160,23,0.06) 0%, transparent 50%);
     }
     .hero-bg::before {
       content: ''; position: absolute; inset: 0; z-index: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cdefs%3E%3Cstyle%3E.s%7Bfill:none;stroke:%23B8860B;stroke-width:1%7D.sf%7Bfill:none;stroke:%23D4A017;stroke-width:.7%7D%3C/style%3E%3C/defs%3E%3Cg opacity='.22'%3E%3C!-- TL large bloom --%3E%3Cellipse class='s' cx='35' cy='35' rx='10' ry='22' transform='rotate(0 35 35)'/%3E%3Cellipse class='s' cx='35' cy='35' rx='10' ry='22' transform='rotate(60 35 35)'/%3E%3Cellipse class='s' cx='35' cy='35' rx='10' ry='22' transform='rotate(120 35 35)'/%3E%3Ccircle cx='35' cy='35' r='7' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='35' cy='35' r='3' fill='%23F5C842' stroke='none'/%3E%3C!-- TR bloom --%3E%3Cellipse class='s' cx='245' cy='35' rx='10' ry='22' transform='rotate(0 245 35)'/%3E%3Cellipse class='s' cx='245' cy='35' rx='10' ry='22' transform='rotate(60 245 35)'/%3E%3Cellipse class='s' cx='245' cy='35' rx='10' ry='22' transform='rotate(120 245 35)'/%3E%3Ccircle cx='245' cy='35' r='7' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='245' cy='35' r='3' fill='%23F5C842' stroke='none'/%3E%3C!-- BL bloom --%3E%3Cellipse class='s' cx='35' cy='245' rx='10' ry='22' transform='rotate(0 35 245)'/%3E%3Cellipse class='s' cx='35' cy='245' rx='10' ry='22' transform='rotate(60 35 245)'/%3E%3Cellipse class='s' cx='35' cy='245' rx='10' ry='22' transform='rotate(120 35 245)'/%3E%3Ccircle cx='35' cy='245' r='7' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='35' cy='245' r='3' fill='%23F5C842' stroke='none'/%3E%3C!-- BR bloom --%3E%3Cellipse class='s' cx='245' cy='245' rx='10' ry='22' transform='rotate(0 245 245)'/%3E%3Cellipse class='s' cx='245' cy='245' rx='10' ry='22' transform='rotate(60 245 245)'/%3E%3Cellipse class='s' cx='245' cy='245' rx='10' ry='22' transform='rotate(120 245 245)'/%3E%3Ccircle cx='245' cy='245' r='7' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='245' cy='245' r='3' fill='%23F5C842' stroke='none'/%3E%3C!-- Centre mandala --%3E%3Cellipse class='s' cx='140' cy='140' rx='13' ry='28' transform='rotate(0 140 140)'/%3E%3Cellipse class='s' cx='140' cy='140' rx='13' ry='28' transform='rotate(45 140 140)'/%3E%3Cellipse class='s' cx='140' cy='140' rx='13' ry='28' transform='rotate(90 140 140)'/%3E%3Cellipse class='s' cx='140' cy='140' rx='13' ry='28' transform='rotate(135 140 140)'/%3E%3Cellipse class='sf' cx='140' cy='140' rx='8' ry='18' transform='rotate(22.5 140 140)'/%3E%3Cellipse class='sf' cx='140' cy='140' rx='8' ry='18' transform='rotate(67.5 140 140)'/%3E%3Cellipse class='sf' cx='140' cy='140' rx='8' ry='18' transform='rotate(112.5 140 140)'/%3E%3Cellipse class='sf' cx='140' cy='140' rx='8' ry='18' transform='rotate(157.5 140 140)'/%3E%3Ccircle cx='140' cy='140' r='10' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='140' cy='140' r='5' fill='%23F5C842' stroke='none'/%3E%3Ccircle cx='140' cy='140' r='2' fill='%23fff' stroke='none'/%3E%3C!-- Mid-edge small blooms --%3E%3Cellipse class='sf' cx='140' cy='35' rx='6' ry='14' transform='rotate(0 140 35)'/%3E%3Cellipse class='sf' cx='140' cy='35' rx='6' ry='14' transform='rotate(60 140 35)'/%3E%3Cellipse class='sf' cx='140' cy='35' rx='6' ry='14' transform='rotate(120 140 35)'/%3E%3Ccircle cx='140' cy='35' r='4.5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='sf' cx='140' cy='245' rx='6' ry='14' transform='rotate(0 140 245)'/%3E%3Cellipse class='sf' cx='140' cy='245' rx='6' ry='14' transform='rotate(60 140 245)'/%3E%3Cellipse class='sf' cx='140' cy='245' rx='6' ry='14' transform='rotate(120 140 245)'/%3E%3Ccircle cx='140' cy='245' r='4.5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='sf' cx='35' cy='140' rx='6' ry='14' transform='rotate(90 35 140)'/%3E%3Cellipse class='sf' cx='35' cy='140' rx='6' ry='14' transform='rotate(30 35 140)'/%3E%3Cellipse class='sf' cx='35' cy='140' rx='6' ry='14' transform='rotate(150 35 140)'/%3E%3Ccircle cx='35' cy='140' r='4.5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='sf' cx='245' cy='140' rx='6' ry='14' transform='rotate(90 245 140)'/%3E%3Cellipse class='sf' cx='245' cy='140' rx='6' ry='14' transform='rotate(30 245 140)'/%3E%3Cellipse class='sf' cx='245' cy='140' rx='6' ry='14' transform='rotate(150 245 140)'/%3E%3Ccircle cx='245' cy='140' r='4.5' fill='%23D4A017' stroke='none'/%3E%3C!-- Corner sprigs --%3E%3Cpath class='s' d='M6 6 Q20 15 13 32 Q8 42 18 48'/%3E%3Ccircle cx='18' cy='48' r='5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='18' cy='48' r='2.5' fill='%23F5C842' stroke='none'/%3E%3Cpath class='sf' d='M13 32 Q5 38 8 48'/%3E%3Ccircle cx='8' cy='48' r='3.5' fill='%23D4A017' stroke='none'/%3E%3Cpath class='s' d='M274 6 Q260 15 267 32 Q272 42 262 48'/%3E%3Ccircle cx='262' cy='48' r='5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='262' cy='48' r='2.5' fill='%23F5C842' stroke='none'/%3E%3Cpath class='sf' d='M267 32 Q275 38 272 48'/%3E%3Ccircle cx='272' cy='48' r='3.5' fill='%23D4A017' stroke='none'/%3E%3Cpath class='s' d='M6 274 Q20 265 13 248 Q8 238 18 232'/%3E%3Ccircle cx='18' cy='232' r='5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='18' cy='232' r='2.5' fill='%23F5C842' stroke='none'/%3E%3Cpath class='sf' d='M13 248 Q5 242 8 232'/%3E%3Ccircle cx='8' cy='232' r='3.5' fill='%23D4A017' stroke='none'/%3E%3Cpath class='s' d='M274 274 Q260 265 267 248 Q272 238 262 232'/%3E%3Ccircle cx='262' cy='232' r='5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='262' cy='232' r='2.5' fill='%23F5C842' stroke='none'/%3E%3Cpath class='sf' d='M267 248 Q275 242 272 232'/%3E%3Ccircle cx='272' cy='232' r='3.5' fill='%23D4A017' stroke='none'/%3E%3C!-- Diamonds --%3E%3Cpath class='s' d='M140 3 L144 12 L140 21 L136 12Z'/%3E%3Cpath class='s' d='M140 259 L144 268 L140 277 L136 268Z'/%3E%3Cpath class='s' d='M3 140 L12 136 L21 140 L12 144Z'/%3E%3Cpath class='s' d='M259 140 L268 136 L277 140 L268 144Z'/%3E%3C!-- Dot constellation --%3E%3Ccircle cx='88' cy='88' r='3.5' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='192' cy='88' r='3.5' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='88' cy='192' r='3.5' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='192' cy='192' r='3.5' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='140' cy='88' r='2.5' fill='%23B8860B' stroke='none' opacity='.4'/%3E%3Ccircle cx='140' cy='192' r='2.5' fill='%23B8860B' stroke='none' opacity='.4'/%3E%3Ccircle cx='88' cy='140' r='2.5' fill='%23B8860B' stroke='none' opacity='.4'/%3E%3Ccircle cx='192' cy='140' r='2.5' fill='%23B8860B' stroke='none' opacity='.4'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: 280px 280px; background-repeat: repeat;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:none;stroke:%23BF360C;stroke-width:1%7D.b%7Bfill:none;stroke:%23D4A017;stroke-width:.75%7D%3C/style%3E%3C/defs%3E%3Cg opacity='.2'%3E%3C!--TL large bloom--%3E%3Cellipse class='a' cx='40' cy='40' rx='11' ry='24' transform='rotate(0 40 40)'/%3E%3Cellipse class='a' cx='40' cy='40' rx='11' ry='24' transform='rotate(60 40 40)'/%3E%3Cellipse class='a' cx='40' cy='40' rx='11' ry='24' transform='rotate(120 40 40)'/%3E%3Ccircle cx='40' cy='40' r='7.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='40' cy='40' r='3' fill='%23FF6D3A' stroke='none'/%3E%3C!--TR bloom--%3E%3Cellipse class='a' cx='280' cy='40' rx='11' ry='24' transform='rotate(0 280 40)'/%3E%3Cellipse class='a' cx='280' cy='40' rx='11' ry='24' transform='rotate(60 280 40)'/%3E%3Cellipse class='a' cx='280' cy='40' rx='11' ry='24' transform='rotate(120 280 40)'/%3E%3Ccircle cx='280' cy='40' r='7.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='280' cy='40' r='3' fill='%23FF6D3A' stroke='none'/%3E%3C!--BL bloom--%3E%3Cellipse class='a' cx='40' cy='280' rx='11' ry='24' transform='rotate(0 40 280)'/%3E%3Cellipse class='a' cx='40' cy='280' rx='11' ry='24' transform='rotate(60 40 280)'/%3E%3Cellipse class='a' cx='40' cy='280' rx='11' ry='24' transform='rotate(120 40 280)'/%3E%3Ccircle cx='40' cy='280' r='7.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='40' cy='280' r='3' fill='%23FF6D3A' stroke='none'/%3E%3C!--BR bloom--%3E%3Cellipse class='a' cx='280' cy='280' rx='11' ry='24' transform='rotate(0 280 280)'/%3E%3Cellipse class='a' cx='280' cy='280' rx='11' ry='24' transform='rotate(60 280 280)'/%3E%3Cellipse class='a' cx='280' cy='280' rx='11' ry='24' transform='rotate(120 280 280)'/%3E%3Ccircle cx='280' cy='280' r='7.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='280' cy='280' r='3' fill='%23FF6D3A' stroke='none'/%3E%3C!--Centre mandala 8-petal--%3E%3Cellipse class='a' cx='160' cy='160' rx='14' ry='30' transform='rotate(0 160 160)'/%3E%3Cellipse class='a' cx='160' cy='160' rx='14' ry='30' transform='rotate(45 160 160)'/%3E%3Cellipse class='a' cx='160' cy='160' rx='14' ry='30' transform='rotate(90 160 160)'/%3E%3Cellipse class='a' cx='160' cy='160' rx='14' ry='30' transform='rotate(135 160 160)'/%3E%3Cellipse class='b' cx='160' cy='160' rx='9' ry='20' transform='rotate(22.5 160 160)'/%3E%3Cellipse class='b' cx='160' cy='160' rx='9' ry='20' transform='rotate(67.5 160 160)'/%3E%3Cellipse class='b' cx='160' cy='160' rx='9' ry='20' transform='rotate(112.5 160 160)'/%3E%3Cellipse class='b' cx='160' cy='160' rx='9' ry='20' transform='rotate(157.5 160 160)'/%3E%3Ccircle cx='160' cy='160' r='11' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='160' cy='160' r='5' fill='%23D4A017' stroke='none'/%3E%3Ccircle cx='160' cy='160' r='2' fill='%23fff' stroke='none'/%3E%3C!--mid-edge small blooms--%3E%3Cellipse class='b' cx='160' cy='40' rx='7' ry='15' transform='rotate(0 160 40)'/%3E%3Cellipse class='b' cx='160' cy='40' rx='7' ry='15' transform='rotate(60 160 40)'/%3E%3Cellipse class='b' cx='160' cy='40' rx='7' ry='15' transform='rotate(120 160 40)'/%3E%3Ccircle cx='160' cy='40' r='5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='b' cx='160' cy='280' rx='7' ry='15' transform='rotate(0 160 280)'/%3E%3Cellipse class='b' cx='160' cy='280' rx='7' ry='15' transform='rotate(60 160 280)'/%3E%3Cellipse class='b' cx='160' cy='280' rx='7' ry='15' transform='rotate(120 160 280)'/%3E%3Ccircle cx='160' cy='280' r='5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='b' cx='40' cy='160' rx='7' ry='15' transform='rotate(90 40 160)'/%3E%3Cellipse class='b' cx='40' cy='160' rx='7' ry='15' transform='rotate(30 40 160)'/%3E%3Cellipse class='b' cx='40' cy='160' rx='7' ry='15' transform='rotate(150 40 160)'/%3E%3Ccircle cx='40' cy='160' r='5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='b' cx='280' cy='160' rx='7' ry='15' transform='rotate(90 280 160)'/%3E%3Cellipse class='b' cx='280' cy='160' rx='7' ry='15' transform='rotate(30 280 160)'/%3E%3Cellipse class='b' cx='280' cy='160' rx='7' ry='15' transform='rotate(150 280 160)'/%3E%3Ccircle cx='280' cy='160' r='5' fill='%23D4A017' stroke='none'/%3E%3C!--Corner sprigs--%3E%3Cpath class='a' d='M8 8 Q22 17 15 34 Q10 44 20 50'/%3E%3Ccircle cx='20' cy='50' r='5.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='20' cy='50' r='2.5' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='b' d='M15 34 Q6 40 9 50'/%3E%3Ccircle cx='9' cy='50' r='3.5' fill='%23D4A017' stroke='none'/%3E%3Cpath class='a' d='M312 8 Q298 17 305 34 Q310 44 300 50'/%3E%3Ccircle cx='300' cy='50' r='5.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='300' cy='50' r='2.5' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='b' d='M305 34 Q314 40 311 50'/%3E%3Ccircle cx='311' cy='50' r='3.5' fill='%23D4A017' stroke='none'/%3E%3Cpath class='a' d='M8 312 Q22 303 15 286 Q10 276 20 270'/%3E%3Ccircle cx='20' cy='270' r='5.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='20' cy='270' r='2.5' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='b' d='M15 286 Q6 280 9 270'/%3E%3Ccircle cx='9' cy='270' r='3.5' fill='%23D4A017' stroke='none'/%3E%3Cpath class='a' d='M312 312 Q298 303 305 286 Q310 276 300 270'/%3E%3Ccircle cx='300' cy='270' r='5.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='300' cy='270' r='2.5' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='b' d='M305 286 Q314 280 311 270'/%3E%3Ccircle cx='311' cy='270' r='3.5' fill='%23D4A017' stroke='none'/%3E%3C!--Diamonds--%3E%3Cpath class='a' d='M160 3 L165 13 L160 23 L155 13Z'/%3E%3Cpath class='a' d='M160 297 L165 307 L160 317 L155 307Z'/%3E%3Cpath class='a' d='M3 160 L13 155 L23 160 L13 165Z'/%3E%3Cpath class='a' d='M297 160 L307 155 L317 160 L307 165Z'/%3E%3C!--Dot constellation--%3E%3Ccircle cx='100' cy='100' r='4' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='220' cy='100' r='4' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='100' cy='220' r='4' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='220' cy='220' r='4' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='160' cy='100' r='2.5' fill='%23BF360C' stroke='none' opacity='.4'/%3E%3Ccircle cx='160' cy='220' r='2.5' fill='%23BF360C' stroke='none' opacity='.4'/%3E%3Ccircle cx='100' cy='160' r='2.5' fill='%23BF360C' stroke='none' opacity='.4'/%3E%3Ccircle cx='220' cy='160' r='2.5' fill='%23BF360C' stroke='none' opacity='.4'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 320px 320px; background-repeat: repeat;
     }
     .hero-center {
       position: relative; z-index: 1;
@@ -103,50 +102,49 @@
       position: relative; display: inline-flex; flex-direction: column; align-items: center;
     }
     .hero-name-row { display: flex; align-items: baseline; gap: 0; }
-    /* Animated shimmer underline — multi-colour */
+    /* Underline — sienna to navy sweep */
     .hero-name-underline {
-      display: block; width: 85%; height: 4px; margin-top: 0.55rem;
+      display: block; width: 88%; height: 4px; margin-top: 0.55rem;
       background: linear-gradient(90deg,
         transparent 0%,
-        #C2185B 8%, #E91E63 20%,
-        #B8860B 35%, #F5C842 50%,
-        #B8860B 65%, #E91E63 80%,
-        #C2185B 92%, transparent 100%);
+        #BF360C 10%, #E64A19 28%,
+        #FF6D3A 45%, #E64A19 58%,
+        #BF360C 76%, transparent 100%);
       border-radius: 2px; opacity: 0.8;
     }
-    /* "Issac" — rich jewel crimson-to-rose, vivid & celebratory */
+    /* "Issac" — Burnt Sienna F, rich warm fire */
     .hero-issac {
-      font-family: 'Playfair Display', serif; font-weight: 800;
+      font-family: 'Playfair Display', serif; font-weight: 900;
       font-size: clamp(4rem, 10vw, 8rem);
       background: linear-gradient(160deg,
-        #6A0020 0%,
-        #C2185B 18%,
-        #E91E63 32%,
-        #FF4081 45%,
-        #E91E63 58%,
-        #C2185B 72%,
-        #8B0030 88%,
-        #6A0020 100%);
+        #2A0C00 0%,
+        #7B2D00 14%,
+        #BF360C 28%,
+        #E64A19 42%,
+        #FF6D3A 52%,
+        #E64A19 62%,
+        #BF360C 76%,
+        #7B2D00 90%,
+        #2A0C00 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       letter-spacing: 0.025em;
-      filter: drop-shadow(0 3px 16px rgba(194,24,91,0.4));
+      filter: drop-shadow(0 4px 22px rgba(230,74,25,0.42));
     }
-    /* "events" — warm deep champagne gold, italic, feels refined */
+    /* "events" — deep navy, italic, refined contrast */
     .hero-eventsword {
-      font-family: 'Playfair Display', serif; font-weight: 400; font-style: italic;
+      font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic;
       font-size: clamp(2.6rem, 6vw, 5.2rem);
-      background: linear-gradient(135deg, #7A5500 0%, #C8880A 30%, #E8B020 55%, #C8880A 75%, #5C3A00 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      letter-spacing: 0.06em;
-      filter: drop-shadow(0 2px 8px rgba(184,134,11,0.25));
+      color: #1A1F3A; -webkit-text-fill-color: #1A1F3A;
+      letter-spacing: 0.08em; margin-left: 0.6rem;
+      opacity: 0.75;
     }
     .hero-tagline-text {
       font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase;
-      color: var(--navy-mid); font-weight: 600; margin: 1rem 0 1.6rem;
+      color: #BF360C; font-weight: 700; margin: 1rem 0 1.6rem;
       display: flex; align-items: center; gap: 0.9rem; justify-content: center;
     }
     .hero-tagline-text::before,
-    .hero-tagline-text::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold-light); }
+    .hero-tagline-text::after { content: ''; display: block; width: 44px; height: 1px; background: linear-gradient(90deg, transparent, #BF360C); }
     .hero-desc { font-size: 1rem; color: var(--body); line-height: 1.82; margin-bottom: 2.2rem; max-width: 600px; font-weight: 300; }
     .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
     .btn-gold {
@@ -183,32 +181,48 @@
     .btn-outline span { position: relative; z-index: 1; }
     .hero-connect {
       display: flex; align-items: stretch; flex-wrap: wrap;
-      border: 2px solid rgba(184,134,11,0.2); width: 100%;
+      border: 1.5px solid rgba(184,134,11,0.18); width: 100%;
       background: #fff;
-      box-shadow: 0 4px 28px rgba(26,31,58,0.1), 0 0 0 4px rgba(184,134,11,0.06);
-      border-radius: 4px; overflow: hidden;
+      box-shadow: 0 6px 32px rgba(26,31,58,0.1), 0 0 0 4px rgba(184,134,11,0.05);
+      border-radius: 6px; overflow: visible;
     }
     .hcc-item {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 1.2rem 1rem; text-decoration: none; color: inherit;
-      flex: 1; min-width: 110px; gap: 0.22rem;
-      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+      display: flex; flex-direction: row; align-items: center; justify-content: flex-start;
+      padding: 1rem 1.2rem; text-decoration: none; color: inherit;
+      flex: 1 1 160px; gap: 0.75rem;
+      transition: all 0.32s cubic-bezier(0.16,1,0.3,1);
       border-right: 1px solid rgba(184,134,11,0.1);
-      position: relative; overflow: hidden;
-    }
-    .hcc-item::before {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+      position: relative; overflow: visible;
     }
     .hcc-item:last-child { border-right: none; }
-    .hcc-item:hover { background: linear-gradient(180deg, #fff 0%, var(--gold-pale) 100%); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(184,134,11,0.12); }
-    .hcc-item:hover::before { transform: scaleX(1); }
+    .hcc-item::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+      border-radius: 0 0 2px 2px;
+    }
+    .hcc-item:nth-child(1)::after { background: #BF360C; }
+    .hcc-item:nth-child(2)::after { background: #25D366; }
+    .hcc-item:nth-child(3)::after { background: #B8860B; }
+    .hcc-item:nth-child(4)::after { background: #1565C0; }
+    .hcc-item:nth-child(5)::after { background: #555; }
+    .hcc-item:hover::after { transform: scaleX(1); }
+    .hcc-item:hover { background: #FAFAFA; transform: translateY(-2px); box-shadow: 0 4px 18px rgba(26,31,58,0.08); }
     .hcc-sep { display: none; }
-    .hcc-icon { font-size: 1.5rem; transition: transform 0.3s; }
-    .hcc-item:hover .hcc-icon { transform: scale(1.2); }
-    .hcc-label { font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--subtle); margin-top: 0.12rem; font-weight: 600; }
-    .hcc-value { font-size: 0.75rem; font-weight: 700; color: var(--ink); }
+    .hcc-icon-wrap {
+      width: 38px; height: 38px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.15rem; transition: transform 0.3s;
+    }
+    .hcc-item:hover .hcc-icon-wrap { transform: scale(1.1); }
+    .hcc-icon-wrap.ic-call  { background: rgba(191,54,12,0.1); }
+    .hcc-icon-wrap.ic-wa    { background: #25D366; }
+    .hcc-icon-wrap.ic-email { background: rgba(184,134,11,0.12); }
+    .hcc-icon-wrap.ic-loc   { background: rgba(21,101,192,0.1); }
+    .hcc-icon-wrap.ic-hours { background: rgba(80,80,80,0.08); }
+    .hcc-icon-wrap.ic-wa svg { width: 20px; height: 20px; }
+    .hcc-text { display: flex; flex-direction: column; gap: 0.08rem; }
+    .hcc-label { font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--subtle); font-weight: 700; white-space: nowrap; }
+    .hcc-value { font-size: 0.74rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
 
     /* ══ SECTION COMMONS ══ */
     .section-label { font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
@@ -456,6 +470,7 @@
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item.featured { grid-column: span 2; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .hcc-item { flex: 1 1 45%; border-bottom: 1px solid rgba(184,134,11,0.1); }
     }
     @media (max-width: 600px) {
       .cards { grid-template-columns: 1fr; }
@@ -463,8 +478,8 @@
       .gallery-item.featured { grid-column: span 1; aspect-ratio: 4/3; }
       .form-row { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; align-items: center; }
-      .hcc-sep { display: none; }
-      .hcc-item { min-width: 45%; border-bottom: 1px solid rgba(184,134,11,0.1); }
+      .hcc-item { flex: 1 1 100%; border-right: none; border-bottom: 1px solid rgba(184,134,11,0.1); }
+      .hcc-item:last-child { border-bottom: none; }
       .footer-inner { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
@@ -536,33 +551,48 @@
     <!-- Quick Connect strip — horizontal row below buttons -->
     <div class="hero-connect">
       <a href="tel:+19734622380" class="hcc-item">
-        <span class="hcc-icon">📞</span>
-        <span class="hcc-label">Call Us</span>
-        <span class="hcc-value">+1 (973) 462-2380</span>
+        <div class="hcc-icon-wrap ic-call">📞</div>
+        <div class="hcc-text">
+          <span class="hcc-label">Call Us</span>
+          <span class="hcc-value">+1 (973) 462-2380</span>
+        </div>
       </a>
       <div class="hcc-sep"></div>
       <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!" target="_blank" rel="noopener" class="hcc-item">
-        <span class="hcc-icon">💬</span>
-        <span class="hcc-label">WhatsApp</span>
-        <span class="hcc-value">Chat with us</span>
+        <div class="hcc-icon-wrap ic-wa">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 3C8.82 3 3 8.82 3 16c0 2.34.64 4.54 1.76 6.44L3 29l6.72-1.74A13.04 13.04 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="#fff"/>
+            <path d="M21.9 18.72c-.32-.16-1.88-.92-2.17-1.03-.29-.1-.5-.16-.71.16-.21.32-.82 1.03-.99 1.24-.18.21-.36.23-.68.08a8.54 8.54 0 01-2.52-1.56 9.4 9.4 0 01-1.74-2.17c-.18-.32-.02-.49.14-.65.14-.14.32-.36.48-.54.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.72-.97-2.35-.26-.62-.52-.53-.71-.54H12.1c-.18 0-.48.07-.73.35-.25.28-.97.95-.97 2.32s.99 2.69 1.13 2.88c.14.18 1.95 2.98 4.73 4.18.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.11-.26-.18-.55-.32z" fill="#25D366"/>
+          </svg>
+        </div>
+        <div class="hcc-text">
+          <span class="hcc-label">WhatsApp</span>
+          <span class="hcc-value">Chat with us</span>
+        </div>
       </a>
       <div class="hcc-sep"></div>
       <a href="mailto:Issacevents@gmail.com" class="hcc-item">
-        <span class="hcc-icon">📧</span>
-        <span class="hcc-label">Email</span>
-        <span class="hcc-value">Issacevents@gmail.com</span>
+        <div class="hcc-icon-wrap ic-email">📧</div>
+        <div class="hcc-text">
+          <span class="hcc-label">Email</span>
+          <span class="hcc-value">Issacevents@gmail.com</span>
+        </div>
       </a>
       <div class="hcc-sep"></div>
       <div class="hcc-item">
-        <span class="hcc-icon">📍</span>
-        <span class="hcc-label">Location</span>
-        <span class="hcc-value">Morris Plains, NJ</span>
+        <div class="hcc-icon-wrap ic-loc">📍</div>
+        <div class="hcc-text">
+          <span class="hcc-label">Location</span>
+          <span class="hcc-value">Morris Plains, NJ</span>
+        </div>
       </div>
       <div class="hcc-sep"></div>
       <div class="hcc-item">
-        <span class="hcc-icon">🕐</span>
-        <span class="hcc-label">Hours</span>
-        <span class="hcc-value">Mon–Sun, 9AM–9PM</span>
+        <div class="hcc-icon-wrap ic-hours">🕐</div>
+        <div class="hcc-text">
+          <span class="hcc-label">Hours</span>
+          <span class="hcc-value">Mon–Sun, 9AM–9PM</span>
+        </div>
       </div>
     </div>
 
@@ -766,7 +796,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-brand-name">
-        <span class="brand-highlight" style="font-size:1.55rem">Issac</span><span class="brand-events" style="font-size:1.25rem"> events</span>
+        <span class="brand-highlight" style="font-size:1.55rem">Issac</span><span class="brand-events" style="font-size:1.25rem;color:#B8860B;-webkit-text-fill-color:#B8860B;"> events</span>
       </div>
       <div class="footer-tagline">Planned with Purpose, Delivered with Excellence</div>
     </div>
