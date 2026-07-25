@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Issac Events – Planned with Purpose, Delivered with Excellence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold:       #B8860B;
+      --gold-mid:   #D4A017;
+      --gold-light: #F0C84A;
+      --gold-pale:  #FDF6E3;
+      --navy:       #1A1F3A;
+      --navy-mid:   #252B4A;
+      --white:      #FFFFFF;
+      --ink:        #1A1F3A;
+      --body:       #3A3A52;
+      --subtle:     #6A6A84;
+      --shadow-sm:  0 2px 12px rgba(26,31,58,0.08);
+      --shadow-md:  0 8px 32px rgba(26,31,58,0.12);
+      --shadow-lg:  0 16px 48px rgba(26,31,58,0.16);
+      --shadow-gold:0 8px 32px rgba(184,134,11,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--body); overflow-x: hidden; }
+
+    /* ══ CELEBRATION BACKGROUND PATTERN — used on hero ══ */
+    .hero-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cdefs%3E%3Cstyle%3E.g%7Bfill:none;stroke:%23B8860B;stroke-width:.9%7D%3C/style%3E%3C/defs%3E%3Cg opacity='.18'%3E%3C!--TL bloom--%3E%3Cellipse class='g' cx='38' cy='38' rx='9' ry='20' transform='rotate(0 38 38)'/%3E%3Cellipse class='g' cx='38' cy='38' rx='9' ry='20' transform='rotate(60 38 38)'/%3E%3Cellipse class='g' cx='38' cy='38' rx='9' ry='20' transform='rotate(120 38 38)'/%3E%3Ccircle cx='38' cy='38' r='6' fill='%23B8860B' stroke='none'/%3E%3C!--TR bloom--%3E%3Cellipse class='g' cx='262' cy='38' rx='9' ry='20' transform='rotate(0 262 38)'/%3E%3Cellipse class='g' cx='262' cy='38' rx='9' ry='20' transform='rotate(60 262 38)'/%3E%3Cellipse class='g' cx='262' cy='38' rx='9' ry='20' transform='rotate(120 262 38)'/%3E%3Ccircle cx='262' cy='38' r='6' fill='%23B8860B' stroke='none'/%3E%3C!--BL bloom--%3E%3Cellipse class='g' cx='38' cy='262' rx='9' ry='20' transform='rotate(0 38 262)'/%3E%3Cellipse class='g' cx='38' cy='262' rx='9' ry='20' transform='rotate(60 38 262)'/%3E%3Cellipse class='g' cx='38' cy='262' rx='9' ry='20' transform='rotate(120 38 262)'/%3E%3Ccircle cx='38' cy='262' r='6' fill='%23B8860B' stroke='none'/%3E%3C!--BR bloom--%3E%3Cellipse class='g' cx='262' cy='262' rx='9' ry='20' transform='rotate(0 262 262)'/%3E%3Cellipse class='g' cx='262' cy='262' rx='9' ry='20' transform='rotate(60 262 262)'/%3E%3Cellipse class='g' cx='262' cy='262' rx='9' ry='20' transform='rotate(120 262 262)'/%3E%3Ccircle cx='262' cy='262' r='6' fill='%23B8860B' stroke='none'/%3E%3C!--centre--%3E%3Cellipse class='g' cx='150' cy='150' rx='12' ry='26' transform='rotate(0 150 150)'/%3E%3Cellipse class='g' cx='150' cy='150' rx='12' ry='26' transform='rotate(45 150 150)'/%3E%3Cellipse class='g' cx='150' cy='150' rx='12' ry='26' transform='rotate(90 150 150)'/%3E%3Cellipse class='g' cx='150' cy='150' rx='12' ry='26' transform='rotate(135 150 150)'/%3E%3Ccircle cx='150' cy='150' r='8' fill='%23B8860B' stroke='none'/%3E%3C!--corner sprigs--%3E%3Cpath class='g' d='M8 8 Q20 16 14 30 Q10 38 18 43'/%3E%3Ccircle cx='18' cy='43' r='4' fill='%23B8860B' stroke='none'/%3E%3Cpath class='g' d='M292 8 Q280 16 286 30 Q290 38 282 43'/%3E%3Ccircle cx='282' cy='43' r='4' fill='%23B8860B' stroke='none'/%3E%3Cpath class='g' d='M8 292 Q20 284 14 270 Q10 262 18 257'/%3E%3Ccircle cx='18' cy='257' r='4' fill='%23B8860B' stroke='none'/%3E%3Cpath class='g' d='M292 292 Q280 284 286 270 Q290 262 282 257'/%3E%3Ccircle cx='282' cy='257' r='4' fill='%23B8860B' stroke='none'/%3E%3C!--diamonds--%3E%3Cpath class='g' d='M150 4 L154 12 L150 20 L146 12Z'/%3E%3Cpath class='g' d='M150 280 L154 288 L150 296 L146 288Z'/%3E%3Cpath class='g' d='M4 150 L12 146 L20 150 L12 154Z'/%3E%3Cpath class='g' d='M280 150 L288 146 L296 150 L288 154Z'/%3E%3C!--dots--%3E%3Ccircle cx='90' cy='90' r='3' fill='%23D4A017' stroke='none' opacity='.5'/%3E%3Ccircle cx='210' cy='90' r='3' fill='%23D4A017' stroke='none' opacity='.5'/%3E%3Ccircle cx='90' cy='210' r='3' fill='%23D4A017' stroke='none' opacity='.5'/%3E%3Ccircle cx='210' cy='210' r='3' fill='%23D4A017' stroke='none' opacity='.5'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 300px 300px;
+      background-repeat: repeat;
+    }
+
+    /* ══ BRAND ══ */
+    .brand-highlight {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      background: linear-gradient(135deg, #3E1500 0%, #7B2D00 25%, #BF360C 45%, #E64A19 58%, #BF360C 75%, #7B2D00 90%, #3E1500 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: 0.02em; display: inline-block;
+      filter: drop-shadow(0 1px 5px rgba(191,54,12,0.22));
+    }
+    .brand-events {
+      font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic;
+      color: #1A1F3A; -webkit-text-fill-color: #1A1F3A;
+      letter-spacing: 0.06em; margin-left: 0.5rem;
+    }
+
+    /* ══ NAV — crisp white, gold border, elegant ══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.85rem 5%;
+      background: rgba(255,255,255,0.98); backdrop-filter: blur(16px);
+      border-bottom: 2px solid var(--gold-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-logo-text { display: flex; flex-direction: column; }
+    .nav-brand { font-size: 1.55rem; line-height: 1; }
+    .nav-brand .brand-highlight { font-size: 1.55rem; }
+    .nav-brand .brand-events { font-size: 1.25rem; }
+    .nav-sub { font-size: 0.48rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--subtle); margin-top: 0.2rem; white-space: nowrap; }
+    nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    nav ul a { text-decoration: none; color: var(--ink); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; transition: color 0.3s; position: relative; }
+    nav ul a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
+    nav ul a:hover { color: var(--gold); }
+    nav ul a:hover::after { width: 100%; }
+    .nav-cta { padding: 0.5rem 1.4rem; background: var(--gold); color: #fff !important; font-weight: 700 !important; transition: all 0.3s; border-radius: 2px; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--navy) !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(26,31,58,0.22); }
+
+    /* ══ HERO — grand white, layered decoration ══ */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 100px 6% 5rem; overflow: hidden;
+      background: #ffffff;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 75% 60% at 50% 35%, rgba(230,74,25,0.1) 0%, rgba(255,109,58,0.05) 38%, transparent 62%),
+        radial-gradient(ellipse 45% 45% at 0%   100%, rgba(191,54,12,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 45% at 100% 0%,   rgba(191,54,12,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse 30% 30% at 0%   0%,   rgba(212,160,23,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 30% 30% at 100% 100%, rgba(212,160,23,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 35% at 50% 95%,  rgba(26,31,58,0.04) 0%, transparent 55%);
+    }
+    /* Ornate corner frame accents */
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 18px; z-index: 0; pointer-events: none;
+      border: 1px solid rgba(191,54,12,0.12);
+    }
+    .hero-bg::before {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:none;stroke:%23BF360C;stroke-width:1.1%7D.b%7Bfill:none;stroke:%23D4A017;stroke-width:.8%7D.c%7Bfill:none;stroke:%231A1F3A;stroke-width:.6%7D%3C/style%3E%3C/defs%3E%3Cg opacity='.24'%3E%3C!--corner medallions--%3E%3Cellipse class='a' cx='45' cy='45' rx='13' ry='27' transform='rotate(0 45 45)'/%3E%3Cellipse class='a' cx='45' cy='45' rx='13' ry='27' transform='rotate(60 45 45)'/%3E%3Cellipse class='a' cx='45' cy='45' rx='13' ry='27' transform='rotate(120 45 45)'/%3E%3Ccircle cx='45' cy='45' r='8.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='45' cy='45' r='3.5' fill='%23FF6D3A' stroke='none'/%3E%3Ccircle cx='45' cy='45' r='22' fill='none' stroke='%23D4A017' stroke-width='.6' opacity='.5'/%3E%3Cellipse class='a' cx='315' cy='45' rx='13' ry='27' transform='rotate(0 315 45)'/%3E%3Cellipse class='a' cx='315' cy='45' rx='13' ry='27' transform='rotate(60 315 45)'/%3E%3Cellipse class='a' cx='315' cy='45' rx='13' ry='27' transform='rotate(120 315 45)'/%3E%3Ccircle cx='315' cy='45' r='8.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='315' cy='45' r='3.5' fill='%23FF6D3A' stroke='none'/%3E%3Ccircle cx='315' cy='45' r='22' fill='none' stroke='%23D4A017' stroke-width='.6' opacity='.5'/%3E%3Cellipse class='a' cx='45' cy='315' rx='13' ry='27' transform='rotate(0 45 315)'/%3E%3Cellipse class='a' cx='45' cy='315' rx='13' ry='27' transform='rotate(60 45 315)'/%3E%3Cellipse class='a' cx='45' cy='315' rx='13' ry='27' transform='rotate(120 45 315)'/%3E%3Ccircle cx='45' cy='315' r='8.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='45' cy='315' r='3.5' fill='%23FF6D3A' stroke='none'/%3E%3Ccircle cx='45' cy='315' r='22' fill='none' stroke='%23D4A017' stroke-width='.6' opacity='.5'/%3E%3Cellipse class='a' cx='315' cy='315' rx='13' ry='27' transform='rotate(0 315 315)'/%3E%3Cellipse class='a' cx='315' cy='315' rx='13' ry='27' transform='rotate(60 315 315)'/%3E%3Cellipse class='a' cx='315' cy='315' rx='13' ry='27' transform='rotate(120 315 315)'/%3E%3Ccircle cx='315' cy='315' r='8.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='315' cy='315' r='3.5' fill='%23FF6D3A' stroke='none'/%3E%3Ccircle cx='315' cy='315' r='22' fill='none' stroke='%23D4A017' stroke-width='.6' opacity='.5'/%3E%3C!--centre grand mandala 12-petal with ring--%3E%3Ccircle cx='180' cy='180' r='62' fill='none' stroke='%23D4A017' stroke-width='.5' opacity='.4'/%3E%3Ccircle cx='180' cy='180' r='48' fill='none' stroke='%23BF360C' stroke-width='.5' opacity='.35'/%3E%3Cellipse class='a' cx='180' cy='180' rx='16' ry='34' transform='rotate(0 180 180)'/%3E%3Cellipse class='a' cx='180' cy='180' rx='16' ry='34' transform='rotate(45 180 180)'/%3E%3Cellipse class='a' cx='180' cy='180' rx='16' ry='34' transform='rotate(90 180 180)'/%3E%3Cellipse class='a' cx='180' cy='180' rx='16' ry='34' transform='rotate(135 180 180)'/%3E%3Cellipse class='b' cx='180' cy='180' rx='10' ry='23' transform='rotate(22.5 180 180)'/%3E%3Cellipse class='b' cx='180' cy='180' rx='10' ry='23' transform='rotate(67.5 180 180)'/%3E%3Cellipse class='b' cx='180' cy='180' rx='10' ry='23' transform='rotate(112.5 180 180)'/%3E%3Cellipse class='b' cx='180' cy='180' rx='10' ry='23' transform='rotate(157.5 180 180)'/%3E%3Ccircle cx='180' cy='180' r='13' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='180' cy='180' r='6.5' fill='%23D4A017' stroke='none'/%3E%3Ccircle cx='180' cy='180' r='2.5' fill='%23fff' stroke='none'/%3E%3C!--ring of small dots around centre--%3E%3Ccircle cx='180' cy='118' r='2.5' fill='%23BF360C' stroke='none' opacity='.5'/%3E%3Ccircle cx='180' cy='242' r='2.5' fill='%23BF360C' stroke='none' opacity='.5'/%3E%3Ccircle cx='118' cy='180' r='2.5' fill='%23BF360C' stroke='none' opacity='.5'/%3E%3Ccircle cx='242' cy='180' r='2.5' fill='%23BF360C' stroke='none' opacity='.5'/%3E%3C!--mid-edge blooms--%3E%3Cellipse class='b' cx='180' cy='45' rx='8' ry='17' transform='rotate(0 180 45)'/%3E%3Cellipse class='b' cx='180' cy='45' rx='8' ry='17' transform='rotate(60 180 45)'/%3E%3Cellipse class='b' cx='180' cy='45' rx='8' ry='17' transform='rotate(120 180 45)'/%3E%3Ccircle cx='180' cy='45' r='5.5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='b' cx='180' cy='315' rx='8' ry='17' transform='rotate(0 180 315)'/%3E%3Cellipse class='b' cx='180' cy='315' rx='8' ry='17' transform='rotate(60 180 315)'/%3E%3Cellipse class='b' cx='180' cy='315' rx='8' ry='17' transform='rotate(120 180 315)'/%3E%3Ccircle cx='180' cy='315' r='5.5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='b' cx='45' cy='180' rx='8' ry='17' transform='rotate(90 45 180)'/%3E%3Cellipse class='b' cx='45' cy='180' rx='8' ry='17' transform='rotate(30 45 180)'/%3E%3Cellipse class='b' cx='45' cy='180' rx='8' ry='17' transform='rotate(150 45 180)'/%3E%3Ccircle cx='45' cy='180' r='5.5' fill='%23D4A017' stroke='none'/%3E%3Cellipse class='b' cx='315' cy='180' rx='8' ry='17' transform='rotate(90 315 180)'/%3E%3Cellipse class='b' cx='315' cy='180' rx='8' ry='17' transform='rotate(30 315 180)'/%3E%3Cellipse class='b' cx='315' cy='180' rx='8' ry='17' transform='rotate(150 315 180)'/%3E%3Ccircle cx='315' cy='180' r='5.5' fill='%23D4A017' stroke='none'/%3E%3C!--corner ornate sprig pairs--%3E%3Cpath class='a' d='M9 9 Q26 19 17 38 Q11 49 23 56'/%3E%3Ccircle cx='23' cy='56' r='6' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='23' cy='56' r='2.8' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='b' d='M17 38 Q6 45 10 56'/%3E%3Ccircle cx='10' cy='56' r='4' fill='%23D4A017' stroke='none'/%3E%3Cpath class='c' d='M9 9 Q9 26 19 36'/%3E%3Cpath class='a' d='M351 9 Q334 19 343 38 Q349 49 337 56'/%3E%3Ccircle cx='337' cy='56' r='6' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='337' cy='56' r='2.8' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='b' d='M343 38 Q354 45 350 56'/%3E%3Ccircle cx='350' cy='56' r='4' fill='%23D4A017' stroke='none'/%3E%3Cpath class='a' d='M9 351 Q26 341 17 322 Q11 311 23 304'/%3E%3Ccircle cx='23' cy='304' r='6' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='23' cy='304' r='2.8' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='b' d='M17 322 Q6 315 10 304'/%3E%3Ccircle cx='10' cy='304' r='4' fill='%23D4A017' stroke='none'/%3E%3Cpath class='a' d='M351 351 Q334 341 343 322 Q349 311 337 304'/%3E%3Ccircle cx='337' cy='304' r='6' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='337' cy='304' r='2.8' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='b' d='M343 322 Q354 315 350 304'/%3E%3Ccircle cx='350' cy='304' r='4' fill='%23D4A017' stroke='none'/%3E%3C!--ornate diamonds with dots--%3E%3Cpath class='a' d='M180 4 L186 15 L180 26 L174 15Z'/%3E%3Ccircle cx='180' cy='15' r='2' fill='%23D4A017' stroke='none'/%3E%3Cpath class='a' d='M180 334 L186 345 L180 356 L174 345Z'/%3E%3Ccircle cx='180' cy='345' r='2' fill='%23D4A017' stroke='none'/%3E%3Cpath class='a' d='M4 180 L15 174 L26 180 L15 186Z'/%3E%3Ccircle cx='15' cy='180' r='2' fill='%23D4A017' stroke='none'/%3E%3Cpath class='a' d='M334 180 L345 174 L356 180 L345 186Z'/%3E%3Ccircle cx='345' cy='180' r='2' fill='%23D4A017' stroke='none'/%3E%3C!--dot constellation grid--%3E%3Ccircle cx='112' cy='112' r='4.5' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='248' cy='112' r='4.5' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='112' cy='248' r='4.5' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='248' cy='248' r='4.5' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='180' cy='112' r='2.8' fill='%23BF360C' stroke='none' opacity='.4'/%3E%3Ccircle cx='180' cy='248' r='2.8' fill='%23BF360C' stroke='none' opacity='.4'/%3E%3Ccircle cx='112' cy='180' r='2.8' fill='%23BF360C' stroke='none' opacity='.4'/%3E%3Ccircle cx='248' cy='180' r='2.8' fill='%23BF360C' stroke='none' opacity='.4'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 360px 360px; background-repeat: repeat;
+    }
+    .hero-center {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; max-width: 820px; width: 100%;
+    }
+    .hero-name-block {
+      line-height: 1; margin-bottom: 1rem; white-space: nowrap;
+      position: relative; display: inline-flex; flex-direction: column; align-items: center;
+    }
+    .hero-name-row { display: flex; align-items: baseline; gap: 0; }
+    /* Underline — sienna to navy sweep */
+    .hero-name-underline {
+      display: block; width: 88%; height: 4px; margin-top: 0.55rem;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        #BF360C 10%, #E64A19 28%,
+        #FF6D3A 45%, #E64A19 58%,
+        #BF360C 76%, transparent 100%);
+      border-radius: 2px; opacity: 0.8;
+    }
+    /* "Issac" — Burnt Sienna F, rich warm fire */
+    .hero-issac {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(4rem, 10vw, 8rem);
+      background: linear-gradient(160deg,
+        #2A0C00 0%,
+        #7B2D00 14%,
+        #BF360C 28%,
+        #E64A19 42%,
+        #FF6D3A 52%,
+        #E64A19 62%,
+        #BF360C 76%,
+        #7B2D00 90%,
+        #2A0C00 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      letter-spacing: 0.025em;
+      filter: drop-shadow(0 4px 22px rgba(230,74,25,0.42));
+    }
+    /* "events" — deep navy, italic, refined contrast */
+    .hero-eventsword {
+      font-family: 'Playfair Display', serif; font-weight: 600; font-style: italic;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      color: #1A1F3A; -webkit-text-fill-color: #1A1F3A;
+      letter-spacing: 0.08em; margin-left: 0.6rem;
+      opacity: 0.75;
+    }
+    .hero-tagline-text {
+      font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase;
+      color: #BF360C; font-weight: 700; margin: 1rem 0 1.6rem;
+      display: flex; align-items: center; gap: 0.9rem; justify-content: center;
+    }
+    .hero-tagline-text::before,
+    .hero-tagline-text::after { content: ''; display: block; width: 44px; height: 1px; background: linear-gradient(90deg, transparent, #BF360C); }
+    .hero-desc { font-size: 1rem; color: var(--body); line-height: 1.82; margin-bottom: 2.2rem; max-width: 600px; font-weight: 300; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-gold {
+      display: inline-block; padding: 1rem 2.8rem;
+      background: linear-gradient(135deg, #B8860B 0%, #D4A017 40%, #F5C842 60%, #D4A017 80%, #B8860B 100%);
+      background-size: 200% auto;
+      color: #1A1F3A; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.2em;
+      text-transform: uppercase; font-weight: 800;
+      transition: all 0.4s ease; border-radius: 2px;
+      box-shadow: 0 4px 20px rgba(184,134,11,0.35), inset 0 1px 0 rgba(255,255,255,0.3);
+      border: 1px solid rgba(184,134,11,0.4);
+      position: relative; overflow: hidden;
+    }
+    .btn-gold:hover {
+      background-position: right center;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(184,134,11,0.45), inset 0 1px 0 rgba(255,255,255,0.3);
+    }
+    .btn-outline {
+      display: inline-block; padding: 1rem 2.8rem;
+      border: 2px solid var(--navy); color: var(--navy);
+      text-decoration: none; font-size: 0.78rem; letter-spacing: 0.2em;
+      text-transform: uppercase; font-weight: 700;
+      position: relative; overflow: hidden; transition: color 0.35s; border-radius: 2px;
+      box-shadow: 0 4px 16px rgba(26,31,58,0.1);
+    }
+    .btn-outline::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    .btn-outline:hover { color: #fff; transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,31,58,0.2); }
+    .btn-outline:hover::before { transform: translateX(0); }
+    .btn-outline span { position: relative; z-index: 1; }
+    .hero-connect {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1.5px solid rgba(191,54,12,0.18); width: 100%;
+      background: #fff;
+      box-shadow: 0 6px 28px rgba(26,31,58,0.09);
+      border-radius: 8px; overflow: hidden; margin-top: 0.5rem;
+    }
+    .hcc-item {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 1.4rem 1rem; text-decoration: none; color: inherit;
+      gap: 0.55rem; text-align: center;
+      transition: all 0.3s ease;
+      border-right: 1px solid rgba(191,54,12,0.1);
+      position: relative;
+    }
+    .hcc-item:last-child { border-right: none; }
+    .hcc-item::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      transform: scaleX(0); transition: transform 0.3s ease; transform-origin: center;
+    }
+    .hcc-item:nth-child(1)::after { background: #BF360C; }
+    .hcc-item:nth-child(2)::after { background: #25D366; }
+    .hcc-item:nth-child(3)::after { background: #D4A017; }
+    .hcc-item:nth-child(4)::after { background: #1565C0; }
+    .hcc-item:hover { background: #FFF8F5; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(26,31,58,0.08); }
+    .hcc-item:hover::after { transform: scaleX(1); }
+    .hcc-sep { display: none; }
+    .hcc-icon-wrap {
+      width: 46px; height: 46px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .hcc-item:hover .hcc-icon-wrap { transform: scale(1.15); }
+    .hcc-icon-wrap.ic-call  { background: rgba(191,54,12,0.1); }
+    .hcc-icon-wrap.ic-wa    { background: #25D366; }
+    .hcc-icon-wrap.ic-email { background: rgba(212,160,23,0.12); }
+    .hcc-icon-wrap.ic-loc   { background: rgba(21,101,192,0.1); }
+    .hcc-icon-wrap.ic-wa svg { width: 22px; height: 22px; }
+    .hcc-text { display: flex; flex-direction: column; gap: 0.15rem; }
+    .hcc-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--subtle); font-weight: 700; }
+    .hcc-value { font-size: 0.78rem; font-weight: 700; color: var(--ink); }
+
+    /* ══ SECTION COMMONS ══ */
+    .section-label { font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.2; margin-bottom: 0.8rem; color: var(--ink); }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-desc { font-size: 0.9rem; max-width: 520px; line-height: 1.85; color: var(--subtle); }
+
+    /* ══ SERVICES — warm champagne gold background ══ */
+    .services {
+      padding: 7rem 5%; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #FDF8F0 0%, #FBF3E2 50%, #FDF8F0 100%);
+    }
+    .services::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke='%23B8860B' stroke-width='0.75' opacity='.06'%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(0 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(45 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(90 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(135 110 110)'/%3E%3Ccircle cx='110' cy='110' r='9'/%3E%3Ccircle cx='110' cy='110' r='4' fill='%23B8860B' stroke='none'/%3E%3Cpath d='M14 14 Q30 22 24 38 Q20 47 29 52'/%3E%3Ccircle cx='29' cy='52' r='4'/%3E%3Cpath d='M206 14 Q190 22 196 38 Q200 47 191 52'/%3E%3Ccircle cx='191' cy='52' r='4'/%3E%3Cpath d='M14 206 Q30 198 24 182 Q20 173 29 168'/%3E%3Ccircle cx='29' cy='168' r='4'/%3E%3Cpath d='M206 206 Q190 198 196 182 Q200 173 191 168'/%3E%3Ccircle cx='191' cy='168' r='4'/%3E%3Cpath d='M110 6 L114 13 L110 20 L106 13Z'/%3E%3Cpath d='M110 200 L114 207 L110 214 L106 207Z'/%3E%3Cpath d='M6 110 L13 106 L20 110 L13 114Z'/%3E%3Cpath d='M200 110 L207 106 L214 110 L207 114Z'/%3E%3Ccircle cx='55' cy='55' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='165' cy='55' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='55' cy='165' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='165' cy='165' r='2.5' fill='%23B8860B' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 220px 220px;
+    }
+    .services-header { margin-bottom: 4rem; padding-left: 1.5rem; border-left: 4px solid var(--gold); position: relative; z-index: 1; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; position: relative; z-index: 1; }
+    .card {
+      background: #fff; padding: 2.4rem 2rem;
+      border: 1px solid rgba(184,134,11,0.12);
+      border-top: 4px solid var(--gold);
+      transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+      box-shadow: var(--shadow-sm);
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(212,160,23,0.04) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.4s;
+    }
+    .card:nth-child(even) { border-top-color: var(--navy); }
+    .card:hover { transform: translateY(-8px) scale(1.01); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+    .card:hover::before { opacity: 1; }
+    .card-icon {
+      font-size: 2.2rem; margin-bottom: 1.2rem; display: inline-block;
+      width: 58px; height: 58px; background: var(--gold-pale);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: all 0.4s; box-shadow: 0 4px 12px rgba(184,134,11,0.15);
+    }
+    .card:hover .card-icon { background: var(--gold); transform: rotate(8deg) scale(1.1); box-shadow: var(--shadow-gold); }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.7rem; color: var(--ink); margin-top: 0.8rem; }
+    .card-text { color: var(--subtle); font-size: 0.86rem; line-height: 1.82; }
+    .card-tag { display: inline-block; margin-top: 1.2rem; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,134,11,0.25); padding: 0.28rem 0.8rem; background: var(--gold-pale); border-radius: 20px; transition: all 0.3s; }
+    .card:hover .card-tag { background: var(--gold); color: #fff; }
+
+    /* ══ WHY US — deep navy, gold pattern, photo left ══ */
+    .why {
+      padding: 7rem 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+      position: relative; overflow: hidden;
+      background: linear-gradient(150deg, #FFFFFF 0%, #FDF8EF 45%, #FBF3E2 100%);
+    }
+    .why::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:none;stroke:%23BF360C;stroke-width:1%7D.b%7Bfill:none;stroke:%23D4A017;stroke-width:.75%7D%3C/style%3E%3C/defs%3E%3Cg opacity='.16'%3E%3Cellipse class='a' cx='130' cy='130' rx='14' ry='30' transform='rotate(0 130 130)'/%3E%3Cellipse class='a' cx='130' cy='130' rx='14' ry='30' transform='rotate(45 130 130)'/%3E%3Cellipse class='a' cx='130' cy='130' rx='14' ry='30' transform='rotate(90 130 130)'/%3E%3Cellipse class='a' cx='130' cy='130' rx='14' ry='30' transform='rotate(135 130 130)'/%3E%3Cellipse class='b' cx='130' cy='130' rx='9' ry='20' transform='rotate(22.5 130 130)'/%3E%3Cellipse class='b' cx='130' cy='130' rx='9' ry='20' transform='rotate(67.5 130 130)'/%3E%3Cellipse class='b' cx='130' cy='130' rx='9' ry='20' transform='rotate(112.5 130 130)'/%3E%3Cellipse class='b' cx='130' cy='130' rx='9' ry='20' transform='rotate(157.5 130 130)'/%3E%3Ccircle cx='130' cy='130' r='11' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='130' cy='130' r='5' fill='%23D4A017' stroke='none'/%3E%3Ccircle cx='130' cy='130' r='2' fill='%23fff' stroke='none'/%3E%3Cpath class='a' d='M14 14 Q30 22 24 38 Q20 47 29 52'/%3E%3Ccircle cx='29' cy='52' r='5.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='29' cy='52' r='2.5' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='a' d='M246 14 Q230 22 236 38 Q240 47 231 52'/%3E%3Ccircle cx='231' cy='52' r='5.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='231' cy='52' r='2.5' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='a' d='M14 246 Q30 238 24 222 Q20 213 29 208'/%3E%3Ccircle cx='29' cy='208' r='5.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='29' cy='208' r='2.5' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='a' d='M246 246 Q230 238 236 222 Q240 213 231 208'/%3E%3Ccircle cx='231' cy='208' r='5.5' fill='%23BF360C' stroke='none'/%3E%3Ccircle cx='231' cy='208' r='2.5' fill='%23FF6D3A' stroke='none'/%3E%3Cpath class='a' d='M130 4 L136 14 L130 24 L124 14Z'/%3E%3Cpath class='a' d='M130 236 L136 246 L130 256 L124 246Z'/%3E%3Cpath class='a' d='M4 130 L14 124 L24 130 L14 136Z'/%3E%3Cpath class='a' d='M236 130 L246 124 L256 130 L246 136Z'/%3E%3Ccircle cx='65' cy='65' r='3' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='195' cy='65' r='3' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='65' cy='195' r='3' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3Ccircle cx='195' cy='195' r='3' fill='%23D4A017' stroke='none' opacity='.55'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 260px 260px;
+    }
+    .why .section-label { color: var(--gold); }
+    .why .section-title { color: var(--ink); }
+    .why .section-title em { color: var(--gold); }
+    .why .section-desc { color: var(--subtle); }
+    .why-visual { position: relative; z-index: 1; }
+    .why-photo-wrap {
+      position: relative; border-radius: 4px; overflow: hidden;
+      box-shadow: 0 24px 64px rgba(191,54,12,0.18), 0 4px 16px rgba(26,31,58,0.1);
+    }
+    .why-photo-wrap::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(135deg, rgba(184,134,11,0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .why-photo-wrap img {
+      width: 100%; display: block; aspect-ratio: 4/5; object-fit: cover;
+      filter: saturate(1.05) contrast(1.02);
+      transition: transform 0.6s ease;
+    }
+    .why-photo-wrap:hover img { transform: scale(1.04); }
+    /* Gold border accent */
+    .why-photo-wrap::after {
+      content: ''; position: absolute; inset: -8px; z-index: -1;
+      border: 2px solid rgba(212,160,23,0.45); border-radius: 6px;
+    }
+    /* Stats badge */
+    .why-badge {
+      position: absolute; bottom: -20px; right: -20px; z-index: 2;
+      width: 148px; height: 148px; border-radius: 50%;
+      background: linear-gradient(135deg, #7B2D00 0%, #BF360C 35%, #E64A19 55%, #BF360C 75%, #7B2D00 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: 0 8px 28px rgba(191,54,12,0.45); border: 4px solid #fff;
+      text-align: center; padding: 0.75rem; gap: 0.1rem;
+    }
+    .why-badge-issac {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900;
+      color: #fff; line-height: 1; letter-spacing: 0.04em;
+    }
+    .why-badge-events {
+      font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600;
+      font-style: italic; color: #FFD0A0; line-height: 1; letter-spacing: 0.05em;
+    }
+    .why-badge-divider {
+      width: 60%; height: 1px;
+      background: rgba(255,255,255,0.4);
+      margin: 0.25rem 0;
+    }
+    .why-badge-tagline {
+      font-size: 0.42rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85); line-height: 1.5; text-align: center;
+    }
+    .why-points { display: flex; flex-direction: column; margin-top: 3rem; position: relative; z-index: 1; }
+    .why-point { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid rgba(191,54,12,0.13); transition: all 0.3s; cursor: default; }
+    .why-point:first-child { padding-top: 0; }
+    .why-point:last-child { border-bottom: none; }
+    .why-point:hover { padding-left: 0.5rem; }
+    .why-point-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: rgba(191,54,12,0.25); line-height: 1; min-width: 2rem; font-weight: 700; }
+    .why-point:hover .why-point-num { color: rgba(191,54,12,0.6); }
+    .why-point-body h4 { font-size: 0.93rem; font-weight: 700; color: var(--ink); margin-bottom: 0.38rem; }
+    .why-point-body p { font-size: 0.84rem; color: var(--subtle); line-height: 1.75; }
+    .why-content { position: relative; z-index: 1; }
+
+    /* ══ GALLERY — soft white, gold accents ══ */
+    .gallery {
+      padding: 7rem 5%; position: relative; overflow: hidden;
+      background: #ffffff;
+    }
+    .gallery::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke='%23B8860B' stroke-width='0.75' opacity='.05'%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(0 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(45 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(90 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(135 110 110)'/%3E%3Ccircle cx='110' cy='110' r='9'/%3E%3Ccircle cx='110' cy='110' r='4' fill='%23B8860B' stroke='none'/%3E%3Cpath d='M14 14 Q30 22 24 38 Q20 47 29 52'/%3E%3Ccircle cx='29' cy='52' r='4'/%3E%3Cpath d='M206 14 Q190 22 196 38 Q200 47 191 52'/%3E%3Ccircle cx='191' cy='52' r='4'/%3E%3Cpath d='M14 206 Q30 198 24 182 Q20 173 29 168'/%3E%3Ccircle cx='29' cy='168' r='4'/%3E%3Cpath d='M206 206 Q190 198 196 182 Q200 173 191 168'/%3E%3Ccircle cx='191' cy='168' r='4'/%3E%3Cpath d='M110 6 L114 13 L110 20 L106 13Z'/%3E%3Cpath d='M110 200 L114 207 L110 214 L106 207Z'/%3E%3Cpath d='M6 110 L13 106 L20 110 L13 114Z'/%3E%3Cpath d='M200 110 L207 106 L214 110 L207 114Z'/%3E%3Ccircle cx='55' cy='55' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='165' cy='55' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='55' cy='165' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='165' cy='165' r='2.5' fill='%23B8860B' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 220px 220px;
+    }
+    .gallery-header { text-align: center; margin-bottom: 3rem; position: relative; z-index: 1; }
+    .gallery-tabs { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; position: relative; z-index: 1; }
+    .tab-btn { padding: 0.5rem 1.4rem; border: 1.5px solid rgba(184,134,11,0.25); background: #fff; color: var(--subtle); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; font-family: 'DM Sans', sans-serif; font-weight: 600; border-radius: 2px; }
+    .tab-btn.active, .tab-btn:hover { border-color: var(--gold); color: #fff; background: var(--gold); box-shadow: var(--shadow-gold); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; position: relative; z-index: 1; }
+    .gallery-item { position: relative; overflow: hidden; aspect-ratio: 4/3; background: #f0ede8; cursor: pointer; border-radius: 3px; }
+    .gallery-item.featured { grid-column: span 2; aspect-ratio: 16/9; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,31,58,0.88) 0%, rgba(26,31,58,0.1) 55%, transparent 100%); opacity: 0; transition: opacity 0.4s; display: flex; align-items: flex-end; padding: 1.3rem; }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-caption { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--gold-light); }
+    .gallery-item::after { content: '🔍'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(0); font-size: 1.5rem; transition: transform 0.3s; z-index: 2; }
+    .gallery-item:hover::after { transform: translate(-50%,-50%) scale(1); }
+
+    /* ══ LIGHTBOX ══ */
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(26,31,58,0.97); z-index: 999; align-items: center; justify-content: center; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border: 1px solid rgba(212,160,23,0.3); border-radius: 3px; }
+    .lightbox-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 1.8rem; color: var(--gold-light); cursor: pointer; background: none; border: none; }
+
+    /* ══ TESTIMONIALS — warm champagne, rich cards ══ */
+    .testimonials {
+      padding: 7rem 5%; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, #FDF8F0 0%, #FBF3E2 50%, #FDF8F0 100%);
+    }
+    .testimonials::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke='%23B8860B' stroke-width='0.75' opacity='.06'%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(0 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(45 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(90 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(135 110 110)'/%3E%3Ccircle cx='110' cy='110' r='9'/%3E%3Ccircle cx='110' cy='110' r='4' fill='%23B8860B' stroke='none'/%3E%3Cpath d='M14 14 Q30 22 24 38 Q20 47 29 52'/%3E%3Ccircle cx='29' cy='52' r='4'/%3E%3Cpath d='M206 14 Q190 22 196 38 Q200 47 191 52'/%3E%3Ccircle cx='191' cy='52' r='4'/%3E%3Cpath d='M14 206 Q30 198 24 182 Q20 173 29 168'/%3E%3Ccircle cx='29' cy='168' r='4'/%3E%3Cpath d='M206 206 Q190 198 196 182 Q200 173 191 168'/%3E%3Ccircle cx='191' cy='168' r='4'/%3E%3Cpath d='M110 6 L114 13 L110 20 L106 13Z'/%3E%3Cpath d='M110 200 L114 207 L110 214 L106 207Z'/%3E%3Cpath d='M6 110 L13 106 L20 110 L13 114Z'/%3E%3Cpath d='M200 110 L207 106 L214 110 L207 114Z'/%3E%3Ccircle cx='55' cy='55' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='165' cy='55' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='55' cy='165' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='165' cy='165' r='2.5' fill='%23B8860B' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 220px 220px;
+    }
+    .testimonials-header { text-align: center; margin-bottom: 4rem; position: relative; z-index: 1; }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; position: relative; z-index: 1; }
+    .testi-card { padding: 2.5rem; border: 1px solid rgba(184,134,11,0.14); position: relative; background: #fff; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); box-shadow: var(--shadow-sm); border-radius: 3px; overflow: hidden; }
+    .testi-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-mid)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+    .testi-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: rgba(184,134,11,0.3); }
+    .testi-card:hover::after { transform: scaleX(1); }
+    .testi-card::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold-light); opacity: 0.55; position: absolute; top: -0.5rem; left: 1.5rem; line-height: 1; }
+    .testi-text { font-size: 0.9rem; line-height: 1.9; color: var(--body); margin-bottom: 1.6rem; padding-top: 1rem; }
+    .testi-author { display: flex; align-items: center; gap: 1rem; border-top: 1px solid rgba(184,134,11,0.12); padding-top: 1.2rem; }
+    .testi-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--navy)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1rem; color: #fff; flex-shrink: 0; font-weight: 700; box-shadow: 0 4px 12px rgba(184,134,11,0.25); }
+    .testi-name { font-size: 0.86rem; font-weight: 700; color: var(--ink); }
+    .testi-event { font-size: 0.7rem; color: var(--gold); letter-spacing: 0.08em; margin-top: 0.12rem; }
+    .stars { color: var(--gold); font-size: 0.82rem; margin-bottom: 0.7rem; letter-spacing: 0.1em; }
+
+    /* ══ CONTACT — white with gold pale, rich form ══ */
+    .contact {
+      padding: 7rem 5%; position: relative; overflow: hidden;
+      background: var(--gold-pale);
+    }
+    .contact::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke='%23B8860B' stroke-width='0.75' opacity='.1'%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(0 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(45 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(90 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(135 110 110)'/%3E%3Ccircle cx='110' cy='110' r='9'/%3E%3Ccircle cx='110' cy='110' r='4' fill='%23B8860B' stroke='none'/%3E%3Cpath d='M14 14 Q30 22 24 38 Q20 47 29 52'/%3E%3Ccircle cx='29' cy='52' r='4'/%3E%3Cpath d='M206 14 Q190 22 196 38 Q200 47 191 52'/%3E%3Ccircle cx='191' cy='52' r='4'/%3E%3Cpath d='M14 206 Q30 198 24 182 Q20 173 29 168'/%3E%3Ccircle cx='29' cy='168' r='4'/%3E%3Cpath d='M206 206 Q190 198 196 182 Q200 173 191 168'/%3E%3Ccircle cx='191' cy='168' r='4'/%3E%3Cpath d='M110 6 L114 13 L110 20 L106 13Z'/%3E%3Cpath d='M110 200 L114 207 L110 214 L106 207Z'/%3E%3Cpath d='M6 110 L13 106 L20 110 L13 114Z'/%3E%3Cpath d='M200 110 L207 106 L214 110 L207 114Z'/%3E%3Ccircle cx='55' cy='55' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='165' cy='55' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='55' cy='165' r='2.5' fill='%23B8860B' stroke='none'/%3E%3Ccircle cx='165' cy='165' r='2.5' fill='%23B8860B' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 220px 220px;
+    }
+    .contact-header { text-align: center; margin-bottom: 5rem; position: relative; z-index: 1; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: start; position: relative; z-index: 1; }
+    .contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 400; margin-bottom: 0.7rem; line-height: 1.25; color: var(--ink); }
+    .contact-info > p { color: var(--subtle); font-size: 0.87rem; line-height: 1.85; margin-bottom: 2rem; }
+    .contact-methods { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 2rem; }
+    .contact-method { display: flex; align-items: center; gap: 1.1rem; padding: 0.9rem 1.2rem; border: 1px solid rgba(184,134,11,0.2); transition: all 0.3s; text-decoration: none; color: inherit; background: #fff; border-radius: 3px; box-shadow: var(--shadow-sm); }
+    .contact-method:hover { border-color: var(--gold); transform: translateX(6px); box-shadow: var(--shadow-gold); }
+    .cm-icon { font-size: 1.2rem; width: 2rem; text-align: center; flex-shrink: 0; }
+    .cm-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.1rem; }
+    .cm-value { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+    .quick-label { font-size: 0.68rem; color: var(--subtle); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.7rem; font-weight: 600; }
+    .direct-actions { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+    .action-btn { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.7rem 1.2rem; text-decoration: none; font-size: 0.73rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s; border-radius: 2px; }
+    .action-whatsapp { background: #25D366; color: #fff; box-shadow: 0 4px 14px rgba(37,211,102,0.3); }
+    .action-whatsapp:hover { background: #1ebc5a; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,211,102,0.4); }
+    .action-call { background: var(--navy); color: #fff; box-shadow: 0 4px 14px rgba(26,31,58,0.2); }
+    .action-call:hover { background: var(--navy-mid); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .action-email { background: var(--gold); color: #fff; box-shadow: var(--shadow-gold); }
+    .action-email:hover { background: var(--gold-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,134,11,0.35); }
+
+    /* FORM */
+    .contact-form { background: #fff; padding: 2.8rem; border: 1px solid rgba(184,134,11,0.18); box-shadow: var(--shadow-md); border-radius: 4px; }
+    .form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--ink); }
+    .form-sub { color: var(--subtle); font-size: 0.8rem; margin-bottom: 1.6rem; line-height: 1.65; border-bottom: 1px solid rgba(184,134,11,0.12); padding-bottom: 1.3rem; }
+    .form-sub strong { color: var(--gold); }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group label { display: block; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--subtle); margin-bottom: 0.4rem; font-weight: 600; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: #FAFAF8; border: 1.5px solid rgba(184,134,11,0.18); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 0.87rem; padding: 0.8rem 0.95rem; outline: none; transition: all 0.3s; -webkit-appearance: none; appearance: none; border-radius: 2px; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184,134,11,0.1); background: #fff; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(110,110,136,0.45); }
+    .form-group textarea { resize: vertical; min-height: 95px; }
+    .form-group select option { background: #fff; color: var(--ink); }
+    .form-status { display: none; font-size: 0.78rem; padding: 0.7rem 1rem; margin-top: 0.6rem; border-radius: 2px; }
+    .form-status.error { color: #c0392b; border: 1px solid rgba(192,57,43,0.2); background: rgba(192,57,43,0.04); }
+    .form-submit-row { display: flex; gap: 1rem; align-items: center; margin-top: 1.5rem; padding-top: 1.3rem; border-top: 1px solid rgba(184,134,11,0.12); flex-wrap: wrap; }
+    .form-submit { padding: 1rem 2.5rem; background: var(--navy); color: #fff; border: none; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 16px rgba(26,31,58,0.18); border-radius: 2px; }
+    .form-submit:hover { background: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .form-note { font-size: 0.7rem; color: var(--subtle); line-height: 1.55; }
+    #formSuccess { display:none; padding:2rem; text-align:center; border:1px solid var(--gold); margin-top:1rem; background: var(--gold-pale); border-radius: 3px; }
+
+    /* ══ FOOTER — navy, rich gold pattern ══ */
+    footer { background: var(--navy); padding: 3.5rem 5% 2rem; border-top: 4px solid var(--gold); position: relative; overflow: hidden; }
+    footer::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='none' stroke='%23D4A017' stroke-width='0.75' opacity='.07'%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(0 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(45 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(90 110 110)'/%3E%3Cellipse cx='110' cy='110' rx='11' ry='24' transform='rotate(135 110 110)'/%3E%3Ccircle cx='110' cy='110' r='9'/%3E%3Ccircle cx='110' cy='110' r='4' fill='%23D4A017' stroke='none'/%3E%3Cpath d='M14 14 Q30 22 24 38 Q20 47 29 52'/%3E%3Ccircle cx='29' cy='52' r='4'/%3E%3Cpath d='M206 14 Q190 22 196 38 Q200 47 191 52'/%3E%3Ccircle cx='191' cy='52' r='4'/%3E%3Cpath d='M14 206 Q30 198 24 182 Q20 173 29 168'/%3E%3Ccircle cx='29' cy='168' r='4'/%3E%3Cpath d='M206 206 Q190 198 196 182 Q200 173 191 168'/%3E%3Ccircle cx='191' cy='168' r='4'/%3E%3Cpath d='M110 6 L114 13 L110 20 L106 13Z'/%3E%3Cpath d='M110 200 L114 207 L110 214 L106 207Z'/%3E%3Cpath d='M6 110 L13 106 L20 110 L13 114Z'/%3E%3Cpath d='M200 110 L207 106 L214 110 L207 114Z'/%3E%3Ccircle cx='55' cy='55' r='2.5' fill='%23D4A017' stroke='none'/%3E%3Ccircle cx='165' cy='55' r='2.5' fill='%23D4A017' stroke='none'/%3E%3Ccircle cx='55' cy='165' r='2.5' fill='%23D4A017' stroke='none'/%3E%3Ccircle cx='165' cy='165' r='2.5' fill='%23D4A017' stroke='none'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 220px 220px;
+    }
+    .footer-inner { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr 0.7fr; gap: 2.5rem; align-items: start; margin-bottom: 2.5rem; position: relative; z-index: 1; }
+    .footer-brand-name { font-size: 1.55rem; line-height: 1; }
+    .footer-tagline { font-size: 0.56rem; color: rgba(255,255,255,0.35); margin-top: 0.4rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .footer-contact { display: flex; flex-direction: column; gap: 0.55rem; }
+    .footer-contact a, .footer-contact span { font-size: 0.78rem; text-decoration: none; color: rgba(255,255,255,0.5); transition: color 0.3s; display: flex; align-items: center; gap: 0.45rem; }
+    .footer-contact a:hover { color: var(--gold-light); }
+    .footer-col-label { font-size: 0.63rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(212,160,23,0.22); }
+    .footer-services { display: flex; flex-direction: column; gap: 0.45rem; }
+    .footer-services a { font-size: 0.76rem; text-decoration: none; color: rgba(255,255,255,0.5); transition: color 0.3s; }
+    .footer-services a:hover { color: var(--gold-light); }
+    .footer-nav { display: flex; flex-direction: column; gap: 0.45rem; }
+    .footer-nav a { font-size: 0.76rem; text-decoration: none; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+    .footer-nav a:hover { color: var(--gold-light); }
+    .footer-copy { font-size: 0.68rem; color: rgba(255,255,255,0.22); text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.07); position: relative; z-index: 1; }
+
+    /* Sparkle */
+    .sparkle { position: absolute; border-radius: 50%; background: var(--gold-mid); opacity: 0; animation: float-up 6s infinite ease-in-out; z-index: 0; }
+    @keyframes float-up { 0%{transform:translateY(0) scale(1);opacity:0} 20%{opacity:0.22} 80%{opacity:0.05} 100%{transform:translateY(-120px) scale(0.2);opacity:0} }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 960px) {
+      nav ul { display: none; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .why { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item.featured { grid-column: span 2; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .hero-connect { grid-template-columns: repeat(2, 1fr); }
+      .hcc-item:nth-child(2) { border-right: none; }
+      .hcc-item:nth-child(1),
+      .hcc-item:nth-child(2) { border-bottom: 1px solid rgba(191,54,12,0.1); }
+    }
+    @media (max-width: 600px) {
+      .cards { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item.featured { grid-column: span 1; aspect-ratio: 4/3; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .hero-connect { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <svg width="26" height="32" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="3" r="2.2" fill="#F0D080"/>
+      <circle cx="4" cy="9" r="1.6" fill="#C8992A"/>
+      <circle cx="28" cy="9" r="1.6" fill="#C8992A"/>
+      <path d="M4 10 L8 22 L16 16 L24 22 L28 10 L16 14 Z" fill="#C8992A" fill-opacity="0.18" stroke="#C8992A" stroke-width="1.2" stroke-linejoin="round"/>
+      <line x1="16" y1="5.2" x2="16" y2="16" stroke="#F0D080" stroke-width="1.4"/>
+      <line x1="16" y1="16" x2="16" y2="34" stroke="#C8992A" stroke-width="2" stroke-linecap="round"/>
+      <path d="M16 22 Q8 20 9 26 Q10 30 16 28" stroke="#C8992A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+      <path d="M10 34 Q16 36.5 22 34" stroke="#C8992A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="nav-brand">
+        <span class="brand-highlight">Issac</span><span class="brand-events"> events</span>
+      </span>
+      <span class="nav-sub">Planned with Purpose, Delivered with Excellence</span>
+    </div>
+  </a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="sparkle" style="width:3px;height:3px;left:10%;top:65%;animation-delay:0s;animation-duration:5s;"></div>
+  <div class="sparkle" style="width:4px;height:4px;left:88%;top:55%;animation-delay:1.8s;animation-duration:6.5s;"></div>
+  <div class="sparkle" style="width:3px;height:3px;left:55%;top:80%;animation-delay:0.9s;animation-duration:7s;"></div>
+
+  <div class="hero-center">
+
+    <!-- Brand name — Issac bold, events lighter, on one line, big -->
+    <div class="hero-name-block">
+      <div class="hero-name-row">
+        <span class="hero-issac">Issac</span><span class="hero-eventsword"> events</span>
+      </div>
+      <span class="hero-name-underline"></span>
+    </div>
+
+    <!-- Tagline -->
+    <div class="hero-tagline-text">Planned with Purpose, Delivered with Excellence</div>
+
+    <!-- Description -->
+    <p class="hero-desc">
+      Your premier event management partner in New Jersey — specialising in bespoke stage décor for weddings, birthdays,
+      baby showers, receptions, and every celebration in between.
+      Crafted with elegance, delivered on time, every time.
+    </p>
+
+    <!-- Buttons -->
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold">Plan Your Event</a>
+      <a href="#gallery" class="btn-outline"><span>View Our Work</span></a>
+    </div>
+
+    <!-- Quick Connect strip -->
+    <div class="hero-connect">
+      <a href="tel:+19734622380" class="hcc-item">
+        <div class="hcc-icon-wrap ic-call">📞</div>
+        <div class="hcc-text">
+          <span class="hcc-label">Call Us</span>
+          <span class="hcc-value">+1 (973) 462-2380</span>
+        </div>
+      </a>
+      <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!" target="_blank" rel="noopener" class="hcc-item">
+        <div class="hcc-icon-wrap ic-wa">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 3C8.82 3 3 8.82 3 16c0 2.34.64 4.54 1.76 6.44L3 29l6.72-1.74A13.04 13.04 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="#fff"/>
+            <path d="M21.9 18.72c-.32-.16-1.88-.92-2.17-1.03-.29-.1-.5-.16-.71.16-.21.32-.82 1.03-.99 1.24-.18.21-.36.23-.68.08a8.54 8.54 0 01-2.52-1.56 9.4 9.4 0 01-1.74-2.17c-.18-.32-.02-.49.14-.65.14-.14.32-.36.48-.54.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.72-.97-2.35-.26-.62-.52-.53-.71-.54H12.1c-.18 0-.48.07-.73.35-.25.28-.97.95-.97 2.32s.99 2.69 1.13 2.88c.14.18 1.95 2.98 4.73 4.18.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.11-.26-.18-.55-.32z" fill="#25D366"/>
+          </svg>
+        </div>
+        <div class="hcc-text">
+          <span class="hcc-label">WhatsApp</span>
+          <span class="hcc-value">Chat with us</span>
+        </div>
+      </a>
+      <a href="mailto:Issacevents@gmail.com" class="hcc-item">
+        <div class="hcc-icon-wrap ic-email">📧</div>
+        <div class="hcc-text">
+          <span class="hcc-label">Email</span>
+          <span class="hcc-value">Issacevents@gmail.com</span>
+        </div>
+      </a>
+      <div class="hcc-item">
+        <div class="hcc-icon-wrap ic-loc">📍</div>
+        <div class="hcc-text">
+          <span class="hcc-label">Location</span>
+          <span class="hcc-value">Morris Plains, NJ</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="services" id="services">
+  <div class="services-header">
+    <p class="section-label">What We Do</p>
+    <h2 class="section-title">Crafted for <em>Every Occasion</em></h2>
+    <p class="section-desc">From an intimate birthday to a grand wedding, we design and execute every detail with elegance and precision.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><span class="card-icon">💍</span><h3 class="card-title">Wedding Stage Decoration</h3><p class="card-text">Floral arches, mandap setups, lighting canopies, and custom backdrops. Your vows deserve the most beautiful stage possible.</p><span class="card-tag">Weddings</span></div>
+    <div class="card"><span class="card-icon">🎂</span><h3 class="card-title">Birthday Party Stages</h3><p class="card-text">Themed setups for kids and adults alike. Balloon walls, neon signs, photo backdrops, and colour-coordinated designs.</p><span class="card-tag">Birthdays</span></div>
+    <div class="card"><span class="card-icon">🎊</span><h3 class="card-title">Event Decoration</h3><p class="card-text">Anniversaries, engagements, receptions and more. Full venue décor including entrance, tables, and centrepieces.</p><span class="card-tag">All Events</span></div>
+    <div class="card"><span class="card-icon">🌸</span><h3 class="card-title">Floral & Lighting Design</h3><p class="card-text">Fresh floral installations, fairy lights, LED setups, and custom chandeliers that transform any space into something extraordinary.</p><span class="card-tag">Décor</span></div>
+    <div class="card"><span class="card-icon">📸</span><h3 class="card-title">Photo Backdrop Setups</h3><p class="card-text">Perfectly styled backdrops for portraits, booths, and candid shots. Every angle becomes a memory worth framing.</p><span class="card-tag">Photography</span></div>
+    <div class="card"><span class="card-icon">🎯</span><h3 class="card-title">Full Event Management</h3><p class="card-text">End-to-end coordination — from concept to execution. We handle vendors, timelines, and logistics so you enjoy the moment.</p><span class="card-tag">Management</span></div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section class="why" id="why">
+  <div class="why-visual">
+    <div class="why-photo-wrap">
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=700&q=90&fit=crop&crop=center" alt="Beautiful wedding stage decoration with flowers and lights" loading="lazy"/>
+      <div class="why-badge">
+        <div class="why-badge-issac">Issac</div>
+        <div class="why-badge-events">events</div>
+        <div class="why-badge-divider"></div>
+        <div class="why-badge-tagline">Planned with Purpose<br/>Delivered with Excellence</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-content">
+    <p class="section-label">Why Issac Events</p>
+    <h2 class="section-title">We Don't Just Decorate.<br/><em>We Create Experiences.</em></h2>
+    <p class="section-desc" style="margin-top:0.6rem">Built on a passion for beauty and a commitment to detail, Issac Events is the trusted name for families and couples seeking truly memorable celebrations in New Jersey.</p>
+    <div class="why-points">
+      <div class="why-point"><div class="why-point-num">I</div><div class="why-point-body"><h4>Custom Concepts, Every Time</h4><p>No two events are alike. We design from scratch based on your vision, theme, and budget — no templates, no shortcuts.</p></div></div>
+      <div class="why-point"><div class="why-point-num">II</div><div class="why-point-body"><h4>On-Time, Every Time</h4><p>We understand the pressure of event timelines. Our team arrives early, sets up professionally, and leaves nothing to chance.</p></div></div>
+      <div class="why-point"><div class="why-point-num">III</div><div class="why-point-body"><h4>Packages for Every Budget</h4><p>From simple elegant setups to grand luxury productions, we have offerings that make every celebration feel special.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ══ -->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <p class="section-label">Our Work</p>
+    <h2 class="section-title" style="text-align:center">Moments We've <em>Brought to Life</em></h2>
+    <p class="section-desc" style="margin:0.5rem auto 0;text-align:center">A glimpse of the stages, florals, and memories we've created for our clients.</p>
+  </div>
+  <div class="gallery-tabs">
+    <button class="tab-btn active" onclick="filterGallery('all',this)">All</button>
+    <button class="tab-btn" onclick="filterGallery('wedding',this)">Weddings</button>
+    <button class="tab-btn" onclick="filterGallery('birthday',this)">Birthdays</button>
+    <button class="tab-btn" onclick="filterGallery('decor',this)">Décor</button>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item featured" data-cat="wedding" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1000&q=90&fit=crop&crop=center" alt="Grand Wedding Stage with Floral Arch"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Grand Wedding Stage</span></div>
+    </div>
+    <div class="gallery-item" data-cat="wedding" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=90&fit=crop&crop=center" alt="Elegant Floral Wedding Backdrop"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Floral Wedding Backdrop</span></div>
+    </div>
+    <div class="gallery-item" data-cat="birthday" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=90&fit=crop" alt="Birthday Party Decoration"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Birthday Celebration</span></div>
+    </div>
+    <div class="gallery-item" data-cat="decor" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=90&fit=crop&crop=center" alt="Grand Stage Decoration with Lights"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Grand Stage Decoration</span></div>
+    </div>
+    <div class="gallery-item" data-cat="decor" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&q=90&fit=crop&crop=center" alt="Stage Lighting & Draping"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Stage Lighting & Draping</span></div>
+    </div>
+    <div class="gallery-item featured" data-cat="wedding" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=1000&q=90&fit=crop&crop=center" alt="Wedding Reception Decor"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Wedding Reception Setup</span></div>
+    </div>
+    <div class="gallery-item" data-cat="birthday" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=90&fit=crop" alt="Birthday Balloon Backdrop"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Birthday Balloon Backdrop</span></div>
+    </div>
+    <div class="gallery-item" data-cat="decor" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=90&fit=crop&crop=center" alt="Floral Stage Backdrop Setup"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Floral Stage Backdrop</span></div>
+    </div>
+    <div class="gallery-item" data-cat="wedding" onclick="openLightbox(this)">
+      <img src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?w=600&q=90&fit=crop&crop=center" alt="Wedding Stage Backdrop"/>
+      <div class="gallery-overlay"><span class="gallery-caption">Wedding Stage Backdrop</span></div>
+    </div>
+  </div>
+  <p id="imgNotice" style="display:none;text-align:center;color:var(--muted);font-size:0.78rem;margin-top:1.5rem;">⚠️ Gallery images require an internet connection to load.</p>
+</section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt=""/>
+</div>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials">
+  <div class="testimonials-header">
+    <p class="section-label">Kind Words</p>
+    <h2 class="section-title">Families Who <em>Trust Us</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">The wedding stage was absolutely stunning. Every flower, every light was exactly how we imagined. Issac Events made our big day truly magical.</p><div class="testi-author"><div class="testi-avatar">P</div><div><div class="testi-name">Priya & Rahul</div><div class="testi-event">Wedding · January 2025</div></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">My daughter's 1st birthday party looked like it was straight out of a magazine. The balloon setup and backdrop were beyond what I expected!</p><div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Anitha Rajan</div><div class="testi-event">Birthday Party · March 2025</div></div></div></div>
+    <div class="testi-card"><div class="stars">★★★★★</div><p class="testi-text">Professional, punctual, and passionate. The stage they built for our reception was breathtaking. Highly recommend Issac Events.</p><div class="testi-author"><div class="testi-avatar">S</div><div><div class="testi-name">Samuel & Deepa</div><div class="testi-event">Reception · December 2024</div></div></div></div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact" id="contact">
+  <div class="contact-header">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's Plan Your <em>Perfect Event</em></h2>
+    <p class="section-desc" style="margin:0 auto">Tell us about your dream event. Free consultation, always.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Reach Us<br/>Directly</h3>
+      <p>Available to answer questions, discuss décor ideas, and share packages. We respond fast.</p>
+      <div class="contact-methods">
+        <a href="tel:+19734622380" class="contact-method"><div class="cm-icon">📞</div><div><div class="cm-label">Phone</div><div class="cm-value">+1 (973) 462-2380</div></div></a>
+        <a href="https://wa.me/19734622380" target="_blank" rel="noopener" class="contact-method"><div class="cm-icon">💬</div><div><div class="cm-label">WhatsApp</div><div class="cm-value">+1 (973) 462-2380</div></div></a>
+        <a href="mailto:Issacevents@gmail.com" class="contact-method"><div class="cm-icon">📧</div><div><div class="cm-label">Email</div><div class="cm-value">Issacevents@gmail.com</div></div></a>
+        <div class="contact-method" style="cursor:default"><div class="cm-icon">📍</div><div><div class="cm-label">Location</div><div class="cm-value">Morris Plains, New Jersey</div></div></div>
+        <div class="contact-method" style="cursor:default"><div class="cm-icon">🕐</div><div><div class="cm-label">Working Hours</div><div class="cm-value">Mon – Sun &nbsp;|&nbsp; 9 AM – 9 PM</div></div></div>
+      </div>
+      <p class="quick-label">Tap to connect instantly</p>
+      <div class="direct-actions">
+        <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!%20I%27d%20like%20to%20enquire." target="_blank" rel="noopener" class="action-btn action-whatsapp">💬 WhatsApp</a>
+        <a href="tel:+19734622380" class="action-btn action-call">📞 Call Now</a>
+        <a href="mailto:Issacevents@gmail.com" class="action-btn action-email">✉ Email Us</a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-title">Send an Enquiry</div>
+      <p class="form-sub">Fill in your details and click <strong>Send Enquiry</strong> — we'll receive your message directly by email and respond promptly.</p>
+
+      <!-- Web3Forms: free service that emails form submissions to your inbox, no backend needed -->
+      <!-- HOW TO ACTIVATE: Go to https://web3forms.com, enter Issacevents@gmail.com, get your Access Key, replace YOUR_ACCESS_KEY_HERE below -->
+      <form id="enquiryForm" onsubmit="handleSubmit(event)" novalidate>
+
+        <div class="form-row">
+          <div class="form-group"><label>Your Name *</label><input type="text" name="name" id="fname" placeholder="Full name" required/></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" id="fphone" placeholder="+1 (xxx) xxx-xxxx" required/></div>
+        </div>
+        <div class="form-group"><label>Your Email</label><input type="email" name="email" id="femail" placeholder="your@email.com"/></div>
+        <div class="form-group">
+          <label>Event Type *</label>
+          <select name="event_type" id="ftype" required>
+            <option value="" disabled selected>Select event type</option>
+            <option>Wedding</option><option>Birthday Party</option><option>Reception</option>
+            <option>Engagement</option><option>Corporate Event</option><option>Anniversary</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Preferred Event Date</label><input type="date" name="event_date" id="fdate"/></div>
+        <div class="form-group"><label>Tell Us Your Vision</label><textarea name="message" id="fmsg" placeholder="Describe your event, theme, décor ideas, expected guests, venue, budget..."></textarea></div>
+        <div class="form-group">
+          <label>Preferred Mode of Communication *</label>
+          <select name="preferred_contact" id="fcontact" required>
+            <option value="" disabled selected>How should we contact you?</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="Phone Call">Phone Call</option>
+            <option value="Email">Email</option>
+          </select>
+        </div>
+        <div class="form-status error" id="formError"></div>
+        <div class="form-submit-row">
+          <button type="submit" class="form-submit" id="submitBtn">Send Enquiry ✦</button>
+          <span class="form-note">You'll receive a confirmation.<br/>We reply within a few hours.</span>
+        </div>
+      </form>
+
+      <div id="formSuccess">
+        <div style="font-size:2rem;margin-bottom:0.8rem">✦</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.5rem;background:linear-gradient(135deg,#F0D080,#C8992A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.6rem">Thank You!</div>
+        <p style="color:var(--muted);font-size:0.86rem;line-height:1.65">Your enquiry has been sent successfully. We've received it and will get back to you very soon!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name">
+        <span class="brand-highlight" style="font-size:1.55rem">Issac</span><span class="brand-events" style="font-size:1.25rem;color:#B8860B;-webkit-text-fill-color:#B8860B;"> events</span>
+      </div>
+      <div class="footer-tagline">Planned with Purpose, Delivered with Excellence</div>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:+19734622380">📞 +1 (973) 462-2380</a>
+      <a href="mailto:Issacevents@gmail.com">📧 Issacevents@gmail.com</a>
+      <a href="https://wa.me/19734622380" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      <span>📍 Morris Plains, New Jersey</span>
+      <span>🕐 Mon – Sun, 9 AM – 9 PM</span>
+    </div>
+    <div class="footer-services">
+      <div class="footer-col-label">Our Services</div>
+      <a href="#contact">💍 Wedding Stage Decoration</a>
+      <a href="#contact">🎂 Birthday Party Stages</a>
+      <a href="#contact">🍼 Baby Shower Décor</a>
+      <a href="#contact">🎈 Party Decorations</a>
+      <a href="#contact">📸 Backdrop Setups</a>
+      <a href="#contact">🎊 Event Decorations</a>
+      <a href="#contact">🌸 Floral & Lighting Design</a>
+      <a href="#contact">🎯 Full Event Management</a>
+    </div>
+    <div class="footer-nav">
+      <div class="footer-col-label">Quick Links</div>
+      <a href="#why">About Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact">Book Now</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 Issac Events · Morris Plains, NJ · All rights reserved</div>
+</footer>
+
+<script>
+  /* Image errors */
+  window.addEventListener('load', () => {
+    let fc = 0;
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.onerror = function() {
+        this.parentElement.style.background='linear-gradient(135deg,#1A1208,#2C1A0A)';
+        this.style.display='none';
+        if(++fc>=3) document.getElementById('imgNotice').style.display='block';
+      };
+    });
+  });
+
+  /* Gallery filter */
+  function filterGallery(cat,btn){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.gallery-item').forEach(item=>{
+      item.style.display=(cat==='all'||item.dataset.cat===cat)?'':'none';
+    });
+  }
+
+  /* Lightbox */
+  function openLightbox(el){
+    const img=el.querySelector('img');
+    if(!img||img.style.display==='none') return;
+    document.getElementById('lightboxImg').src=img.src.replace('w=600','w=1200').replace('w=1000','w=1400');
+    document.getElementById('lightboxImg').alt=img.alt;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+  /* Form: Formspree sends email, then opens WhatsApp with enquiry details */
+  async function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('formError').style.display = 'none';
+
+    var name    = document.getElementById('fname').value.trim();
+    var phone   = document.getElementById('fphone').value.trim();
+    var email   = document.getElementById('femail').value.trim();
+    var type    = document.getElementById('ftype').value;
+    var date    = document.getElementById('fdate').value;
+    var contact = document.getElementById('fcontact').value;
+    var msg     = document.getElementById('fmsg').value.trim();
+
+    if (!name)    { showErr('Please enter your name.'); return; }
+    if (!phone)   { showErr('Please enter your phone number.'); return; }
+    if (!type)    { showErr('Please select an event type.'); return; }
+    if (!contact) { showErr('Please select preferred contact mode.'); return; }
+
+    var btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      var res = await fetch('https://formspree.io/f/xzdnjqor', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name:              name,
+          phone:             phone,
+          email:             email || 'Not provided',
+          event_type:        type,
+          event_date:        date || 'To be decided',
+          preferred_contact: contact,
+          message:           msg || 'No additional details.'
+        })
+      });
+
+      if (!res.ok) {
+        showErr('Could not send. Please call or WhatsApp us directly.');
+        btn.disabled = false;
+        btn.textContent = 'Send Enquiry';
+        return;
+      }
+    } catch(err) {
+      showErr('Network error. Please call or WhatsApp us directly.');
+      btn.disabled = false;
+      btn.textContent = 'Send Enquiry';
+      return;
+    }
+
+    document.getElementById('enquiryForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+
+    var lines = [
+      'New Enquiry - Issac Events',
+      '',
+      'Name: ' + name,
+      'Phone: ' + phone,
+      'Email: ' + (email || 'Not provided'),
+      'Event: ' + type,
+      'Date: ' + (date || 'To be decided'),
+      'Contact via: ' + contact,
+      '',
+      'Message:',
+      msg || 'No additional details.',
+      '',
+      'Sent from Issac Events website'
+    ];
+    var waMsg = encodeURIComponent(lines.join('\n'));
+    setTimeout(function() {
+      window.open('https://wa.me/19734622380?text=' + waMsg, '_blank');
+    }, 700);
+  }
+
+  function showErr(msg) {
+    var el = document.getElementById('formError');
+    el.textContent = msg;
+    el.style.display = 'block';
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+</script>
+</body>
+</html>
