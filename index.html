@@ -56,12 +56,22 @@
       border-bottom: 2px solid var(--gold-light);
       box-shadow: var(--shadow-sm);
     }
-    .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    .nav-logo-text { display: flex; flex-direction: column; }
-    .nav-brand { font-size: 1.55rem; line-height: 1; }
-    .nav-brand .brand-highlight { font-size: 1.55rem; }
-    .nav-brand .brand-events { font-size: 1.25rem; }
-    .nav-sub { font-size: 0.48rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--subtle); margin-top: 0.2rem; white-space: nowrap; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .nav-logo-img { height: 48px; width: auto; display: block; object-fit: contain; flex-shrink: 0; }
+    .nav-logo-text { display: flex; flex-direction: column; justify-content: center; }
+    .nav-brand { line-height: 1; }
+    .nav-issac {
+      font-family: 'DM Sans', sans-serif; font-weight: 900;
+      font-size: 1.5rem; color: #111; letter-spacing: -0.02em;
+    }
+    .nav-events {
+      font-family: 'DM Sans', sans-serif; font-weight: 400;
+      font-size: 1.25rem; color: #444; letter-spacing: 0.01em;
+    }
+    .nav-sub {
+      font-size: 0.46rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--subtle); margin-top: 0.2rem; white-space: nowrap;
+    }
     nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
     nav ul a { text-decoration: none; color: var(--ink); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; transition: color 0.3s; position: relative; }
     nav ul a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
@@ -186,7 +196,7 @@
     .btn-outline:hover::before { transform: translateX(0); }
     .btn-outline span { position: relative; z-index: 1; }
     .hero-connect {
-      display: grid; grid-template-columns: repeat(4, 1fr);
+      display: grid; grid-template-columns: repeat(5, 1fr);
       border: 1.5px solid rgba(191,54,12,0.18); width: 100%;
       background: #fff;
       box-shadow: 0 6px 28px rgba(26,31,58,0.09);
@@ -223,6 +233,8 @@
     .hcc-icon-wrap.ic-wa    { background: #25D366; }
     .hcc-icon-wrap.ic-email { background: rgba(212,160,23,0.12); }
     .hcc-icon-wrap.ic-loc   { background: rgba(21,101,192,0.1); }
+    .hcc-icon-wrap.ic-insta { background: linear-gradient(135deg, #fdf497 0%, #fd5949 45%, #d6249f 70%, #285AEB 100%); }
+    .hcc-item:nth-child(5)::after { background: #d6249f; }
     .hcc-icon-wrap.ic-wa svg { width: 22px; height: 22px; }
     .hcc-text { display: flex; flex-direction: column; gap: 0.15rem; }
     .hcc-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--subtle); font-weight: 700; }
@@ -489,10 +501,11 @@
       .gallery-grid { grid-template-columns: 1fr 1fr; }
       .gallery-item.featured { grid-column: span 2; }
       .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .hero-connect { grid-template-columns: repeat(2, 1fr); }
-      .hcc-item:nth-child(2) { border-right: none; }
+      .hero-connect { grid-template-columns: repeat(3, 1fr); }
+      .hcc-item:nth-child(3) { border-right: none; }
       .hcc-item:nth-child(1),
-      .hcc-item:nth-child(2) { border-bottom: 1px solid rgba(191,54,12,0.1); }
+      .hcc-item:nth-child(2),
+      .hcc-item:nth-child(3) { border-bottom: 1px solid rgba(191,54,12,0.1); }
     }
     @media (max-width: 600px) {
       .cards { grid-template-columns: 1fr; }
@@ -511,21 +524,12 @@
 <!-- ══ NAV ══ -->
 <nav>
   <a class="nav-logo" href="#">
-    <svg width="26" height="32" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="3" r="2.2" fill="#F0D080"/>
-      <circle cx="4" cy="9" r="1.6" fill="#C8992A"/>
-      <circle cx="28" cy="9" r="1.6" fill="#C8992A"/>
-      <path d="M4 10 L8 22 L16 16 L24 22 L28 10 L16 14 Z" fill="#C8992A" fill-opacity="0.18" stroke="#C8992A" stroke-width="1.2" stroke-linejoin="round"/>
-      <line x1="16" y1="5.2" x2="16" y2="16" stroke="#F0D080" stroke-width="1.4"/>
-      <line x1="16" y1="16" x2="16" y2="34" stroke="#C8992A" stroke-width="2" stroke-linecap="round"/>
-      <path d="M16 22 Q8 20 9 26 Q10 30 16 28" stroke="#C8992A" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-      <path d="M10 34 Q16 36.5 22 34" stroke="#C8992A" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-    </svg>
+    <img class="nav-logo-img" src="data:image/png;base64,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" alt="Issac Events Icon"/>
     <div class="nav-logo-text">
-      <span class="nav-brand">
-        <span class="brand-highlight">Issac</span><span class="brand-events"> events</span>
-      </span>
-      <span class="nav-sub">Planned with Purpose, Delivered with Excellence</span>
+      <div class="nav-brand">
+        <span class="nav-issac">Issac</span><span class="nav-events"> events</span>
+      </div>
+      <div class="nav-sub">Planned with Purpose, Delivered with Excellence</div>
     </div>
   </a>
   <ul>
@@ -571,23 +575,11 @@
 
     <!-- Quick Connect strip -->
     <div class="hero-connect">
-      <a href="tel:+19734622380" class="hcc-item">
+      <a href="tel:+919088347722" class="hcc-item">
         <div class="hcc-icon-wrap ic-call">📞</div>
         <div class="hcc-text">
           <span class="hcc-label">Call Us</span>
-          <span class="hcc-value">+1 (973) 462-2380</span>
-        </div>
-      </a>
-      <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!" target="_blank" rel="noopener" class="hcc-item">
-        <div class="hcc-icon-wrap ic-wa">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 3C8.82 3 3 8.82 3 16c0 2.34.64 4.54 1.76 6.44L3 29l6.72-1.74A13.04 13.04 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="#fff"/>
-            <path d="M21.9 18.72c-.32-.16-1.88-.92-2.17-1.03-.29-.1-.5-.16-.71.16-.21.32-.82 1.03-.99 1.24-.18.21-.36.23-.68.08a8.54 8.54 0 01-2.52-1.56 9.4 9.4 0 01-1.74-2.17c-.18-.32-.02-.49.14-.65.14-.14.32-.36.48-.54.16-.18.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.72-.97-2.35-.26-.62-.52-.53-.71-.54H12.1c-.18 0-.48.07-.73.35-.25.28-.97.95-.97 2.32s.99 2.69 1.13 2.88c.14.18 1.95 2.98 4.73 4.18.66.29 1.18.46 1.58.59.66.21 1.27.18 1.74.11.53-.08 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.11-.26-.18-.55-.32z" fill="#25D366"/>
-          </svg>
-        </div>
-        <div class="hcc-text">
-          <span class="hcc-label">WhatsApp</span>
-          <span class="hcc-value">Chat with us</span>
+          <span class="hcc-value">+91 90883 47722</span>
         </div>
       </a>
       <a href="mailto:Issacevents@gmail.com" class="hcc-item">
@@ -604,6 +596,28 @@
           <span class="hcc-value">Morris Plains, NJ</span>
         </div>
       </div>
+      <a href="https://www.instagram.com/issacevents?igsh=MXd1ejE3YjY2cWlsNg==" target="_blank" rel="noopener" class="hcc-item">
+        <div class="hcc-icon-wrap ic-insta">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="22" height="22">
+            <defs>
+              <radialGradient id="ig1" cx="30%" cy="107%" r="150%">
+                <stop offset="0%" stop-color="#fdf497"/>
+                <stop offset="5%" stop-color="#fdf497"/>
+                <stop offset="45%" stop-color="#fd5949"/>
+                <stop offset="60%" stop-color="#d6249f"/>
+                <stop offset="90%" stop-color="#285AEB"/>
+              </radialGradient>
+            </defs>
+            <rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#ig1)"/>
+            <circle cx="12" cy="12" r="4.5" stroke="#fff" stroke-width="1.6" fill="none"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="hcc-text">
+          <span class="hcc-label">Instagram</span>
+          <span class="hcc-value">@issacevents</span>
+        </div>
+      </a>
     </div>
 
   </div>
@@ -736,16 +750,16 @@
       <h3>Reach Us<br/>Directly</h3>
       <p>Available to answer questions, discuss décor ideas, and share packages. We respond fast.</p>
       <div class="contact-methods">
-        <a href="tel:+19734622380" class="contact-method"><div class="cm-icon">📞</div><div><div class="cm-label">Phone</div><div class="cm-value">+1 (973) 462-2380</div></div></a>
-        <a href="https://wa.me/19734622380" target="_blank" rel="noopener" class="contact-method"><div class="cm-icon">💬</div><div><div class="cm-label">WhatsApp</div><div class="cm-value">+1 (973) 462-2380</div></div></a>
+        <a href="tel:+919088347722" class="contact-method"><div class="cm-icon">📞</div><div><div class="cm-label">Phone</div><div class="cm-value">+91 90883 47722</div></div></a>
+        <a href="https://wa.me/919088347722" target="_blank" rel="noopener" class="contact-method"><div class="cm-icon">💬</div><div><div class="cm-label">WhatsApp</div><div class="cm-value">+91 90883 47722</div></div></a>
         <a href="mailto:Issacevents@gmail.com" class="contact-method"><div class="cm-icon">📧</div><div><div class="cm-label">Email</div><div class="cm-value">Issacevents@gmail.com</div></div></a>
         <div class="contact-method" style="cursor:default"><div class="cm-icon">📍</div><div><div class="cm-label">Location</div><div class="cm-value">Morris Plains, New Jersey</div></div></div>
         <div class="contact-method" style="cursor:default"><div class="cm-icon">🕐</div><div><div class="cm-label">Working Hours</div><div class="cm-value">Mon – Sun &nbsp;|&nbsp; 9 AM – 9 PM</div></div></div>
       </div>
       <p class="quick-label">Tap to connect instantly</p>
       <div class="direct-actions">
-        <a href="https://wa.me/19734622380?text=Hi%20Issac%20Events!%20I%27d%20like%20to%20enquire." target="_blank" rel="noopener" class="action-btn action-whatsapp">💬 WhatsApp</a>
-        <a href="tel:+19734622380" class="action-btn action-call">📞 Call Now</a>
+        <a href="https://wa.me/919088347722?text=Hi%20Issac%20Events!%20I%27d%20like%20to%20enquire." target="_blank" rel="noopener" class="action-btn action-whatsapp">💬 WhatsApp</a>
+        <a href="tel:+919088347722" class="action-btn action-call">📞 Call Now</a>
         <a href="mailto:Issacevents@gmail.com" class="action-btn action-email">✉ Email Us</a>
       </div>
     </div>
@@ -755,8 +769,8 @@
       <p class="form-sub">Fill in your details and click <strong>Send Enquiry</strong> — we'll receive your message directly by email and respond promptly.</p>
 
       <!-- Web3Forms: free service that emails form submissions to your inbox, no backend needed -->
-      <!-- HOW TO ACTIVATE: Go to https://web3forms.com, enter Issacevents@gmail.com, get your Access Key, replace YOUR_ACCESS_KEY_HERE below -->
       <form id="enquiryForm" onsubmit="handleSubmit(event)" novalidate>
+
 
         <div class="form-row">
           <div class="form-group"><label>Your Name *</label><input type="text" name="name" id="fname" placeholder="Full name" required/></div>
@@ -808,9 +822,9 @@
       <div class="footer-tagline">Planned with Purpose, Delivered with Excellence</div>
     </div>
     <div class="footer-contact">
-      <a href="tel:+19734622380">📞 +1 (973) 462-2380</a>
+      <a href="tel:+919088347722">📞 +91 90883 47722</a>
       <a href="mailto:Issacevents@gmail.com">📧 Issacevents@gmail.com</a>
-      <a href="https://wa.me/19734622380" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      <a href="https://wa.me/919088347722" target="_blank" rel="noopener">💬 WhatsApp Us</a>
       <span>📍 Morris Plains, New Jersey</span>
       <span>🕐 Mon – Sun, 9 AM – 9 PM</span>
     </div>
@@ -873,7 +887,7 @@
   }
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 
-  /* Form: Formspree sends email, then opens WhatsApp with enquiry details */
+  /* Form: Formspree - sends email to Issacevents@gmail.com on submission */
   async function handleSubmit(e) {
     e.preventDefault();
     document.getElementById('formError').style.display = 'none';
@@ -896,7 +910,7 @@
     btn.textContent = 'Sending...';
 
     try {
-      var res = await fetch('https://formspree.io/f/xzdnjqor', {
+      var res = await fetch('https://formspree.io/f/xrpzgyvl', {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -910,41 +924,19 @@
         })
       });
 
-      if (!res.ok) {
+      if (res.ok) {
+        document.getElementById('enquiryForm').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
         showErr('Could not send. Please call or WhatsApp us directly.');
         btn.disabled = false;
         btn.textContent = 'Send Enquiry';
-        return;
       }
     } catch(err) {
       showErr('Network error. Please call or WhatsApp us directly.');
       btn.disabled = false;
       btn.textContent = 'Send Enquiry';
-      return;
     }
-
-    document.getElementById('enquiryForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-
-    var lines = [
-      'New Enquiry - Issac Events',
-      '',
-      'Name: ' + name,
-      'Phone: ' + phone,
-      'Email: ' + (email || 'Not provided'),
-      'Event: ' + type,
-      'Date: ' + (date || 'To be decided'),
-      'Contact via: ' + contact,
-      '',
-      'Message:',
-      msg || 'No additional details.',
-      '',
-      'Sent from Issac Events website'
-    ];
-    var waMsg = encodeURIComponent(lines.join('\n'));
-    setTimeout(function() {
-      window.open('https://wa.me/19734622380?text=' + waMsg, '_blank');
-    }, 700);
   }
 
   function showErr(msg) {
