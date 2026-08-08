@@ -56,21 +56,61 @@
       border-bottom: 2px solid var(--gold-light);
       box-shadow: var(--shadow-sm);
     }
+                /* ── NAV LOGO ── */
     .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-    .nav-logo-img { height: 48px; width: auto; display: block; object-fit: contain; flex-shrink: 0; }
-    .nav-logo-text { display: flex; flex-direction: column; justify-content: center; }
-    .nav-brand { line-height: 1; }
+    .nav-icon { height: 52px; width: auto; display: block; object-fit: contain; flex-shrink: 0; }
+    .nav-box-wrap { display: flex; flex-direction: column; }
+    .nav-box {
+      position: relative;
+      display: inline-flex; align-items: baseline;
+      padding: 7px 14px 7px 10px;
+      border-top: 2px solid #111;
+      border-bottom: 2px solid #111;
+    }
+    /* Left side — short tick top */
+    .nav-box-tl {
+      position: absolute;
+      top: -2px; left: -2px;
+      width: 2px; height: 38%;
+      background: #111; display: block;
+    }
+    /* Left side — short tick bottom */
+    .nav-box-tr {
+      position: absolute;
+      bottom: -2px; left: -2px;
+      width: 2px; height: 38%;
+      background: #111; display: block;
+    }
+    /* Right side — short tick top */
+    .nav-box-rt {
+      position: absolute;
+      top: -2px; right: -2px;
+      width: 2px; height: 38%;
+      background: #111; display: block;
+    }
+    /* Right side — short tick bottom */
+    .nav-box-rb {
+      position: absolute;
+      bottom: -2px; right: -2px;
+      width: 2px; height: 38%;
+      background: #111; display: block;
+    }
     .nav-issac {
-      font-family: 'DM Sans', sans-serif; font-weight: 900;
-      font-size: 1.5rem; color: #111; letter-spacing: -0.02em;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 900; font-size: 1.55rem;
+      color: #111; letter-spacing: -0.02em; line-height: 1;
     }
     .nav-events {
-      font-family: 'DM Sans', sans-serif; font-weight: 400;
-      font-size: 1.25rem; color: #444; letter-spacing: 0.01em;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400; font-size: 1.3rem;
+      color: #111; letter-spacing: 0.01em; line-height: 1;
+      margin-left: 0.3rem;
     }
-    .nav-sub {
-      font-size: 0.46rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--subtle); margin-top: 0.2rem; white-space: nowrap;
+    .nav-tagline {
+      font-size: 0.52rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: #555;
+      margin-top: 6px; padding-left: 10px;
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
     }
     nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
     nav ul a { text-decoration: none; color: var(--ink); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; transition: color 0.3s; position: relative; }
@@ -350,6 +390,7 @@
     }
     .why-points { display: flex; flex-direction: column; margin-top: 3rem; position: relative; z-index: 1; }
     .why-point { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.5rem 0; border-bottom: 1px solid rgba(191,54,12,0.13); transition: all 0.3s; cursor: default; }
+    .why-belief { font-size: 0.92rem; color: var(--subtle); line-height: 1.85; font-style: italic; margin-bottom: 1.8rem; padding: 1rem 1.2rem; border-left: 3px solid var(--gold); background: rgba(184,134,11,0.04); }
     .why-point:first-child { padding-top: 0; }
     .why-point:last-child { border-bottom: none; }
     .why-point:hover { padding-left: 0.5rem; }
@@ -524,12 +565,18 @@
 <!-- ══ NAV ══ -->
 <nav>
   <a class="nav-logo" href="#">
-    <img class="nav-logo-img" src="data:image/png;base64,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" alt="Issac Events Icon"/>
-    <div class="nav-logo-text">
-      <div class="nav-brand">
+    <!-- Crown monogram icon -->
+    <img class="nav-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAABQCAIAAADDQyF+AAAMO0lEQVR42u2aaWxc13XHz7n3vvdm5pEz5HCnKIkiRUUyLUtyIriOLVlLktpq4lhphcBxkqYx6qQOoPpDuqBF0cVBo6Rw4qQpkLRIKgPZ7BSxHcV2YtkxBHhJK2uDZVmUSMoUd3Gd4bz1LqcfhrIl2pKoIUXLgC7mA0EOZ373nHvO+Z9zHwZBAO+Hxeb/I4mAzPsAlFlJ7qSualAiLWxn4NDXO57+JDJ+VVuUgBhPWKIS59uiWHowEQECwPlIyMFIIsVEioyc+VciQFxoiyK3AcX5HIYJyxs9MNn7DBOCiGb8B3JnoV2PyGUwSMoDZOf5nUE89aY/dgQZABkgA1DERSAV+6cXEpQQudHB0Z+uGnzt28K2ySgAxhgHAEQI8p3h+LHp3dgp5DYZzW0n1/fs4d2tUe4EE04J+asEUCTSjDuLb32osvlOrSSzklHu+PE9f2hkgQDifHec7zQKGHc6n/9Crm+vcJJahm7N+qUbH7bcJtKyhJPKSgxuFNnl9xTGDgNapJVwG2rav8REijTEhVPSH9RxDpG7tR+yUw1Ga24lpoZeqVi6zUpmyaiZQXbFQNHoUNjO1KmnRzt+xB3HcqplNK5lXqtQekMynIi9AUICAqe8hXFeGP798GvfsZLVWobnHusFiHpCJiqW3t6zb2c02cUFTnY+WhjYR0ZKf4gU6XgyynWNHv0PRCBSXXs/72bbrVSGjFrYqAemlUkv2gI67H7uT4k0aX+s6xde/z4TekhQGHxxvOux2OsRdnnPi1/1hk5WtGwnDSXn0TkkfCDGxfFfbcq9+XLF8q1x7qT0hphVpqNJRELuIgIguvUbJ7ufssvrV+04ZDnV71IFrnTCJ6OZsMoatjAuvL7nZeE0UKzDcSRDhowsGFkwysv3PMVQpGpvslP1RkelUc6t1iOSgXTjJjLKKFAxaAPMKhPJOuE2MCejAXRkyIAMVbpxE2MAM2vVZSwxB06mVezWfLBy5R8Lq6ys/lYn02an6pidQWRGFqQ/HOe7CiP7g/ET6cW3G6URS5dUOFeFj8iEjQzhLWMZIABEQJz+gQxoFc9RTQuY4yIycQAItmXJaEIrnzEBgGQ0446VyMpYGgJELPl0zhMoACAjMga4DEeOPfFR0B4iU1Kv2PZY5ZLbDcVz8fg8C2dEJqPAzbZXNt0WF/LKn3TSDZmmLXEUIc7PV8yjwidDlG7+OHIkwrK6P2DcvlTWpLOvhQRFNAZTmRVMoDHkZJZegICINJEGIAAGyAEYkCGjLh5tYr6sCWSM1tzJoEhC6AmnCgCnCRAR2bQ+ZDa3LUAATVoFZDRjDrdTyEAr0NIrvvNKRL0hICaSgjPGwMRJZDaAV+w6mJMWAowBLWMgYzluHIyNd+/Nn/61N3JQhSOAjFllItVYXv/hqtZPl9XfqGNFJn6nwhJzg9TMcrmAaPL06OmncgP7GtZ8WQg3NhPIrM69904NH8os3phetLW8cQO33MEj/z546JvBmT4rBZnFWytX3J1ItyKKyOvzzxzofPYzqdq1zRu+y+0q0tEM1pJBCQispOuPHevf/+BY589BQrL2A8g4Fo8amUzLJwxRYfiVMx27E26TcCryvS9ZbmXz5n/Ott3jVLQynK6pyIABxMFEz0t/+8aTm6+7ax8TaSJ97hkQpSV5QCZsp3//v55++e8dt65p/T9UtOxwq1abaMjoCBCIVF3rXdmWu4BABmMdT2zI976EArhTlVmyzc22SglxnENkgKy4beRu20d+8PrjW3r/9++WbflP5XvnTjFEaZRM8I7f7Jjo2tO84Vs17feJhGtiMtqcYwbUpOPCpJWs9EYOBpNdTIglGx6S8eTxJ29PVa9bfPO/lC+62SjQ0i/2+0YWyMm6tevHTz4GCpDNyfUEQNx2Tjx9VzDWsfbzxxIVLSqMpV/A6bYdzxHXCICM0VTfc9qP003ratvvZ5aoW/nnAwe/0fHUp8oX3bpo3V+7devPGs71J7qHjny/ctnHgAERIZbqejLGSrl9v38wzHXecPerwFzpTxUrJAEwLkizt2U1MuGkOeOJ7HVAnLk1yERcmOCJmuZND9eveWDw8MOdz33OTjWkalYzOxPnusa6n0hVXr/4w982SuL5SUpcFia3EoXhQyMdj7Rv3wcsqaM8MI7cERYnAzIYI+0Vmw1kdueLX811P2OX1wMi2tobeNkbO1Jeu0YGvvRDy13Ssvnh2JvI9//OO7NfeQPCqW7d+khF8ycQLdLxjKblMmQekbac1EjHz4mi2lVfiP2ccDKMQZjvzff+dqzr0cLgKyu2Pdrzwv3e6Onl235AwLzh15kAGYxKb2Bq8GWGTtMtu2pX3ktEZBQRMW4zy2JsuogRgY4iID2nPIrIVRxmW/8EALQkO5kpDO8fPvZfEyd+EuV8p7K8ZuXnnPJmOhv1je33y1XTdjEKwonX+/d/rXvvX4yd+NkH/uhpQIFoiJSK4reVf7GGvZuOEZcb8qSVcJL+2LHBQ98c6XhE+5BuWr14419ml37SLqtW/hBRsSFmmrT0ppAJAATERMV1bXf8rPGDfzN1Zj8ZQoFAWNz/bJSquBxIzXnSoOo/sGvo4K5wMpeqXbJo8z9Wtd3DbEdHsYwknJOlETkygWz6K7QKtKJkdm2qdq2Oo8sV/GLWgaSEUxZN9Zx64b7cqWcBof5DX1x809ctt1ZHkQoKiAxZgi5snKIwNconRSVIaTHLmi6cMm/kQOczO8KJUyzhLLnlW/U33K9jpYICMo5MzLbDRFZaRyJm43HhuN7IgY49d2h/hCdTLR/9cfXy7bHvIeJbnr3SS1zSmIw7UaGn85ntOhhBbrds3V29fHvsTyGzYAEXu3RSQur+3b1xvhcIGm96sHrFjmjBKS8BSkbxRHL49e/ne54HhEzLHY03/pUMPLbglBd3PSF3Yn90+PC/cY5ouU03PUSG4D1a7CKDBWFbk12/DHO9ZKiq7dNuzSotfcB5uekiIFPs8oj0bDKGuNhY2dDEm48zQOKssu0eMufprpIHK0AGmcUs561KaTSRCggull/FBWefzNJhLpx8A4DssoZUdrVWGuYwTSDSgCjsFOMgwyAYOxIXerXyuFWeqFjhVCxHBB2Fl29RRKN8Uj4BWMlaZqWBVGnzIyKNwITjAkGu97nR47sLI68SSMvKILNJhzoucLehbvXO7NKPF5uoywAlMsxyuUiDGQEyWFIcEWkgJhwXAMY7/2fg1W+oYDizbNvSDd9JVd9oOVXAGBgd+0OTXb8YPvLdsqp1TmaZUfE7J+jigpdJRnInY2ev98a740JvHJ6xUg1g5OyHKwTAnQzjMNG9p///vhYX+mpXf6l+9Vdst8poMEobHYMiQLCSDfXrHqi94QGjQnOBWyhx8SuFmpVfzHc9qbzx3Kkn6tftjD2fcfuCB+A8QUQMYOLUL4cOPhTlT9dcf2/Dmp1WKqsjFfsFQDY9iEQEADKRDM2FZiSXAEXkOgqyy+7MXfdnw4f/e+DgrrJFt5XXrpFhOH0FM321TMVxLQJjQhjNiyMnFInOF74ydvLXDWu/XNt+n+VW6UhK/6yCeZf6x0uv9YigZdS84XtKeaNHH+t4fNPijd+ravmUSJVNu/acc29iHeQ6OUpEjgBGBtUrP9u4/p8SZTXqYojzI0oQyBATrR/5Sbr+loGDu07s+Wyyui7deFuyot1K1QIKLaek1x/mT4bjbxgZtn5sN3KbCBBZZcPNQRDEc0acnXpCJNKgdd3andm2z+T69uZ6fxuOveYNvkJGAudcuFaqIVGxsmLdnelFmy3bMSosmtmQAVLzJV9ms1EEABV43KqoWXF3zcq7SYPR0pBiwJDbjCMggAFDYMKBczXyHOf2pbQiyDiRlFFUHOkgMkRGBKRCLU2xWDOeeO+E8ztjE2cko7O/JCqOuwinT/f8Cq25jMZn3MgQAhAZQ+Zs2bxaQGfWIWDMSA+0jwg6LsDVCQpAjIMM+nUcIYL0B/C9O6OXGqEheKNHjGFcgD/ZcTbwry6LEqKlVXDm6A8p1kbp3Jt7/cmTXCRonh4onDeLOsnE1JlXrbLm6utXFC/y/PGjNRVtoZ6na6x5eX4UETnnAMDF2zvX2gAZItJaXy2gxTkfAhLp8ysTzL3NmmfXF4EQ5/lpzCuRnt7jkc410Gug10CvgV4DvQZ6DfR9Dfr/3jJPVjf/3uAAAAAASUVORK5CYII=" alt="IE"/>
+    <!-- Box design matching Image 4 -->
+    <div class="nav-box-wrap">
+      <div class="nav-box">
+        <span class="nav-box-tl"></span>
+        <span class="nav-box-tr"></span>
+        <span class="nav-box-rt"></span>
+        <span class="nav-box-rb"></span>
         <span class="nav-issac">Issac</span><span class="nav-events"> events</span>
       </div>
-      <div class="nav-sub">Planned with Purpose, Delivered with Excellence</div>
+      <div class="nav-tagline">Planned with Purpose, Delivered with Excellence</div>
     </div>
   </a>
   <ul>
@@ -558,7 +605,7 @@
     </div>
 
     <!-- Tagline -->
-    <div class="hero-tagline-text">Planned with Purpose, Delivered with Excellence</div>
+    <div class="hero-tagline-text"><strong>Planned with Purpose, Delivered with Excellence</strong></div>
 
     <!-- Description -->
     <p class="hero-desc">
@@ -633,8 +680,8 @@
   <div class="cards">
     <div class="card"><span class="card-icon">💍</span><h3 class="card-title">Wedding Stage Decoration</h3><p class="card-text">Floral arches, mandap setups, lighting canopies, and custom backdrops. Your vows deserve the most beautiful stage possible.</p><span class="card-tag">Weddings</span></div>
     <div class="card"><span class="card-icon">🎂</span><h3 class="card-title">Birthday Party Stages</h3><p class="card-text">Themed setups for kids and adults alike. Balloon walls, neon signs, photo backdrops, and colour-coordinated designs.</p><span class="card-tag">Birthdays</span></div>
-    <div class="card"><span class="card-icon">🎊</span><h3 class="card-title">Event Decoration</h3><p class="card-text">Anniversaries, engagements, receptions and more. Full venue décor including entrance, tables, and centrepieces.</p><span class="card-tag">All Events</span></div>
-    <div class="card"><span class="card-icon">🌸</span><h3 class="card-title">Floral & Lighting Design</h3><p class="card-text">Fresh floral installations, fairy lights, LED setups, and custom chandeliers that transform any space into something extraordinary.</p><span class="card-tag">Décor</span></div>
+    <div class="card"><span class="card-icon"><svg viewBox="0 0 60 48" width="38" height="30" xmlns="http://www.w3.org/2000/svg"><ellipse cx="12" cy="32" rx="10" ry="13" fill="#F48FB1"/><circle cx="5"  cy="18" r="3.5" fill="#F48FB1"/><circle cx="10" cy="15" r="3.2" fill="#F48FB1"/><circle cx="15" cy="14" r="3"   fill="#F48FB1"/><circle cx="20" cy="15" r="2.8" fill="#F48FB1"/><circle cx="24" cy="18" r="2.5" fill="#F48FB1"/><ellipse cx="48" cy="32" rx="10" ry="13" fill="#90CAF9"/><circle cx="36" cy="18" r="2.5" fill="#90CAF9"/><circle cx="40" cy="15" r="2.8" fill="#90CAF9"/><circle cx="45" cy="14" r="3"   fill="#90CAF9"/><circle cx="50" cy="15" r="3.2" fill="#90CAF9"/><circle cx="55" cy="18" r="3.5" fill="#90CAF9"/></svg></span><h3 class="card-title">Baby Shower Décor</h3><p class="card-text">Sweet and elegant baby shower setups — from dreamy pastel balloon arches and floral centrepieces to personalised backdrops that make the moment truly special.</p><span class="card-tag">Baby Shower</span></div>
+    <div class="card"><span class="card-icon">🎓</span><h3 class="card-title">Graduation Day Events</h3><p class="card-text">Celebrate academic milestones in style — themed stage setups, photo backdrops, banners, and décor that honour the journey and make graduates feel truly celebrated.</p><span class="card-tag">Graduation</span></div>
     <div class="card"><span class="card-icon">📸</span><h3 class="card-title">Photo Backdrop Setups</h3><p class="card-text">Perfectly styled backdrops for portraits, booths, and candid shots. Every angle becomes a memory worth framing.</p><span class="card-tag">Photography</span></div>
     <div class="card"><span class="card-icon">🎯</span><h3 class="card-title">Full Event Management</h3><p class="card-text">End-to-end coordination — from concept to execution. We handle vendors, timelines, and logistics so you enjoy the moment.</p><span class="card-tag">Management</span></div>
   </div>
@@ -657,7 +704,7 @@
   <div class="why-content">
     <p class="section-label">Why Issac Events</p>
     <h2 class="section-title">We Don't Just Decorate.<br/><em>We Create Experiences.</em></h2>
-    <p class="section-desc" style="margin-top:0.6rem">Built on a passion for beauty and a commitment to detail, Issac Events is the trusted name for families and couples seeking truly memorable celebrations in New Jersey.</p>
+    <p class="section-desc" style="margin-top:0.6rem">Creating meaningful celebrations with purpose, care, love and excellence, while trusting God's perfect timing to make every moment beautiful.</p>
     <div class="why-points">
       <div class="why-point"><div class="why-point-num">I</div><div class="why-point-body"><h4>Custom Concepts, Every Time</h4><p>No two events are alike. We design from scratch based on your vision, theme, and budget — no templates, no shortcuts.</p></div></div>
       <div class="why-point"><div class="why-point-num">II</div><div class="why-point-body"><h4>On-Time, Every Time</h4><p>We understand the pressure of event timelines. Our team arrives early, sets up professionally, and leaves nothing to chance.</p></div></div>
@@ -832,7 +879,7 @@
       <div class="footer-col-label">Our Services</div>
       <a href="#contact">💍 Wedding Stage Decoration</a>
       <a href="#contact">🎂 Birthday Party Stages</a>
-      <a href="#contact">🍼 Baby Shower Décor</a>
+      <a href="#contact"><svg viewBox="0 0 28 22" width="16" height="12" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:4px"><ellipse cx="6" cy="15" rx="5" ry="6.5" fill="#F48FB1"/><circle cx="2.5" cy="8" r="1.8" fill="#F48FB1"/><circle cx="5" cy="6.5" r="1.6" fill="#F48FB1"/><circle cx="7.5" cy="6" r="1.5" fill="#F48FB1"/><circle cx="10" cy="6.5" r="1.4" fill="#F48FB1"/><ellipse cx="22" cy="15" rx="5" ry="6.5" fill="#90CAF9"/><circle cx="18" cy="8" r="1.4" fill="#90CAF9"/><circle cx="20" cy="6.5" r="1.5" fill="#90CAF9"/><circle cx="22.5" cy="6" r="1.6" fill="#90CAF9"/><circle cx="25" cy="6.5" r="1.8" fill="#90CAF9"/></svg> Baby Shower Décor</a>
       <a href="#contact">🎈 Party Decorations</a>
       <a href="#contact">📸 Backdrop Setups</a>
       <a href="#contact">🎊 Event Decorations</a>
