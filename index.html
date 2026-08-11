@@ -57,60 +57,42 @@
       box-shadow: var(--shadow-sm);
     }
                 /* ── NAV LOGO ── */
-    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
-    .nav-icon { height: 52px; width: auto; display: block; object-fit: contain; flex-shrink: 0; }
-    .nav-box-wrap { display: flex; flex-direction: column; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 0.55rem; }
+    .nav-icon { height: 46px; width: auto; display: block; object-fit: contain; flex-shrink: 0; }
+    .nav-box-wrap { display: flex; flex-direction: column; justify-content: center; }
     .nav-box {
       position: relative;
-      display: inline-flex; align-items: baseline;
-      padding: 7px 14px 7px 10px;
+      display: inline-flex; align-items: center;
+      padding: 5px 6px 5px 8px;
       border-top: 2px solid #111;
       border-bottom: 2px solid #111;
     }
-    /* Left side — short tick top */
-    .nav-box-tl {
-      position: absolute;
-      top: -2px; left: -2px;
-      width: 2px; height: 38%;
-      background: #111; display: block;
-    }
-    /* Left side — short tick bottom */
-    .nav-box-tr {
-      position: absolute;
-      bottom: -2px; left: -2px;
-      width: 2px; height: 38%;
-      background: #111; display: block;
-    }
-    /* Right side — short tick top */
-    .nav-box-rt {
-      position: absolute;
-      top: -2px; right: -2px;
-      width: 2px; height: 38%;
-      background: #111; display: block;
-    }
-    /* Right side — short tick bottom */
-    .nav-box-rb {
-      position: absolute;
-      bottom: -2px; right: -2px;
-      width: 2px; height: 38%;
-      background: #111; display: block;
-    }
+    /* Left top tick */
+    .nav-box-tl { position: absolute; top: -2px; left: -2px; width: 2px; height: 40%; background: #111; display: block; }
+    /* Left bottom tick */
+    .nav-box-tr { position: absolute; bottom: -2px; left: -2px; width: 2px; height: 40%; background: #111; display: block; }
+    /* Right top tick */
+    .nav-box-rt { position: absolute; top: -2px; right: -2px; width: 2px; height: 40%; background: #111; display: block; }
+    /* Right bottom tick */
+    .nav-box-rb { position: absolute; bottom: -2px; right: -2px; width: 2px; height: 40%; background: #111; display: block; }
     .nav-issac {
       font-family: 'DM Sans', sans-serif;
-      font-weight: 900; font-size: 1.55rem;
-      color: #111; letter-spacing: -0.02em; line-height: 1;
+      font-weight: 900; font-size: 1.85rem;
+      color: #0a0a0a; letter-spacing: 0.06em; line-height: 1;
+      -webkit-text-stroke: 0.3px #0a0a0a;
     }
     .nav-events {
       font-family: 'DM Sans', sans-serif;
-      font-weight: 400; font-size: 1.3rem;
-      color: #111; letter-spacing: 0.01em; line-height: 1;
-      margin-left: 0.3rem;
+      font-weight: 600; font-size: 1.45rem;
+      color: #0a0a0a; letter-spacing: 0.04em; line-height: 1;
+      margin-left: 0.35rem;
     }
     .nav-tagline {
-      font-size: 0.52rem; letter-spacing: 0.16em;
-      text-transform: uppercase; color: #555;
-      margin-top: 6px; padding-left: 10px;
-      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.3rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #111; margin-top: 3px; padding-left: 2px;
+      white-space: nowrap;
     }
     nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
     nav ul a { text-decoration: none; color: var(--ink); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; transition: color 0.3s; position: relative; }
@@ -790,7 +772,7 @@
   <div class="contact-header">
     <p class="section-label">Get In Touch</p>
     <h2 class="section-title">Let's Plan Your <em>Perfect Event</em></h2>
-    <p class="section-desc" style="margin:0 auto">Tell us about your dream event. Free consultation, always.</p>
+    <p class="section-desc" style="margin:0.8rem auto 0;text-align:center;">Let's connect, explore your ideas, and make your celebration truly special.</p>
   </div>
   <div class="contact-grid">
     <div class="contact-info">
@@ -880,10 +862,10 @@
       <a href="#contact">💍 Wedding Stage Decoration</a>
       <a href="#contact">🎂 Birthday Party Stages</a>
       <a href="#contact"><svg viewBox="0 0 28 22" width="16" height="12" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:4px"><ellipse cx="6" cy="15" rx="5" ry="6.5" fill="#F48FB1"/><circle cx="2.5" cy="8" r="1.8" fill="#F48FB1"/><circle cx="5" cy="6.5" r="1.6" fill="#F48FB1"/><circle cx="7.5" cy="6" r="1.5" fill="#F48FB1"/><circle cx="10" cy="6.5" r="1.4" fill="#F48FB1"/><ellipse cx="22" cy="15" rx="5" ry="6.5" fill="#90CAF9"/><circle cx="18" cy="8" r="1.4" fill="#90CAF9"/><circle cx="20" cy="6.5" r="1.5" fill="#90CAF9"/><circle cx="22.5" cy="6" r="1.6" fill="#90CAF9"/><circle cx="25" cy="6.5" r="1.8" fill="#90CAF9"/></svg> Baby Shower Décor</a>
+      <a href="#contact">🎓 Graduation Day Events</a>
       <a href="#contact">🎈 Party Decorations</a>
       <a href="#contact">📸 Backdrop Setups</a>
       <a href="#contact">🎊 Event Decorations</a>
-      <a href="#contact">🌸 Floral & Lighting Design</a>
       <a href="#contact">🎯 Full Event Management</a>
     </div>
     <div class="footer-nav">
